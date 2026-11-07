@@ -1,0 +1,15 @@
+{
+  "name": "7didan",
+  "dataColors": ["#FF7900", "#1E1712", "#FFB06E", "#D65800", "#7C7168", "#1E9E60", "#D63A30", "#FFE2C4"],
+  "background": "#FFFFFF",
+  "foreground": "#1E1712",
+  "tableAccent": "#FF7900",
+  "good": "#1E9E60",
+  "neutral": "#FFB06E",
+  "bad": "#D63A30",
+  "textClasses": {
+    "title": { "fontFace": "Segoe UI Semibold", "fontSize": 14, "color": "#1E1712" },
+    "label": { "fontFace": "Segoe UI", "fontSize": 10, "color": "#7C7168" },
+    "callout": { "fontFace": "Segoe UI Bold", "fontSize": 28, "color": "#1E1712" }
+  }
+}

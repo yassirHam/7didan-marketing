@@ -1,0 +1,91 @@
+// 7didan Marketing Command Centre measures.
+// These measures are already embedded in 7didan_Command_Centre.SemanticModel/model.bim.
+// This file is the readable DAX source of record.
+
+// Conversation funnel
+Conversations = COUNTROWS ( v_conversations )
+Entered Qualification = CALCULATE ( [Conversations], v_conversations[entered_qualification] = TRUE () )
+Completed Qualifications = CALCULATE ( [Conversations], v_conversations[completed_qualification] = TRUE () )
+Abandoned Conversations = CALCULATE ( [Conversations], v_conversations[abandoned] = TRUE () )
+Conversations with Abstention = CALCULATE ( [Conversations], v_conversations[had_abstention] = TRUE () )
+Information-only Conversations = CALCULATE ( [Conversations], v_conversations[entered_qualification] = FALSE () )
+Qualification Entry Rate = DIVIDE ( [Entered Qualification], [Conversations] )
+Qualification Completion = DIVIDE ( [Completed Qualifications], [Entered Qualification] )
+Abandonment Rate = DIVIDE ( [Abandoned Conversations], [Entered Qualification] )
+Abstention Rate = DIVIDE ( [Conversations with Abstention], [Conversations] )
+
+// Lead quality
+Opportunities Created = COUNTROWS ( v_opportunities )
+Leads Meeting Criteria = CALCULATE ( [Opportunities Created], v_opportunities[qualification_status] = "qualified" )
+Partial Leads = CALCULATE ( [Opportunities Created], v_opportunities[qualification_status] = "partial" )
+Not Qualified Leads = CALCULATE ( [Opportunities Created], v_opportunities[qualification_status] = "not_qualified" )
+Average Lead Score = AVERAGE ( v_opportunities[lead_score] )
+Median Lead Score = MEDIAN ( v_opportunities[lead_score] )
+High Priority Leads = CALCULATE ( [Opportunities Created], v_opportunities[lead_score] >= 75 )
+Field Completeness = DIVIDE ( SUM ( v_opportunities[fields_populated] ), SUM ( v_opportunities[fields_expected] ) )
+Opportunity Conversion = DIVIDE ( [Opportunities Created], [Completed Qualifications] )
+Qualified Lead Rate = DIVIDE ( [Leads Meeting Criteria], [Opportunities Created] )
+
+// CRM reliability
+Total Transactions = COUNTROWS ( v_transactions )
+Valid Unique Submissions =
+    CALCULATE ( DISTINCTCOUNT ( v_transactions[submission_id] ), v_transactions[is_valid_submission] = TRUE () )
+Verified Creations =
+    CALCULATE ( DISTINCTCOUNT ( v_transactions[submission_id] ), v_transactions[is_verified_creation] = TRUE () )
+CRM Success Rate = DIVIDE ( [Verified Creations], [Valid Unique Submissions] )
+Duplicates Blocked = CALCULATE ( [Total Transactions], v_transactions[outcome] = "duplicate" )
+Duplicate Attempt Rate = DIVIDE ( [Duplicates Blocked], [Total Transactions] )
+Duplicate Record Rate =
+    DIVIDE ( [Opportunities Created] - DISTINCTCOUNT ( v_opportunities[submission_id] ), [Opportunities Created] )
+Rejected Submissions =
+    CALCULATE ( [Total Transactions], v_transactions[outcome] IN { "invalid", "consent_declined" } )
+Unauthorized Requests = CALCULATE ( [Total Transactions], v_transactions[outcome] = "unauthorized" )
+CRM Failures =
+    CALCULATE (
+        [Total Transactions],
+        v_transactions[outcome] IN {
+            "crm_auth_failed",
+            "crm_unavailable",
+            "crm_error",
+            "verification_failed",
+            "crm_not_configured"
+        }
+    )
+Verified Transaction Rate =
+    DIVIDE ( CALCULATE ( [Total Transactions], v_transactions[verified] = TRUE () ), [Total Transactions] )
+
+// Processing time
+Median Processing (s) =
+    DIVIDE (
+        CALCULATE ( MEDIAN ( v_transactions[duration_ms] ), v_transactions[is_verified_creation] = TRUE () ),
+        1000
+    )
+Average Processing (s) =
+    DIVIDE (
+        CALCULATE ( AVERAGE ( v_transactions[duration_ms] ), v_transactions[is_verified_creation] = TRUE () ),
+        1000
+    )
+P90 Processing (s) =
+    DIVIDE (
+        CALCULATE (
+            PERCENTILEX.INC ( v_transactions, v_transactions[duration_ms], 0.9 ),
+            v_transactions[is_verified_creation] = TRUE ()
+        ),
+        1000
+    )
+Maximum Processing (s) =
+    DIVIDE (
+        CALCULATE ( MAX ( v_transactions[duration_ms] ), v_transactions[is_verified_creation] = TRUE () ),
+        1000
+    )
+
+// Disconnected funnel-axis measure
+Funnel Value =
+    SWITCH (
+        SELECTEDVALUE ( 'Funnel Stages'[Step] ),
+        "Conversations", [Conversations],
+        "Entered qualification", [Entered Qualification],
+        "Completed qualification", [Completed Qualifications],
+        "Opportunities created", [Opportunities Created],
+        "Qualified leads", [Leads Meeting Criteria]
+    )

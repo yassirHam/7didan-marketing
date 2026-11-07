@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "conversationfunnel00205",
+  "position": {
+    "x": 18,
+    "y": 652,
+    "z": 4,
+    "width": 164,
+    "height": 58,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Orange Maroc Business\nacademic prototype",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#D4CCC5",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

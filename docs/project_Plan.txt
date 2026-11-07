@@ -1,0 +1,477 @@
+# Group 10 — Final Project Plan: 7didan
+
+[Quikwit.chat - AI Frontdesk for Your Business - Customer Support | hotscripts](https://images.openai.com/static-rsc-4/aTKr7OXd_xvqk1JQslBGIpP-0gJ6j821f835vKfjNV1U4TMYuMhHoYpZtlRFw8-NtRF-iM9IX22a4AHVbqTa2sQ1Br2Q_IQOr8CchZms1yMKqa-yABdom1pSaW_ln2taosMrynHhTvTCBr42Dj7jNMnG3l8006D9X27sYzM9PDc?purpose=inline)
+
+[hotscripts.com](https://www.hotscripts.com/listing/quikwit-chat-ai-frontdesk-for-your-business/?utm_source=chatgpt.com)
+
+# 7didan
+
+## An AI-Powered B2B Lead Qualification and CRM Automation System
+
+Module: Webmarketing et CRM · Groupe 10 · 3 members
+
+The project will use Orange Maroc Business as a real-world case study, relying on publicly available information only. You will build an independent academic prototype, not an official Orange product, and you will not access Orange's private systems or customer data.
+
+The goal is to demonstrate how a business could use RAG to answer questions about its services, qualify potential customers through three questions, and create structured sales opportunities in a CRM.
+
+The implementation must follow the tools and evaluation expectations in your professor's project brief. That document specifically lists Odoo CRM, HubSpot CRM and n8n as relevant tools for Team 10, and recommends a working prototype, a live demonstration, a 20-question evaluation, architecture, measurable results and documented limitations.&#x20;
+
+Description_Projets_Web Marketing\_&\_CRM.pdf
+
+
+
+## 1. The real-world problem
+
+B2B telecom and digital-service catalogues can contain multiple offerings, technical conditions and service-specific requirements. A prospective business customer may need to identify the right service before submitting a useful enquiry.
+
+The problem to investigate is:
+
+Can an AI-assisted enquiry process help business customers find relevant service information and submit more complete, structured sales enquiries, while reducing manual CRM data entry?
+
+This is a hypothesis to test, not a claim that Orange Maroc has a documented conversion problem or currently uses the proposed workflow.
+
+### Real business case
+
+[Live Intelligence - Orange](https://images.openai.com/static-rsc-4/Sf765tiFMBXBHUycOaNgBC_rg98MQ8L0MVRmWxMvI8TMIl5vvw-19QQdI9wL0nHjMEW235itlXbgS9HsqxzOOj_PZgiuK3YxH85zdxj5gmhN-w76k9F78E0tsQXNoJYuDMMhH95e3Sn-P5hFUwuRuRXcbGTrMbia634xyoj1zvQ?purpose=inline)
+
+Case study: Orange Maroc Business
+
+Use its publicly available business-service catalogue and FAQs as the knowledge base. Potential topics include connectivity, business mobile services, cloud, cybersecurity and collaboration, where supported by current official documentation.
+
+Source: [Orange Maroc Business](https://entreprise.orange.ma/?utm_source=chatgpt.com)
+
+Use only published documents and record their source and retrieval date. If a price, contractual condition or service specification is not documented, the chatbot must say so rather than inventing an answer.
+
+## 2. The solution
+
+7didan will provide an end-to-end customer journey:
+
+1\. Customer asks a question
+
+Website chat · Business-service enquiry
+
+2\. RAG answers from public documents
+
+Catalogue retrieval · Evidence · Source references
+
+3\. Three qualification questions
+
+Service need · Budget or requirements · Timeline
+
+4\. Backend validates the enquiry
+
+Structured fields · Consent · Duplicate protection
+
+5\. n8n automates the CRM workflow
+
+Validated request · Error handling · Execution status
+
+Odoo CRM
+
+Lead or opportunity record
+
+Analytics
+
+Qualification and processing KPIs
+
+The CRM records and analytics will contain synthetic demonstration enquiries. No real Orange customer information is required.
+
+## 3. Technology stack and tools from the professor's PDF
+
+The project should prioritize the tools explicitly listed in the course document rather than accumulating unrelated technologies.
+
+| Tool                   | Role in the project                                            | Priority            |
+| ---------------------- | -------------------------------------------------------------- | ------------------- |
+| Odoo CRM               | Main CRM, pipeline and lead/opportunity records                | Required            |
+| n8n                    | Workflow automation between the backend and CRM                | Required            |
+| HubSpot CRM            | Optional comparison with Odoo on the same lead-management case | Extension           |
+| Python + FastAPI       | RAG backend and application API                                | Core implementation |
+| PostgreSQL + pgvector  | Document chunks, embeddings and retrieval                      | Core implementation |
+| Next.js + Tailwind CSS | Website and chatbot interface                                  | Core implementation |
+| Docker Compose         | Reproducible local deployment                                  | Recommended         |
+
+The professor's document lists Odoo CRM for Team 10, n8n for Teams 10 and 11, and HubSpot CRM for Teams 6, 8, 10, 11 and 13. It also says that comparing two CRMs on the same case is a plus.&#x20;
+
+Description_Projets_Web Marketing\_&\_CRM.pdf
+
+
+
+Implementation decision: use Odoo as the main CRM and n8n for automation. Only add HubSpot if the core application, testing and presentation are already complete and you have verified that the required functionality is available on its current free offering.
+
+Do not use a second CRM merely to add another logo to the presentation.
+
+## 4. RAG knowledge base
+
+### 4.1 Collect public information
+
+Build a documented knowledge base from official Orange Maroc Business pages and downloadable documents.
+
+Collect information about:
+
+- Business services and their descriptions.
+- Eligibility and technical requirements.
+- Published prices, if available.
+- Contractual conditions and limitations.
+- Customer support and contact procedures.
+- Frequently asked questions.
+
+Maintain a source register with the document title, official URL, retrieval date and relevant section. Distinguish published facts from information that is absent or ambiguous.
+
+### 4.2 Build the retrieval pipeline
+
+Official public documents
+
+Text extraction and cleaning
+
+Section-aware chunking and metadata
+
+Embeddings stored in PostgreSQL + pgvector
+
+Relevant passages → grounded answer → source references
+
+Start with semantic retrieval and section-aware chunking. Test whether adding PostgreSQL full-text search improves the results before introducing hybrid retrieval.
+
+Every answer must be grounded in retrieved evidence. When evidence is missing, the chatbot must explain that it cannot verify the requested information.
+
+## 5. The three qualification questions
+
+The conversation must answer the visitor's initial question before offering qualification. A visitor asking for general information should not be forced into a sales flow.
+
+When the visitor expresses business interest, ask exactly these three questions:
+
+1. Need: Which business service are you looking for, and what do you need it to achieve?
+2. Requirements and budget: What are your approximate budget and essential requirements for this service?
+3. Timeline: When do you need the service to be operational?
+
+The second question deliberately combines budget and essential requirements to keep the process at three qualification questions. Store each component separately in structured fields.
+
+If the business catalogue does not provide sufficient information to assess a requirement or price, mark the relevant field as unknown rather than fabricating a value.
+
+After qualification, collect contact information through a separate form and obtain appropriate consent before transmitting the enquiry to the demonstration CRM.
+
+### Lead scoring
+
+Use a deterministic, transparent scoring model. For example:
+
+| Criterion                   | Points |
+| --------------------------- | ------ |
+| Service fit                 | 0–30   |
+| Budget fit, when applicable | 0–40   |
+| Timeline urgency            | 0–30   |
+| Total                       | 0–100  |
+
+Document the rules and missing-data behavior. The score is a lead-priority heuristic, not a probability of conversion. It must not imply that Orange Maroc uses these rules.
+
+## 6. Odoo CRM and n8n integration
+
+This is the project's most important integration milestone.
+
+### Workflow design
+
+Validated enquiry from FastAPI
+
+n8n workflow receives structured data
+
+Validate required fields and submission ID
+
+Valid request
+
+Create or safely handle duplicate
+
+Invalid request
+
+Reject and record the error
+
+Verify the result in Odoo and return the transaction status
+
+### Lead versus opportunity
+
+Configure Odoo to create the correct record type for the assignment. If the required demonstration is opportunity creation, show an actual opportunity in the pipeline rather than an ordinary lead record.
+
+Map the service interest, budget, timeline, source, qualification score and conversation summary into available CRM fields. Verify custom fields in the installed Odoo instance.
+
+### Required failure handling
+
+- Invalid data must not create a CRM record.
+- Repeated requests must not create duplicate records.
+- Failed authentication must produce a controlled error.
+- An API timeout must trigger a check for an already-created record before retrying.
+- The interface must not claim success until the outcome is verified.
+
+Keep Odoo credentials in server-side configuration. Never expose them in the browser or commit them to GitHub.
+
+### Optional HubSpot comparison
+
+If time allows, reproduce the same workflow in HubSpot using synthetic leads. Compare setup effort, field mapping, record creation and workflow reliability.
+
+Verify free-plan and API restrictions before starting. If the comparison cannot be implemented and tested fully, omit it rather than presenting an unverified comparison.
+
+## 7. Marketing analytics
+
+The dashboard must show whether the system works as a marketing and CRM process, not just whether the chatbot responds.
+
+Use real events generated by your prototype and verified results from your Odoo test instance.
+
+## 7didan — Dashboard specification
+
+Conversations
+
+Started, completed and abandoned
+
+Qualified leads
+
+Complete and valid qualification records
+
+CRM integration
+
+Verified records, failures and duplicates
+
+Processing time
+
+Time from valid submission to verified CRM record
+
+Calculate these metrics:
+
+| KPI                      | Definition                                                      |
+| ------------------------ | --------------------------------------------------------------- |
+| Qualification completion | Completed qualifications ÷ conversations entering qualification |
+| Field completeness       | Required fields populated ÷ required fields expected            |
+| CRM success rate         | Verified successful records ÷ valid unique submissions          |
+| Duplicate rate           | Duplicate records created ÷ all records created                 |
+| Median processing time   | Median time from submission to verified CRM record              |
+| Answer correctness       | Correct answers ÷ questions evaluated                           |
+
+For lead qualification, record both the number of completed flows and the number of leads that meet your predefined criteria. These are different measurements.
+
+Use the analytics implementation that best fits your available time. A custom dashboard is sufficient for the core prototype; use only the tools named in the course brief when they serve a clear purpose. The PDF lists Looker Studio and BigQuery for other teams, so they are not necessary for Group 10's main implementation.&#x20;
+
+Description_Projets_Web Marketing\_&\_CRM.pdf
+
+
+
+## 8. Evaluation: prove that the system works
+
+### 8.1 Required 20-question benchmark
+
+| Category                                     | Questions |
+| -------------------------------------------- | --------- |
+| Service descriptions and features            | 5         |
+| Published prices and conditions              | 4         |
+| FAQ and procedures                           | 3         |
+| Unsupported or undocumented information      | 3         |
+| Ambiguous questions and language variation   | 2         |
+| Prompt injection and misleading instructions | 3         |
+| Total                                        | 20        |
+
+Create the expected answers from the collected official documents. Record the actual answer, source passage, correctness result and failure reason.
+
+For unsupported questions, the correct behavior may be an explicit refusal to assert undocumented information. Do not penalize a safe refusal when the source genuinely lacks the answer.
+
+### 8.2 Additional integration tests
+
+Test at least these scenarios:
+
+- Valid complete enquiry.
+- Missing qualification field.
+- Invalid contact information.
+- Repeated submission.
+- Unsupported service request.
+- CRM authentication failure.
+- CRM timeout after a record was created.
+- User declines follow-up.
+- Prompt injection attempting to override the system's instructions.
+- Document retrieval returns irrelevant evidence.
+
+The additional scenarios are proposed engineering tests; the course's explicit benchmark requirement remains 20 questions.
+
+### 8.3 Compare against a baseline
+
+Use the same synthetic enquiries in two workflows:
+
+Baseline: conventional form followed by manual data entry into Odoo.
+
+Proposed system: RAG chatbot, three-question qualification and automated Odoo record creation through n8n.
+
+Measure the time required, field completeness, data-entry errors and successful record creation. Define the procedure before testing and repeat trials where practical.
+
+If the test data are simulated, report simulated workflow results. Do not claim an increase in actual Orange Maroc sales, conversion rates or customer satisfaction.
+
+## 9. Security, privacy and limitations
+
+| Risk                                      | Safeguard                                                |
+| ----------------------------------------- | -------------------------------------------------------- |
+| Incorrect or outdated service information | Source register, document dates and abstention           |
+| Hallucinated prices or commitments        | Evidence-grounded answers and explicit uncertainty       |
+| Prompt injection                          | Treat retrieved documents and user messages as untrusted |
+| Unauthorized CRM operations               | Backend validation and restricted credentials            |
+| Duplicate opportunities                   | Idempotency and duplicate checks                         |
+| Exposure of personal information          | Synthetic demo contacts and data minimization            |
+| False CRM success messages                | Verify record creation before confirmation               |
+| API or automation failure                 | Error logging, controlled retries and recovery checks    |
+
+The report must also state the limits of the project:
+
+- Public information may be incomplete or outdated.
+- You have no access to Orange Maroc's private CRM or sales data.
+- The 20-question benchmark does not establish production-level reliability.
+- Rule-based lead scoring is not a trained prediction model.
+- A simulated comparison cannot establish real-world conversion improvement.
+- The prototype does not represent an official Orange Maroc system.
+
+For a Moroccan business scenario, consider Law 09-08 and relevant CNDP requirements. Do not claim compliance solely because the application includes a consent checkbox.
+
+## 10. Divide the work between three members
+
+Member 1
+
+RAG and knowledge-base engineer
+
+- Collect and document official public sources.
+- Implement ingestion, chunking, embeddings and retrieval.
+- Implement evidence-based answers and citations.
+- Build the 20-question benchmark and report answer correctness.
+
+Member 2
+
+Backend, qualification and CRM engineer
+
+- Implement the three-question flow and scoring rules.
+- Validate structured data and contact consent.
+- Configure n8n and integrate Odoo.
+- Test record creation, duplicate prevention and failures.
+
+Member 3
+
+Frontend, analytics and deployment engineer
+
+- Build the chatbot and qualification interface.
+- Implement analytics using real application events.
+- Configure Docker Compose and deployment.
+- Prepare the architecture diagram and presentation materials.
+
+Shared responsibility: integration, baseline testing, security review, rehearsal and understanding the entire system.
+
+## 11. Fourteen-day implementation schedule
+
+| Period     | Main objective                                                                   | Exit criterion                                      |
+| ---------- | -------------------------------------------------------------------------------- | --------------------------------------------------- |
+| Days 1–2   | Collect official data, define requirements, verify Odoo access and configure n8n | One test CRM record can be created and verified     |
+| Days 3–5   | Build RAG, qualification logic and frontend                                      | Each subsystem passes its basic tests               |
+| Days 6–8   | Integrate chatbot, automation, Odoo and analytics                                | Complete enquiry-to-CRM journey works               |
+| Days 9–11  | Run benchmark, workflow tests and baseline comparison                            | Results are reproducible and failures documented    |
+| Days 12–14 | Deploy, document, rehearse and finalize deliverables                             | Clean demonstration and complete submission package |
+
+The schedule is a proposed plan. If the deadline is closer, prioritize a complete working journey over optional CRM comparisons or advanced retrieval methods.
+
+## 12. Repository structure
+
+```
+7didan/
+├── frontend/
+├── backend/
+│   ├── api/
+│   ├── rag/
+│   ├── qualification/
+│   ├── crm/
+│   └── tests/
+├── knowledge/
+│   ├── source_register.csv
+│   ├── catalogue/
+│   └── faq/
+├── n8n/
+│   └── lead_qualification_workflow.json
+├── evaluation/
+│   ├── questions.json
+│   ├── lead_scenarios.json
+│   └── results/
+├── database/
+├── docs/
+│   ├── architecture.png
+│   ├── methodology.md
+│   ├── security.md
+│   └── limitations.md
+├── docker-compose.yml
+├── .env.example
+├── .gitignore
+└── README.md
+```
+
+The final README should document setup, environment variables, ingestion, Odoo configuration, n8n workflow setup, evaluation commands, measured results and known limitations.
+
+## 13. The 12-minute presentation
+
+Your professor's PDF specifies two minutes for the problem, three for methodology, four for demonstration, two for results and one for limitations and recommendations.&#x20;
+
+Description_Projets_Web Marketing\_&\_CRM.pdf
+
+
+
+## 2 min
+
+Problem and objectives
+
+Introduce the real business case, the published catalogue and the customer-acquisition hypothesis. Explain what you are testing, not what you assume to be true.
+
+## 3 min
+
+Architecture and methodology
+
+Explain RAG, the three questions, lead scoring, n8n, Odoo and the evaluation design.
+
+## 4 min
+
+Live demonstration
+
+Ask a real catalogue question, show the evidence, complete qualification, submit a synthetic contact and verify the created opportunity in Odoo. Finish with the dashboard.
+
+## 2 min
+
+Measured results
+
+Present answer correctness, workflow completion, CRM success and the baseline comparison. Include failures and explain the limitations of the test data.
+
+## 1 min
+
+Limitations and recommendations
+
+Explain the lack of internal business data, privacy constraints and the next steps required for a real deployment.
+
+## 14. Final deliverables checklist
+
+### Submission checklist
+
+0/12
+
+Functional application
+
+Deployed chatbot and public-information knowledge base
+
+Three qualification questions and contact confirmation
+
+Working n8n workflow and verified Odoo opportunity
+
+Evaluation
+
+20-question benchmark with correctness results
+
+Separate workflow and failure tests
+
+Baseline comparison with methodology and measured results
+
+Documentation
+
+Architecture diagram and technology rationale
+
+Limitations, privacy safeguards and guardrails
+
+README, code, workflow export and source register
+
+Presentation
+
+12-minute presentation and live demonstration
+
+One-page project summary
+
+Backup demonstration and preparation for questions
+
+Final decision: build the Orange Maroc Business case study using public information, Odoo CRM as the principal CRM, n8n as the automation tool, and a tested RAG application. Use synthetic enquiries for the demonstration, measure every claimed result, and do not imply authorization, access to private systems or endorsement by Orange Maroc. This is the most defensible route to a high-quality Webmarketing and CRM project.

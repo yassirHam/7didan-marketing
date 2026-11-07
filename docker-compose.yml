@@ -1,0 +1,81 @@
+# 7didan stack: PostgreSQL (Odoo data + reporting schema), Odoo CRM, n8n, and the Next.js frontend.
+# Secrets come from .env (copy .env.example). Nothing secret is committed.
+name: 7didan
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5433:5432"   # local only, for Power BI Desktop
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 5s
+      retries: 20
+
+  odoo:
+    image: odoo:18.0
+    depends_on:
+      db: { condition: service_healthy }
+    environment:
+      HOST: db
+      USER: ${POSTGRES_USER}
+      PASSWORD: ${POSTGRES_PASSWORD}
+    command: ["--db-filter=^${ODOO_DB}$$", "--proxy-mode"]
+    volumes:
+      - odoo-data:/var/lib/odoo
+    ports:
+      - "127.0.0.1:8069:8069"
+
+  n8n:
+    image: n8nio/n8n:1.88.0
+    depends_on:
+      db: { condition: service_healthy }
+    environment:
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
+      N8N_BLOCK_ENV_ACCESS_IN_NODE: "false"
+      N8N_DIAGNOSTICS_ENABLED: "false"
+      N8N_PERSONALIZATION_ENABLED: "false"
+      N8N_RUNNERS_ENABLED: "false"
+      GENERIC_TIMEZONE: Africa/Casablanca
+      # Read by the workflow ($env). The webhook token authenticates the backend;
+      # the Odoo account is the restricted integration user created by setup_odoo.py.
+      WEBHOOK_TOKEN: ${WEBHOOK_TOKEN}
+      ODOO_URL: http://odoo:8069
+      ODOO_DB: ${ODOO_DB}
+      ODOO_INTEGRATION_LOGIN: ${ODOO_INTEGRATION_LOGIN}
+      ODOO_INTEGRATION_PASSWORD: ${ODOO_INTEGRATION_PASSWORD}
+      ODOO_TIMEOUT_MS: ${ODOO_TIMEOUT_MS:-10000}
+      # Used only by the entrypoint to generate the Postgres credential at import time.
+      # n8n_logger may only INSERT into reporting.crm_transactions.
+      REPORTING_DB: ${ODOO_DB}
+      N8N_LOGGER_PASSWORD: ${N8N_LOGGER_PASSWORD}
+    entrypoint: ["/bin/sh", "/import/entrypoint.sh"]
+    volumes:
+      - n8n-data:/home/node/.n8n
+      - ./n8n:/import:ro
+    ports:
+      - "127.0.0.1:5678:5678"
+
+  # Website and chatbot (Amal). Talks to the FastAPI backend when BACKEND_URL is set; otherwise
+  # demo mode: illustrative chat answers, and enquiries sent straight to the n8n webhook.
+  frontend:
+    build: ./frontend
+    depends_on:
+      n8n: { condition: service_started }
+    environment:
+      BACKEND_URL: ${BACKEND_URL:-}
+      N8N_WEBHOOK_URL: http://n8n:5678/webhook/7didan/lead
+      WEBHOOK_TOKEN: ${WEBHOOK_TOKEN}
+    ports:
+      - "127.0.0.1:3000:3000"
+
+volumes:
+  db-data:
+  odoo-data:
+  n8n-data:

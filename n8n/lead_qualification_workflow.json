@@ -1,0 +1,687 @@
+{
+  "id": "7didanLeadFlow01",
+  "name": "7didan - enquiry to Odoo opportunity",
+  "active": false,
+  "nodes": [
+    {
+      "id": "cfafaabe-c335-5f6b-bbf9-00590d330285",
+      "name": "Enquiry webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        300
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "7didan/lead",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "webhookId": "25a820be-dda0-5769-9b6f-d8c152bbaccd"
+    },
+    {
+      "id": "6b30d800-fccb-510c-b10e-5ede909989f1",
+      "name": "Validate enquiry",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// ── Shared helpers. build_workflow.py prepends this file to every Code node. ──\n// Every Code node returns one item. route \"continue\" moves to the next step;\n// route \"done\" goes straight to the webhook response with http_status and outcome.\nconst QUALIFIED_SCORE = 60;\nconst READ_FIELDS = [\n  'type', 'stage_id', 'source_id', 'tag_ids', 'email_from', 'x_submission_id', 'x_service_interest',\n  'x_need', 'x_budget', 'x_requirements', 'x_timeline', 'x_lead_score', 'x_qualification_status', 'x_consent',\n];\n\nconst ctxOf = (node) => $(node).first().json;\nconst go = (ctx, patch = {}) => [{ json: { ...ctx, ...patch, route: 'continue' } }];\nconst finish = (ctx, httpStatus, outcome, errors = [], extra = {}) => [\n  { json: { ...ctx, ...extra, route: 'done', http_status: httpStatus, outcome, errors } },\n];\n\n// HTTP nodes run with \"continue on error\": a failed call arrives as { error }.\n// Odoo JSON-RPC errors also arrive as { error }, but inside a JSON-RPC envelope.\nconst failureOf = (r) => {\n  if (!r || !r.error) return null;\n  const e = r.error;\n  return typeof e === 'string' ? e : (e.data && e.data.message) || e.message || JSON.stringify(e);\n};\nconst isTransport = (r) => Boolean(r && r.error) && r.jsonrpc === undefined;\nconst rpcFailure = (ctx, r) => {\n  if (!r || !r.error) return null;\n  const transport = isTransport(r);\n  return finish(ctx, transport ? 503 : 502, transport ? 'crm_unavailable' : 'crm_error',\n    [failureOf(r)], { retryable: transport });\n};\n\nconst findSubmission = (submissionId) => ({\n  model: 'crm.lead', method: 'search_read',\n  args: [[['x_submission_id', '=', submissionId]]],\n  kwargs: { fields: ['id'], limit: 1, context: { active_test: false } },\n});\nconst readOpportunity = (id) => ({ model: 'crm.lead', method: 'read', args: [[id]], kwargs: { fields: READ_FIELDS } });\n// ── end of shared helpers ──\n\n// Authenticate the backend, validate the enquiry and map it to Odoo opportunity fields.\n// Invalid data never reaches Odoo.\nconst CATEGORIES = ['connectivity', 'mobile', 'cloud', 'cybersecurity', 'collaboration', 'other'];\n\nconst req = $input.first().json;\nconst body = req.body && typeof req.body === 'object' ? req.body : {};\nconst ctx = {\n  started_ms: Date.now(),\n  submission_id: typeof body.submission_id === 'string' ? body.submission_id.slice(0, 64) : null,\n};\n\nif (!$env.WEBHOOK_TOKEN || (req.headers || {})['x-7didan-token'] !== $env.WEBHOOK_TOKEN) {\n  return finish(ctx, 401, 'unauthorized', ['Missing or invalid X-7didan-Token header.']);\n}\n\nconst isText = (v, max) => typeof v === 'string' && v.trim() !== '' && v.trim().length <= max;\nconst isOptionalText = (v, max) => v == null || (typeof v === 'string' && v.trim().length <= max);\nconst contact = body.contact || {};\nconst q = body.qualification || {};\n\nconst checks = [\n  [/^[A-Za-z0-9-]{8,64}$/.test(String(body.submission_id || '')), 'submission_id must be 8-64 letters, digits or dashes.'],\n  [isText(contact.name, 120), 'contact.name is required (max 120 characters).'],\n  [isText(contact.company, 160), 'contact.company is required (max 160 characters).'],\n  [typeof contact.email === 'string' && contact.email.length <= 254 && /^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(contact.email),\n    'contact.email is not a valid email address.'],\n  [contact.phone == null || (typeof contact.phone === 'string' && /^\\+?[0-9 ().-]{6,20}$/.test(contact.phone)),\n    'contact.phone is not a valid phone number.'],\n  [isText(q.service_interest, 120), 'qualification.service_interest is required (max 120 characters).'],\n  [CATEGORIES.includes(q.service_category), `qualification.service_category must be one of: ${CATEGORIES.join(', ')}.`],\n  [isText(q.need, 1000), 'qualification.need is required (max 1000 characters).'],\n  ...['budget', 'requirements', 'timeline'].map((k) => [isOptionalText(q[k], 500), `qualification.${k} must be text or null.`]),\n  [Number.isInteger(body.lead_score) && body.lead_score >= 0 && body.lead_score <= 100, 'lead_score must be an integer from 0 to 100.'],\n  [isOptionalText(body.conversation_summary, 4000), 'conversation_summary must be text (max 4000 characters).'],\n  [isOptionalText(body.conversation_id, 64), 'conversation_id must be text (max 64 characters).'],\n];\nconst errors = checks.filter(([ok]) => !ok).map(([, message]) => message);\nconst consentMissing = body.consent !== true;\nif (consentMissing) errors.push('consent must be true: the contact has not agreed to be contacted.');\nif (errors.length) {\n  return finish(ctx, 422, consentMissing && errors.length === 1 ? 'consent_declined' : 'invalid', errors);\n}\n\n// Unanswered qualification questions are stored as \"Unknown\", never guessed.\nconst clean = (v) => (typeof v === 'string' && v.trim() ? v.trim() : null);\nconst escapeHtml = (s) => s.replace(/[&<>\"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;', \"'\": '&#39;' })[ch]);\nconst answers = { budget: clean(q.budget), requirements: clean(q.requirements), timeline: clean(q.timeline) };\nconst status = Object.values(answers).includes(null) ? 'partial'\n  : body.lead_score >= QUALIFIED_SCORE ? 'qualified' : 'not_qualified';\nconst summary = clean(body.conversation_summary);\n\nreturn go(ctx, {\n  category: q.service_category,\n  values: {\n    type: 'opportunity',\n    name: `${contact.company.trim()} - ${q.service_interest.trim()}`,\n    partner_name: contact.company.trim(),\n    contact_name: contact.name.trim(),\n    email_from: contact.email.trim().toLowerCase(),\n    phone: clean(contact.phone) || false,\n    // Stored as escaped text: the summary comes from a chat and is untrusted.\n    description: summary ? `<p>${escapeHtml(summary)}</p>` : false,\n    x_submission_id: ctx.submission_id,\n    x_conversation_id: clean(body.conversation_id) || false,\n    x_service_interest: q.service_interest.trim(),\n    x_need: q.need.trim(),\n    x_budget: answers.budget || 'Unknown',\n    x_requirements: answers.requirements || 'Unknown',\n    x_timeline: answers.timeline || 'Unknown',\n    x_lead_score: body.lead_score,\n    x_qualification_status: status,\n    x_consent: true,\n  },\n});\n"
+      }
+    },
+    {
+      "id": "9175e8ed-8852-539e-9e2d-9af5038f8609",
+      "name": "Valid?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        440,
+        300
+      ],
+      "parameters": {
+        "mode": "expression",
+        "numberOutputs": 2,
+        "output": "={{ $json.route === 'continue' ? 0 : 1 }}"
+      }
+    },
+    {
+      "id": "fa7a2a98-fe33-540e-9416-14591455ba24",
+      "name": "Odoo login",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        660,
+        300
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.ODOO_URL }}/jsonrpc",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ jsonrpc: '2.0', method: 'call', id: 1, params: { service: 'common', method: 'login', args: [$env.ODOO_DB, $env.ODOO_INTEGRATION_LOGIN, $env.ODOO_INTEGRATION_PASSWORD] } }) }}",
+        "options": {
+          "timeout": "={{ Number($env.ODOO_TIMEOUT_MS) }}"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "id": "58b98396-0462-5e27-a432-a104866f3446",
+      "name": "Check login",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// ── Shared helpers. build_workflow.py prepends this file to every Code node. ──\n// Every Code node returns one item. route \"continue\" moves to the next step;\n// route \"done\" goes straight to the webhook response with http_status and outcome.\nconst QUALIFIED_SCORE = 60;\nconst READ_FIELDS = [\n  'type', 'stage_id', 'source_id', 'tag_ids', 'email_from', 'x_submission_id', 'x_service_interest',\n  'x_need', 'x_budget', 'x_requirements', 'x_timeline', 'x_lead_score', 'x_qualification_status', 'x_consent',\n];\n\nconst ctxOf = (node) => $(node).first().json;\nconst go = (ctx, patch = {}) => [{ json: { ...ctx, ...patch, route: 'continue' } }];\nconst finish = (ctx, httpStatus, outcome, errors = [], extra = {}) => [\n  { json: { ...ctx, ...extra, route: 'done', http_status: httpStatus, outcome, errors } },\n];\n\n// HTTP nodes run with \"continue on error\": a failed call arrives as { error }.\n// Odoo JSON-RPC errors also arrive as { error }, but inside a JSON-RPC envelope.\nconst failureOf = (r) => {\n  if (!r || !r.error) return null;\n  const e = r.error;\n  return typeof e === 'string' ? e : (e.data && e.data.message) || e.message || JSON.stringify(e);\n};\nconst isTransport = (r) => Boolean(r && r.error) && r.jsonrpc === undefined;\nconst rpcFailure = (ctx, r) => {\n  if (!r || !r.error) return null;\n  const transport = isTransport(r);\n  return finish(ctx, transport ? 503 : 502, transport ? 'crm_unavailable' : 'crm_error',\n    [failureOf(r)], { retryable: transport });\n};\n\nconst findSubmission = (submissionId) => ({\n  model: 'crm.lead', method: 'search_read',\n  args: [[['x_submission_id', '=', submissionId]]],\n  kwargs: { fields: ['id'], limit: 1, context: { active_test: false } },\n});\nconst readOpportunity = (id) => ({ model: 'crm.lead', method: 'read', args: [[id]], kwargs: { fields: READ_FIELDS } });\n// ── end of shared helpers ──\n\n// Result of the Odoo login with the restricted integration account.\nconst ctx = ctxOf('Validate enquiry');\nconst r = $input.first().json;\n\nif (isTransport(r)) {\n  return finish(ctx, 503, 'crm_unavailable', [`Odoo is unreachable: ${failureOf(r)}`], { retryable: true });\n}\nif (r.error) return finish(ctx, 502, 'crm_error', [failureOf(r)]);\nif (!r.result) return finish(ctx, 502, 'crm_auth_failed', ['Odoo rejected the integration credentials.']);\n\n// Idempotency, step 1: look for an opportunity that already carries this submission ID.\nreturn go(ctx, { uid: r.result, call: findSubmission(ctx.submission_id) });\n"
+      }
+    },
+    {
+      "id": "05696dc6-f7c4-5106-9f1e-56ffa8fd19f3",
+      "name": "Logged in?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1100,
+        300
+      ],
+      "parameters": {
+        "mode": "expression",
+        "numberOutputs": 2,
+        "output": "={{ $json.route === 'continue' ? 0 : 1 }}"
+      }
+    },
+    {
+      "id": "6a77a2b8-e116-56a0-8386-4e3ba897665e",
+      "name": "Find submission",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1320,
+        300
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.ODOO_URL }}/jsonrpc",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ jsonrpc: '2.0', method: 'call', id: 1, params: { service: 'object', method: 'execute_kw', args: [$env.ODOO_DB, $json.uid, $env.ODOO_INTEGRATION_PASSWORD, $json.call.model, $json.call.method, $json.call.args, $json.call.kwargs || {}] } }) }}",
+        "options": {
+          "timeout": "={{ Number($env.ODOO_TIMEOUT_MS) }}"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "id": "3852c7d4-d7eb-5fe2-aab6-aca98742a91f",
+      "name": "Check existing",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1540,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// ── Shared helpers. build_workflow.py prepends this file to every Code node. ──\n// Every Code node returns one item. route \"continue\" moves to the next step;\n// route \"done\" goes straight to the webhook response with http_status and outcome.\nconst QUALIFIED_SCORE = 60;\nconst READ_FIELDS = [\n  'type', 'stage_id', 'source_id', 'tag_ids', 'email_from', 'x_submission_id', 'x_service_interest',\n  'x_need', 'x_budget', 'x_requirements', 'x_timeline', 'x_lead_score', 'x_qualification_status', 'x_consent',\n];\n\nconst ctxOf = (node) => $(node).first().json;\nconst go = (ctx, patch = {}) => [{ json: { ...ctx, ...patch, route: 'continue' } }];\nconst finish = (ctx, httpStatus, outcome, errors = [], extra = {}) => [\n  { json: { ...ctx, ...extra, route: 'done', http_status: httpStatus, outcome, errors } },\n];\n\n// HTTP nodes run with \"continue on error\": a failed call arrives as { error }.\n// Odoo JSON-RPC errors also arrive as { error }, but inside a JSON-RPC envelope.\nconst failureOf = (r) => {\n  if (!r || !r.error) return null;\n  const e = r.error;\n  return typeof e === 'string' ? e : (e.data && e.data.message) || e.message || JSON.stringify(e);\n};\nconst isTransport = (r) => Boolean(r && r.error) && r.jsonrpc === undefined;\nconst rpcFailure = (ctx, r) => {\n  if (!r || !r.error) return null;\n  const transport = isTransport(r);\n  return finish(ctx, transport ? 503 : 502, transport ? 'crm_unavailable' : 'crm_error',\n    [failureOf(r)], { retryable: transport });\n};\n\nconst findSubmission = (submissionId) => ({\n  model: 'crm.lead', method: 'search_read',\n  args: [[['x_submission_id', '=', submissionId]]],\n  kwargs: { fields: ['id'], limit: 1, context: { active_test: false } },\n});\nconst readOpportunity = (id) => ({ model: 'crm.lead', method: 'read', args: [[id]], kwargs: { fields: READ_FIELDS } });\n// ── end of shared helpers ──\n\n// A repeated submission returns the existing opportunity instead of creating a second one.\nconst ctx = ctxOf('Check login');\nconst r = $input.first().json;\nconst failed = rpcFailure(ctx, r);\nif (failed) return failed;\n\nif (r.result.length) return finish(ctx, 200, 'duplicate', [], { crm_id: r.result[0].id, verified: true });\n\n// Stage, source and tag IDs are looked up by the external IDs created by scripts/configure_odoo.py.\nreturn go(ctx, {\n  call: { model: 'ir.model.data', method: 'search_read', args: [[['module', '=', 'x_7didan']]], kwargs: { fields: ['name', 'res_id'] } },\n});\n"
+      }
+    },
+    {
+      "id": "7115a8d7-c14f-596c-af01-523737a612e5",
+      "name": "New submission?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1760,
+        300
+      ],
+      "parameters": {
+        "mode": "expression",
+        "numberOutputs": 2,
+        "output": "={{ $json.route === 'continue' ? 0 : 1 }}"
+      }
+    },
+    {
+      "id": "81dd3f6f-9117-5d29-8657-bd32654d00f4",
+      "name": "Load references",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        300
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.ODOO_URL }}/jsonrpc",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ jsonrpc: '2.0', method: 'call', id: 1, params: { service: 'object', method: 'execute_kw', args: [$env.ODOO_DB, $json.uid, $env.ODOO_INTEGRATION_PASSWORD, $json.call.model, $json.call.method, $json.call.args, $json.call.kwargs || {}] } }) }}",
+        "options": {
+          "timeout": "={{ Number($env.ODOO_TIMEOUT_MS) }}"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "id": "7b61b9f5-fa8a-5b2f-b6d7-527ca2a81af7",
+      "name": "Build opportunity",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2200,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// ── Shared helpers. build_workflow.py prepends this file to every Code node. ──\n// Every Code node returns one item. route \"continue\" moves to the next step;\n// route \"done\" goes straight to the webhook response with http_status and outcome.\nconst QUALIFIED_SCORE = 60;\nconst READ_FIELDS = [\n  'type', 'stage_id', 'source_id', 'tag_ids', 'email_from', 'x_submission_id', 'x_service_interest',\n  'x_need', 'x_budget', 'x_requirements', 'x_timeline', 'x_lead_score', 'x_qualification_status', 'x_consent',\n];\n\nconst ctxOf = (node) => $(node).first().json;\nconst go = (ctx, patch = {}) => [{ json: { ...ctx, ...patch, route: 'continue' } }];\nconst finish = (ctx, httpStatus, outcome, errors = [], extra = {}) => [\n  { json: { ...ctx, ...extra, route: 'done', http_status: httpStatus, outcome, errors } },\n];\n\n// HTTP nodes run with \"continue on error\": a failed call arrives as { error }.\n// Odoo JSON-RPC errors also arrive as { error }, but inside a JSON-RPC envelope.\nconst failureOf = (r) => {\n  if (!r || !r.error) return null;\n  const e = r.error;\n  return typeof e === 'string' ? e : (e.data && e.data.message) || e.message || JSON.stringify(e);\n};\nconst isTransport = (r) => Boolean(r && r.error) && r.jsonrpc === undefined;\nconst rpcFailure = (ctx, r) => {\n  if (!r || !r.error) return null;\n  const transport = isTransport(r);\n  return finish(ctx, transport ? 503 : 502, transport ? 'crm_unavailable' : 'crm_error',\n    [failureOf(r)], { retryable: transport });\n};\n\nconst findSubmission = (submissionId) => ({\n  model: 'crm.lead', method: 'search_read',\n  args: [[['x_submission_id', '=', submissionId]]],\n  kwargs: { fields: ['id'], limit: 1, context: { active_test: false } },\n});\nconst readOpportunity = (id) => ({ model: 'crm.lead', method: 'read', args: [[id]], kwargs: { fields: READ_FIELDS } });\n// ── end of shared helpers ──\n\n// Complete the opportunity values with the Odoo IDs for stage, source and service tag.\nconst ctx = ctxOf('Check existing');\nconst r = $input.first().json;\nconst failed = rpcFailure(ctx, r);\nif (failed) return failed;\n\nconst refs = Object.fromEntries(r.result.map((row) => [row.name, row.res_id]));\nconst stageKey = ctx.values.x_qualification_status === 'qualified' ? 'stage_qualified' : 'stage_new';\nconst tagKey = `tag_${ctx.category}`;\nconst missing = [stageKey, 'source_chatbot', tagKey].filter((key) => !refs[key]);\nif (missing.length) {\n  return finish(ctx, 500, 'crm_not_configured', [`Missing Odoo references: ${missing.join(', ')}. Run scripts/setup.py.`]);\n}\n\nconst values = { ...ctx.values, stage_id: refs[stageKey], source_id: refs.source_chatbot, tag_ids: [[6, 0, [refs[tagKey]]]] };\nreturn go(ctx, { values, call: { model: 'crm.lead', method: 'create', args: [values], kwargs: {} } });\n"
+      }
+    },
+    {
+      "id": "fcd20d68-aee2-5e9f-962d-7cfcdd5f917a",
+      "name": "References found?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2420,
+        300
+      ],
+      "parameters": {
+        "mode": "expression",
+        "numberOutputs": 2,
+        "output": "={{ $json.route === 'continue' ? 0 : 1 }}"
+      }
+    },
+    {
+      "id": "c0af2e5c-b34d-5d3a-b76a-becef9c3c2a2",
+      "name": "Create opportunity",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2640,
+        300
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.ODOO_URL }}/jsonrpc",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ jsonrpc: '2.0', method: 'call', id: 1, params: { service: 'object', method: 'execute_kw', args: [$env.ODOO_DB, $json.uid, $env.ODOO_INTEGRATION_PASSWORD, $json.call.model, $json.call.method, $json.call.args, $json.call.kwargs || {}] } }) }}",
+        "options": {
+          "timeout": "={{ Number($env.ODOO_TIMEOUT_MS) }}"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "id": "9fb2cf56-0626-5ca7-b236-3b2197746435",
+      "name": "Check create",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2860,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// ── Shared helpers. build_workflow.py prepends this file to every Code node. ──\n// Every Code node returns one item. route \"continue\" moves to the next step;\n// route \"done\" goes straight to the webhook response with http_status and outcome.\nconst QUALIFIED_SCORE = 60;\nconst READ_FIELDS = [\n  'type', 'stage_id', 'source_id', 'tag_ids', 'email_from', 'x_submission_id', 'x_service_interest',\n  'x_need', 'x_budget', 'x_requirements', 'x_timeline', 'x_lead_score', 'x_qualification_status', 'x_consent',\n];\n\nconst ctxOf = (node) => $(node).first().json;\nconst go = (ctx, patch = {}) => [{ json: { ...ctx, ...patch, route: 'continue' } }];\nconst finish = (ctx, httpStatus, outcome, errors = [], extra = {}) => [\n  { json: { ...ctx, ...extra, route: 'done', http_status: httpStatus, outcome, errors } },\n];\n\n// HTTP nodes run with \"continue on error\": a failed call arrives as { error }.\n// Odoo JSON-RPC errors also arrive as { error }, but inside a JSON-RPC envelope.\nconst failureOf = (r) => {\n  if (!r || !r.error) return null;\n  const e = r.error;\n  return typeof e === 'string' ? e : (e.data && e.data.message) || e.message || JSON.stringify(e);\n};\nconst isTransport = (r) => Boolean(r && r.error) && r.jsonrpc === undefined;\nconst rpcFailure = (ctx, r) => {\n  if (!r || !r.error) return null;\n  const transport = isTransport(r);\n  return finish(ctx, transport ? 503 : 502, transport ? 'crm_unavailable' : 'crm_error',\n    [failureOf(r)], { retryable: transport });\n};\n\nconst findSubmission = (submissionId) => ({\n  model: 'crm.lead', method: 'search_read',\n  args: [[['x_submission_id', '=', submissionId]]],\n  kwargs: { fields: ['id'], limit: 1, context: { active_test: false } },\n});\nconst readOpportunity = (id) => ({ model: 'crm.lead', method: 'read', args: [[id]], kwargs: { fields: READ_FIELDS } });\n// ── end of shared helpers ──\n\n// On success, read the record back. On failure or timeout the create may still have been\n// committed, so look the submission up again before anyone retries (route \"recheck\").\nconst ctx = ctxOf('Build opportunity');\nconst r = $input.first().json;\n\nif (!r.error && Number.isInteger(r.result)) return go(ctx, { crm_id: r.result, call: readOpportunity(r.result) });\n\nreturn [{\n  json: {\n    ...ctx,\n    route: 'recheck',\n    create_error: failureOf(r) || 'Unexpected response from Odoo create.',\n    create_transport_error: isTransport(r),\n    call: findSubmission(ctx.submission_id),\n  },\n}];\n"
+      }
+    },
+    {
+      "id": "74293935-ad07-596a-814e-a45c9fc36599",
+      "name": "Created?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        3080,
+        300
+      ],
+      "parameters": {
+        "mode": "expression",
+        "numberOutputs": 2,
+        "output": "={{ $json.route === 'continue' ? 0 : 1 }}"
+      }
+    },
+    {
+      "id": "b2061d57-384a-5a25-a470-608ee087c061",
+      "name": "Recheck submission",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3300,
+        600
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.ODOO_URL }}/jsonrpc",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ jsonrpc: '2.0', method: 'call', id: 1, params: { service: 'object', method: 'execute_kw', args: [$env.ODOO_DB, $json.uid, $env.ODOO_INTEGRATION_PASSWORD, $json.call.model, $json.call.method, $json.call.args, $json.call.kwargs || {}] } }) }}",
+        "options": {
+          "timeout": "={{ Number($env.ODOO_TIMEOUT_MS) }}"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "id": "041e60df-fe61-53c4-8047-42f782e02ac8",
+      "name": "Resolve recheck",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3520,
+        600
+      ],
+      "parameters": {
+        "jsCode": "// ── Shared helpers. build_workflow.py prepends this file to every Code node. ──\n// Every Code node returns one item. route \"continue\" moves to the next step;\n// route \"done\" goes straight to the webhook response with http_status and outcome.\nconst QUALIFIED_SCORE = 60;\nconst READ_FIELDS = [\n  'type', 'stage_id', 'source_id', 'tag_ids', 'email_from', 'x_submission_id', 'x_service_interest',\n  'x_need', 'x_budget', 'x_requirements', 'x_timeline', 'x_lead_score', 'x_qualification_status', 'x_consent',\n];\n\nconst ctxOf = (node) => $(node).first().json;\nconst go = (ctx, patch = {}) => [{ json: { ...ctx, ...patch, route: 'continue' } }];\nconst finish = (ctx, httpStatus, outcome, errors = [], extra = {}) => [\n  { json: { ...ctx, ...extra, route: 'done', http_status: httpStatus, outcome, errors } },\n];\n\n// HTTP nodes run with \"continue on error\": a failed call arrives as { error }.\n// Odoo JSON-RPC errors also arrive as { error }, but inside a JSON-RPC envelope.\nconst failureOf = (r) => {\n  if (!r || !r.error) return null;\n  const e = r.error;\n  return typeof e === 'string' ? e : (e.data && e.data.message) || e.message || JSON.stringify(e);\n};\nconst isTransport = (r) => Boolean(r && r.error) && r.jsonrpc === undefined;\nconst rpcFailure = (ctx, r) => {\n  if (!r || !r.error) return null;\n  const transport = isTransport(r);\n  return finish(ctx, transport ? 503 : 502, transport ? 'crm_unavailable' : 'crm_error',\n    [failureOf(r)], { retryable: transport });\n};\n\nconst findSubmission = (submissionId) => ({\n  model: 'crm.lead', method: 'search_read',\n  args: [[['x_submission_id', '=', submissionId]]],\n  kwargs: { fields: ['id'], limit: 1, context: { active_test: false } },\n});\nconst readOpportunity = (id) => ({ model: 'crm.lead', method: 'read', args: [[id]], kwargs: { fields: READ_FIELDS } });\n// ── end of shared helpers ──\n\n// Decide what a failed create really means, using the fresh lookup by submission ID.\nconst ctx = ctxOf('Check create');\nconst r = $input.first().json;\nconst failed = rpcFailure(ctx, r);\nif (failed) return failed;\n\nif (!r.result.length) {\n  // Nothing was written. A transport failure is worth retrying; an Odoo error is not.\n  return ctx.create_transport_error\n    ? finish(ctx, 503, 'crm_unavailable', [`Opportunity not created: ${ctx.create_error}`], { retryable: true })\n    : finish(ctx, 502, 'crm_error', [ctx.create_error]);\n}\n\nconst crmId = r.result[0].id;\n// A concurrent identical request won the race: the unique index rejected this one.\nif (/x_submission_id|unique|duplicate key/i.test(ctx.create_error)) {\n  return finish(ctx, 200, 'duplicate', [], { crm_id: crmId, verified: true });\n}\n// The create timed out after Odoo committed it: treat it as ours and verify it.\nreturn go(ctx, { crm_id: crmId, recovered: true, call: readOpportunity(crmId) });\n"
+      }
+    },
+    {
+      "id": "a38f863f-9685-53f3-b2ad-91aeaf782270",
+      "name": "Recovered?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        3740,
+        600
+      ],
+      "parameters": {
+        "mode": "expression",
+        "numberOutputs": 2,
+        "output": "={{ $json.route === 'continue' ? 0 : 1 }}"
+      }
+    },
+    {
+      "id": "2b0213ba-9576-5f24-b4a9-17a66f9e49db",
+      "name": "Read back opportunity",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3960,
+        300
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.ODOO_URL }}/jsonrpc",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ jsonrpc: '2.0', method: 'call', id: 1, params: { service: 'object', method: 'execute_kw', args: [$env.ODOO_DB, $json.uid, $env.ODOO_INTEGRATION_PASSWORD, $json.call.model, $json.call.method, $json.call.args, $json.call.kwargs || {}] } }) }}",
+        "options": {
+          "timeout": "={{ Number($env.ODOO_TIMEOUT_MS) }}"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "id": "abc59959-9c7a-5b5d-a2c9-f5d003d0a973",
+      "name": "Verify record",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4180,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// ── Shared helpers. build_workflow.py prepends this file to every Code node. ──\n// Every Code node returns one item. route \"continue\" moves to the next step;\n// route \"done\" goes straight to the webhook response with http_status and outcome.\nconst QUALIFIED_SCORE = 60;\nconst READ_FIELDS = [\n  'type', 'stage_id', 'source_id', 'tag_ids', 'email_from', 'x_submission_id', 'x_service_interest',\n  'x_need', 'x_budget', 'x_requirements', 'x_timeline', 'x_lead_score', 'x_qualification_status', 'x_consent',\n];\n\nconst ctxOf = (node) => $(node).first().json;\nconst go = (ctx, patch = {}) => [{ json: { ...ctx, ...patch, route: 'continue' } }];\nconst finish = (ctx, httpStatus, outcome, errors = [], extra = {}) => [\n  { json: { ...ctx, ...extra, route: 'done', http_status: httpStatus, outcome, errors } },\n];\n\n// HTTP nodes run with \"continue on error\": a failed call arrives as { error }.\n// Odoo JSON-RPC errors also arrive as { error }, but inside a JSON-RPC envelope.\nconst failureOf = (r) => {\n  if (!r || !r.error) return null;\n  const e = r.error;\n  return typeof e === 'string' ? e : (e.data && e.data.message) || e.message || JSON.stringify(e);\n};\nconst isTransport = (r) => Boolean(r && r.error) && r.jsonrpc === undefined;\nconst rpcFailure = (ctx, r) => {\n  if (!r || !r.error) return null;\n  const transport = isTransport(r);\n  return finish(ctx, transport ? 503 : 502, transport ? 'crm_unavailable' : 'crm_error',\n    [failureOf(r)], { retryable: transport });\n};\n\nconst findSubmission = (submissionId) => ({\n  model: 'crm.lead', method: 'search_read',\n  args: [[['x_submission_id', '=', submissionId]]],\n  kwargs: { fields: ['id'], limit: 1, context: { active_test: false } },\n});\nconst readOpportunity = (id) => ({ model: 'crm.lead', method: 'read', args: [[id]], kwargs: { fields: READ_FIELDS } });\n// ── end of shared helpers ──\n\n// Success is reported only after the stored opportunity matches what was sent.\nconst ctx = $('Resolve recheck').isExecuted ? ctxOf('Resolve recheck') : ctxOf('Check create');\nconst r = $input.first().json;\nconst failed = rpcFailure(ctx, r);\nif (failed) return failed;\n\nconst record = (r.result || [])[0];\nif (!record) {\n  return finish(ctx, 502, 'verification_failed', [`Opportunity ${ctx.crm_id} could not be read back.`]);\n}\n\n// many2one fields come back as [id, name]; tag_ids as a list of IDs.\nconst stored = (key) => (key === 'tag_ids' ? [...record[key]].sort() : Array.isArray(record[key]) ? record[key][0] : record[key]);\nconst sent = (key) => (key === 'tag_ids' ? [...ctx.values.tag_ids[0][2]].sort() : ctx.values[key]);\nconst mismatched = READ_FIELDS.filter((key) => JSON.stringify(stored(key)) !== JSON.stringify(sent(key)));\nif (mismatched.length) {\n  return finish(ctx, 502, 'verification_failed', [`Stored values differ for: ${mismatched.join(', ')}.`]);\n}\nreturn finish(ctx, 201, 'created', [], { verified: true });\n"
+      }
+    },
+    {
+      "id": "b69b904b-5464-5249-a1fb-1861bdee56f0",
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        4400,
+        900
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ status: $json.outcome, submission_id: $json.submission_id, crm_id: $json.crm_id || null, verified: Boolean($json.verified), retryable: Boolean($json.retryable), errors: $json.errors || [] }) }}",
+        "options": {
+          "responseCode": "={{ $json.http_status }}"
+        }
+      }
+    },
+    {
+      "id": "d35851d7-1616-52de-b2e9-66018ad24c1e",
+      "name": "Shape log row",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4620,
+        900
+      ],
+      "parameters": {
+        "jsCode": "// ── Shared helpers. build_workflow.py prepends this file to every Code node. ──\n// Every Code node returns one item. route \"continue\" moves to the next step;\n// route \"done\" goes straight to the webhook response with http_status and outcome.\nconst QUALIFIED_SCORE = 60;\nconst READ_FIELDS = [\n  'type', 'stage_id', 'source_id', 'tag_ids', 'email_from', 'x_submission_id', 'x_service_interest',\n  'x_need', 'x_budget', 'x_requirements', 'x_timeline', 'x_lead_score', 'x_qualification_status', 'x_consent',\n];\n\nconst ctxOf = (node) => $(node).first().json;\nconst go = (ctx, patch = {}) => [{ json: { ...ctx, ...patch, route: 'continue' } }];\nconst finish = (ctx, httpStatus, outcome, errors = [], extra = {}) => [\n  { json: { ...ctx, ...extra, route: 'done', http_status: httpStatus, outcome, errors } },\n];\n\n// HTTP nodes run with \"continue on error\": a failed call arrives as { error }.\n// Odoo JSON-RPC errors also arrive as { error }, but inside a JSON-RPC envelope.\nconst failureOf = (r) => {\n  if (!r || !r.error) return null;\n  const e = r.error;\n  return typeof e === 'string' ? e : (e.data && e.data.message) || e.message || JSON.stringify(e);\n};\nconst isTransport = (r) => Boolean(r && r.error) && r.jsonrpc === undefined;\nconst rpcFailure = (ctx, r) => {\n  if (!r || !r.error) return null;\n  const transport = isTransport(r);\n  return finish(ctx, transport ? 503 : 502, transport ? 'crm_unavailable' : 'crm_error',\n    [failureOf(r)], { retryable: transport });\n};\n\nconst findSubmission = (submissionId) => ({\n  model: 'crm.lead', method: 'search_read',\n  args: [[['x_submission_id', '=', submissionId]]],\n  kwargs: { fields: ['id'], limit: 1, context: { active_test: false } },\n});\nconst readOpportunity = (id) => ({ model: 'crm.lead', method: 'read', args: [[id]], kwargs: { fields: READ_FIELDS } });\n// ── end of shared helpers ──\n\n// One reporting.crm_transactions row per request (the response has already been sent).\nconst j = $input.first().json;\nreturn [{\n  json: {\n    received_at: new Date(j.started_ms).toISOString(),\n    submission_id: j.submission_id,\n    outcome: j.outcome,\n    http_status: j.http_status,\n    crm_id: j.crm_id || null,\n    verified: Boolean(j.verified),\n    service_category: j.category || null,\n    qualification_status: (j.values && j.values.x_qualification_status) || null,\n    lead_score: j.values ? j.values.x_lead_score : null,\n    duration_ms: Date.now() - j.started_ms,\n    error: (j.errors || []).join(' | ') || null,\n    is_synthetic: true,\n  },\n}];\n"
+      }
+    },
+    {
+      "id": "d8e8690d-5218-5dc4-bf8c-e0adab65e1a1",
+      "name": "Log transaction",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        4840,
+        900
+      ],
+      "parameters": {
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "reporting"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "crm_transactions"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "credentials": {
+        "postgres": {
+          "id": "7didanReportDB01",
+          "name": "7didan reporting DB (n8n_logger)"
+        }
+      },
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "connections": {
+    "Enquiry webhook": {
+      "main": [
+        [
+          {
+            "node": "Validate enquiry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate enquiry": {
+      "main": [
+        [
+          {
+            "node": "Valid?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Valid?": {
+      "main": [
+        [
+          {
+            "node": "Odoo login",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Odoo login": {
+      "main": [
+        [
+          {
+            "node": "Check login",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check login": {
+      "main": [
+        [
+          {
+            "node": "Logged in?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Logged in?": {
+      "main": [
+        [
+          {
+            "node": "Find submission",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find submission": {
+      "main": [
+        [
+          {
+            "node": "Check existing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check existing": {
+      "main": [
+        [
+          {
+            "node": "New submission?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New submission?": {
+      "main": [
+        [
+          {
+            "node": "Load references",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load references": {
+      "main": [
+        [
+          {
+            "node": "Build opportunity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build opportunity": {
+      "main": [
+        [
+          {
+            "node": "References found?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "References found?": {
+      "main": [
+        [
+          {
+            "node": "Create opportunity",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create opportunity": {
+      "main": [
+        [
+          {
+            "node": "Check create",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check create": {
+      "main": [
+        [
+          {
+            "node": "Created?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Created?": {
+      "main": [
+        [
+          {
+            "node": "Read back opportunity",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Recheck submission",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recheck submission": {
+      "main": [
+        [
+          {
+            "node": "Resolve recheck",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resolve recheck": {
+      "main": [
+        [
+          {
+            "node": "Recovered?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recovered?": {
+      "main": [
+        [
+          {
+            "node": "Read back opportunity",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read back opportunity": {
+      "main": [
+        [
+          {
+            "node": "Verify record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verify record": {
+      "main": [
+        [
+          {
+            "node": "Respond",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond": {
+      "main": [
+        [
+          {
+            "node": "Shape log row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shape log row": {
+      "main": [
+        [
+          {
+            "node": "Log transaction",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {}
+}

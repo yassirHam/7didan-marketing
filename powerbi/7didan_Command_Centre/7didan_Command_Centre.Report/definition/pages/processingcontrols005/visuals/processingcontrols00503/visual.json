@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "processingcontrols00503",
+  "position": {
+    "x": 20,
+    "y": 72,
+    "z": 2,
+    "width": 164,
+    "height": 42,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Marketing Command Centre",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#FF7900",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

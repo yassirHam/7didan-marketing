@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "leadquality00000000302",
+  "position": {
+    "x": 20,
+    "y": 26,
+    "z": 1,
+    "width": 164,
+    "height": 44,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "7didan",
+                    "textStyle": {
+                      "fontSize": "22pt",
+                      "color": "#FFFFFF",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

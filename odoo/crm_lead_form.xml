@@ -1,0 +1,23 @@
+<!-- Adds a "7didan qualification" tab to the Odoo opportunity form. Applied by scripts/configure_odoo.py. -->
+<data>
+  <xpath expr="//notebook" position="inside">
+    <page string="7didan qualification" name="x_7didan_qualification">
+      <group>
+        <group string="Answers">
+          <field name="x_service_interest"/>
+          <field name="x_need"/>
+          <field name="x_budget"/>
+          <field name="x_requirements"/>
+          <field name="x_timeline"/>
+        </group>
+        <group string="Qualification">
+          <field name="x_lead_score"/>
+          <field name="x_qualification_status"/>
+          <field name="x_consent"/>
+          <field name="x_submission_id" readonly="1"/>
+          <field name="x_conversation_id" readonly="1"/>
+        </group>
+      </group>
+    </page>
+  </xpath>
+</data>

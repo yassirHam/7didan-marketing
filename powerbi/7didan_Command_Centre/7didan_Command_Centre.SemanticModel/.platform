@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "7didan Marketing Command Centre"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2efaf0d2-5df0-41f9-82e9-49a06651a8a6"
+  }
+}

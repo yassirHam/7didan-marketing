@@ -1,0 +1,300 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{lastpage}
+
+\geometry{top=2.2cm,bottom=2.2cm,left=2.1cm,right=2.1cm}
+
+\definecolor{LeadBlue}{HTML}{1F4E78}
+\definecolor{LeadTeal}{HTML}{00A6A6}
+\definecolor{LeadLight}{HTML}{EAF3F8}
+\definecolor{LeadGray}{HTML}{5B6573}
+\definecolor{LeadGreen}{HTML}{2E7D32}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=LeadBlue,
+  urlcolor=LeadTeal,
+  pdftitle={7didan -- Updated Work Distribution},
+  pdfauthor={Group 10}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textcolor{LeadBlue}{\textbf{7didan}}}
+\rhead{\textcolor{LeadGray}{Group 10}}
+\cfoot{\textcolor{LeadGray}{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{14pt}
+
+\titleformat{\section}
+  {\Large\bfseries\color{LeadBlue}}
+  {\thesection.}{0.6em}{}
+\titleformat{\subsection}
+  {\large\bfseries\color{LeadTeal}}
+  {\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{LeadBlue}}
+  {}{0em}{}
+
+\setlist[itemize]{leftmargin=1.5em,itemsep=0.3em,topsep=0.3em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\renewcommand{\arraystretch}{1.25}
+
+\newcommand{\rolelead}{\textcolor{LeadGreen}{\textbf{Lead}}}
+\newcommand{\rolesupport}{\textcolor{LeadBlue}{Support}}
+\newcommand{\roleshared}{\textcolor{LeadTeal}{\textbf{Shared}}}
+\newcommand{\none}{\textcolor{LeadGray}{--}}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{2.4cm}
+
+  {\color{LeadBlue}\rule{\textwidth}{1.2pt}}\\[1.2cm]
+  {\Huge\bfseries\color{LeadBlue} 7didan}\\[0.45cm]
+  {\LARGE\bfseries Group 10}\\[0.35cm]
+  {\Large Updated Work Distribution}\\[1.2cm]
+  {\color{LeadTeal}\rule{0.72\textwidth}{2pt}}\\[1.4cm]
+
+  \begin{minipage}{0.82\textwidth}
+    \centering
+    \large
+    A clear allocation of technical ownership across CRM, automation,
+    analytics, frontend, backend, and artificial intelligence.
+  \end{minipage}
+
+  \vfill
+
+  \begin{tabular}{>{\bfseries}rl}
+    Project: & 7didan \\
+    Team: & Group 10 \\
+    Members: & Yassir, Amal, Amine \\
+  \end{tabular}
+
+  \vspace{1.5cm}
+  {\color{LeadBlue}\rule{\textwidth}{1.2pt}}
+\end{titlepage}
+
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{Yassir -- CRM, Automation, Integration \& Analytics}
+
+\textbf{Main responsibility:} Own the CRM transaction pipeline, workflow automation, reporting, and end-to-end integration quality.
+
+\subsection*{A. Odoo CRM}
+\begin{itemize}
+  \item Install and configure Odoo CRM.
+  \item Configure the sales pipeline and opportunity stages.
+  \item Define custom CRM fields for service interest, budget, timeline, and lead score.
+  \item Configure lead sources and qualification status.
+  \item Implement and verify opportunity creation.
+\end{itemize}
+
+\subsection*{B. n8n Workflow Automation}
+\begin{itemize}
+  \item Design the complete n8n workflow.
+  \item Connect FastAPI to n8n through webhooks.
+  \item Implement data validation and field mapping.
+  \item Connect n8n to Odoo CRM.
+  \item Handle duplicate submissions, API failures, and retries.
+  \item Return CRM transaction status to the backend.
+\end{itemize}
+
+\subsection*{C. CRM Integration}
+\begin{itemize}
+  \item Integrate the qualification system with Odoo.
+  \item Ensure correct mapping of structured lead information.
+  \item Implement record verification after creation.
+  \item Ensure idempotency and prevent duplicate opportunities.
+  \item Document the integration and API communication.
+\end{itemize}
+
+\subsection*{D. Power BI Dashboard}
+\begin{itemize}
+  \item Design the marketing and CRM analytics dashboard.
+  \item Connect Power BI to the relevant PostgreSQL and CRM reporting data.
+  \item Create data models and relationships.
+  \item Develop DAX measures and KPIs.
+  \item Visualize the lead qualification funnel, lead sources, CRM success rates, and processing performance.
+\end{itemize}
+
+\subsection*{E. Testing and Quality Assurance}
+\begin{itemize}
+  \item Test the complete FastAPI $\rightarrow$ n8n $\rightarrow$ Odoo workflow.
+  \item Test valid and invalid enquiries.
+  \item Test duplicate submissions.
+  \item Test API authentication and connectivity failures.
+  \item Verify actual Odoo records.
+  \item Validate Power BI figures against the underlying data.
+  \item Document test results and integration limitations.
+\end{itemize}
+
+\subsubsection*{Deliverables}
+\begin{itemize}
+  \item Odoo CRM configuration
+  \item n8n workflow export
+  \item CRM integration
+  \item Power BI dashboard
+  \item Integration test report
+\end{itemize}
+
+\newpage
+\section{Amal -- Frontend \& User Experience}
+
+\textbf{Main responsibility:} Build the customer-facing application and provide a clear, responsive qualification experience.
+
+\begin{itemize}
+  \item Develop the website using Next.js, TypeScript, and Tailwind CSS.
+  \item Design the chatbot interface.
+  \item Implement the conversation experience.
+  \item Develop the three-question qualification interface.
+  \item Build contact-information and consent forms.
+  \item Implement loading states, error messages, and submission feedback.
+  \item Connect the frontend to the FastAPI backend.
+  \item Ensure responsive design and usability.
+\end{itemize}
+
+\subsubsection*{Deliverables}
+\begin{itemize}
+  \item Website
+  \item Chatbot interface
+  \item Qualification screens
+  \item Responsive frontend
+\end{itemize}
+
+\section{Amine -- AI, RAG \& Backend}
+
+\textbf{Main responsibility:} Own knowledge retrieval, AI intelligence, backend orchestration, and AI evaluation.
+
+\subsection*{A. Knowledge Base}
+\begin{itemize}
+  \item Collect official Orange Maroc Business documents.
+  \item Extract and clean catalogue and FAQ information.
+  \item Implement document chunking and metadata management.
+  \item Prepare the knowledge base.
+\end{itemize}
+
+\subsection*{B. RAG Engine}
+\begin{itemize}
+  \item Implement embeddings using Sentence Transformers.
+  \item Configure semantic retrieval using PostgreSQL and pgvector.
+  \item Implement relevance filtering.
+  \item Develop grounded answer generation.
+  \item Display source references.
+  \item Implement abstention for unsupported questions.
+\end{itemize}
+
+\subsection*{C. Backend and Conversation Intelligence}
+\begin{itemize}
+  \item Develop the FastAPI RAG endpoints.
+  \item Implement conversation orchestration.
+  \item Extract structured information from customer messages.
+  \item Coordinate the qualification flow with the frontend and CRM backend.
+\end{itemize}
+
+\subsection*{D. AI Evaluation}
+\begin{itemize}
+  \item Prepare the 20-question benchmark with expected answers.
+  \item Evaluate retrieval relevance and answer correctness.
+  \item Test hallucinations, unsupported questions, and prompt injection.
+  \item Document evaluation results.
+\end{itemize}
+
+\subsubsection*{Deliverables}
+\begin{itemize}
+  \item Knowledge base
+  \item RAG engine
+  \item AI backend
+  \item Evaluation report
+\end{itemize}
+
+\newpage
+\section{Final Responsibility Matrix}
+
+\small
+\rowcolors{2}{LeadLight}{white}
+\begin{longtable}{>{\raggedright\arraybackslash}p{5.5cm}ccc}
+  \toprule
+  \rowcolor{LeadBlue}
+  \textcolor{white}{\textbf{Deliverable}} &
+  \textcolor{white}{\textbf{Yassir}} &
+  \textcolor{white}{\textbf{Amal}} &
+  \textcolor{white}{\textbf{Amine}} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \rowcolor{LeadBlue}
+  \textcolor{white}{\textbf{Deliverable}} &
+  \textcolor{white}{\textbf{Yassir}} &
+  \textcolor{white}{\textbf{Amal}} &
+  \textcolor{white}{\textbf{Amine}} \\
+  \midrule
+  \endhead
+  Odoo CRM              & \rolelead    & \none       & \rolesupport \\
+  n8n automation        & \rolelead    & \none       & \rolesupport \\
+  CRM integration       & \rolelead    & \none       & \rolesupport \\
+  Power BI dashboard    & \rolelead    & \none       & \none \\
+  Integration testing   & \rolelead    & \rolesupport & \rolesupport \\
+  Frontend               & \rolesupport & \rolelead    & \none \\
+  Chatbot interface      & \none        & \rolelead    & \rolesupport \\
+  Qualification UI       & \rolesupport & \rolelead    & \rolesupport \\
+  Knowledge base         & \none        & \none        & \rolelead \\
+  RAG and embeddings     & \none        & \none        & \rolelead \\
+  AI evaluation          & \rolesupport & \none        & \rolelead \\
+  FastAPI RAG endpoints  & \rolesupport & \none        & \rolelead \\
+  Final deployment       & \roleshared  & \roleshared  & \roleshared \\
+  Presentation           & \roleshared  & \roleshared  & \roleshared \\
+  \bottomrule
+\end{longtable}
+\normalsize
+
+\section{Integration Boundary}
+
+\begin{center}
+\setlength{\fboxsep}{12pt}
+\colorbox{LeadLight}{%
+  \begin{minipage}{0.88\textwidth}
+    \textbf{Amine} provides the structured lead data and backend interface.\\[0.45em]
+    \textbf{Amal} connects the customer interface.\\[0.45em]
+    \textbf{Yassir} owns the automation, CRM transaction, verification, and analytics pipeline.
+  \end{minipage}%
+}
+\end{center}
+
+All three members validate the complete workflow. This distribution gives each member a distinct technical ownership area and makes the final demonstration coherent.
+
+\section{End-to-End Collaboration Flow}
+
+\begin{enumerate}[leftmargin=1.8em,itemsep=0.5em]
+  \item Amal's frontend captures the conversation, qualification answers, contact information, and consent.
+  \item Amine's FastAPI and RAG components answer supported questions, orchestrate the conversation, and produce structured lead data.
+  \item Yassir's n8n workflow validates and maps the structured data before creating or updating the corresponding Odoo opportunity.
+  \item The integration verifies the CRM record and returns the transaction status to the backend and customer interface.
+  \item PostgreSQL and CRM reporting data feed Yassir's Power BI dashboard for funnel, source, reliability, and processing analysis.
+  \item The whole team validates the deployed workflow and presents the final demonstration.
+\end{enumerate}
+
+\end{document}

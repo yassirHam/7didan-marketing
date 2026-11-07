@@ -1,0 +1,1474 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"v_conversations\",\"v_transactions\",\"v_opportunities\",\"DidanOdbcConnectionString\",\"Errors in v_conversations\",\"Errors in v_transactions\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DidanOdbcConnectionString",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"Driver={PostgreSQL Unicode(x64)};Server=localhost;Port=5433;Database=7didan;sslmode=disable;\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "b3550427-112b-46ea-9099-32a78fbf12f5"
+      },
+      {
+        "name": "Errors in v_conversations",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "Source = v_conversations,",
+          "  #\"Detected Type Mismatches\" = let",
+          "    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Source, Table.ColumnsOfType(Source, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),",
+          "    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),",
+          "    fieldNames = Record.FieldNames(recordTypeFields),",
+          "    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),",
+          "    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = \"The type of the value does not match the type of the column.\", Detail = v], fieldTypes{i}})",
+          "in",
+          "    Table.TransformColumns(Source, pairs),",
+          "  #\"Added Index\" = Table.AddIndexColumn(#\"Detected Type Mismatches\", \"Row Number\" ,1),",
+          "  #\"Kept Errors\" = Table.SelectRowsWithErrors(#\"Added Index\", {\"conversation_id\", \"started_at\", \"entered_qualification\", \"completed_qualification\", \"abandoned\", \"had_abstention\", \"is_synthetic\"}),",
+          "  #\"Reordered Columns\" = Table.ReorderColumns(#\"Kept Errors\", {\"Row Number\", \"conversation_id\", \"started_at\", \"entered_qualification\", \"completed_qualification\", \"abandoned\", \"had_abstention\", \"is_synthetic\"})",
+          "in",
+          "  #\"Reordered Columns\""
+        ],
+        "kind": "m",
+        "lineageTag": "ddeeb173-15b4-44d4-b784-92c4c2f933b1",
+        "queryGroup": "Query Errors - 10/31/2026 12:32:06 PM"
+      },
+      {
+        "name": "Errors in v_transactions",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "Source = v_transactions,",
+          "  #\"Detected Type Mismatches\" = let",
+          "    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Source, Table.ColumnsOfType(Source, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),",
+          "    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),",
+          "    fieldNames = Record.FieldNames(recordTypeFields),",
+          "    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),",
+          "    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = \"The type of the value does not match the type of the column.\", Detail = v], fieldTypes{i}})",
+          "in",
+          "    Table.TransformColumns(Source, pairs),",
+          "  #\"Added Index\" = Table.AddIndexColumn(#\"Detected Type Mismatches\", \"Row Number\" ,1),",
+          "  #\"Kept Errors\" = Table.SelectRowsWithErrors(#\"Added Index\", {\"id\", \"received_at\", \"submission_id\", \"outcome\", \"http_status\", \"crm_id\", \"verified\", \"service_category\", \"qualification_status\", \"lead_score\", \"duration_ms\", \"error\", \"is_synthetic\", \"received_date\", \"is_valid_submission\", \"is_verified_creation\"}),",
+          "  #\"Reordered Columns\" = Table.ReorderColumns(#\"Kept Errors\", {\"Row Number\", \"id\", \"received_at\", \"submission_id\", \"outcome\", \"http_status\", \"crm_id\", \"verified\", \"service_category\", \"qualification_status\", \"lead_score\", \"duration_ms\", \"error\", \"is_synthetic\", \"received_date\", \"is_valid_submission\", \"is_verified_creation\"}),",
+          "    #\"Filtered Rows\" = Table.SelectRows(#\"Reordered Columns\", each true)",
+          "in",
+          "  #\"Filtered Rows\""
+        ],
+        "kind": "m",
+        "lineageTag": "b418b5c6-90d0-4412-9eb2-f10e9171f3e5",
+        "queryGroup": "Query Errors - 10/31/2026 12:32:06 PM"
+      }
+    ],
+    "queryGroups": [
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "0"
+          }
+        ],
+        "description": "Errors in queries that were loaded on 10/31/2026 12:32:06 PM.",
+        "folder": "Query Errors - 10/31/2026 12:32:06 PM"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "transactions_date",
+        "fromColumn": "received_date",
+        "fromTable": "v_transactions",
+        "toColumn": "Date",
+        "toTable": "Date"
+      },
+      {
+        "name": "opportunities_date",
+        "fromColumn": "Created Date",
+        "fromTable": "v_opportunities",
+        "toColumn": "Date",
+        "toTable": "Date"
+      },
+      {
+        "name": "conversations_date",
+        "fromColumn": "Started Date",
+        "fromTable": "v_conversations",
+        "toColumn": "Date",
+        "toTable": "Date"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "v_conversations",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "conversation_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "50e91ceb-e769-4080-bec1-885d12285dd2",
+            "sourceColumn": "conversation_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "started_at",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "3e0fc0d7-ad85-4788-90fa-c296714ee58e",
+            "sourceColumn": "started_at",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "entered_qualification",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "lineageTag": "ac5a562c-68db-4062-913a-d83972fd2702",
+            "sourceColumn": "entered_qualification",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "completed_qualification",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "lineageTag": "bcc28e7a-891f-4829-858e-36bf1e8d5e0b",
+            "sourceColumn": "completed_qualification",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "abandoned",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "lineageTag": "a5fba10d-02b0-4c97-9fd7-c3dc83fd51c5",
+            "sourceColumn": "abandoned",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "had_abstention",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "lineageTag": "280020b8-bb7a-4155-9c39-c6e1372e7c30",
+            "sourceColumn": "had_abstention",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_synthetic",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "lineageTag": "d4fb01c3-c8fc-4b92-acac-add544d63215",
+            "sourceColumn": "is_synthetic",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Started Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "expression": "DATE ( YEAR ( v_conversations[started_at] ), MONTH ( v_conversations[started_at] ), DAY ( v_conversations[started_at] ) )",
+            "formatString": "Long Date",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "f250857b-b176-4580-9f86-aa8354d4f29c",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Journey Status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "SWITCH ( TRUE (), v_conversations[completed_qualification], \"Completed\", v_conversations[abandoned], \"Abandoned\", v_conversations[entered_qualification], \"In qualification\", \"Information only\" )",
+            "isDataTypeInferred": true,
+            "lineageTag": "98607fc9-77ce-4766-b4b2-9b50bab3ade4",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "124affc9-e454-4f5a-895e-fa28aee24b65",
+        "partitions": [
+          {
+            "name": "v_conversations",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Odbc.Query(DidanOdbcConnectionString, \"SELECT conversation_id::text, started_at::timestamp, entered_qualification, completed_qualification, abandoned, had_abstention, is_synthetic FROM reporting.v_conversations\"),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source, {{\"conversation_id\", type text}, {\"started_at\", type datetime}, {\"entered_qualification\", type logical}, {\"completed_qualification\", type logical}, {\"abandoned\", type logical}, {\"had_abstention\", type logical}, {\"is_synthetic\", type logical}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "v_transactions",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "d6f68618-d54a-49dc-b6ac-acef8e19403d",
+            "sourceColumn": "id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "received_at",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "4d993c2a-c13c-47b0-b88d-f1307e0536a7",
+            "sourceColumn": "received_at",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "submission_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "38a9c52b-67a7-4626-b0c5-552a62056c48",
+            "sourceColumn": "submission_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "outcome",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d1ecaa76-1a93-41c3-a8fe-f02de5b8456d",
+            "sourceColumn": "outcome",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "http_status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "f568aa2e-1203-47e9-96ad-dd26ed2b3f9f",
+            "sourceColumn": "http_status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "crm_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "a2e0c75e-03c3-4ebc-9975-ded14c302e11",
+            "sourceColumn": "crm_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "verified",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "lineageTag": "cbc7ec0f-4e35-4d5f-995e-e20e70786379",
+            "sourceColumn": "verified",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "service_category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dedb3b22-905f-466b-b77b-0b43cdbef296",
+            "sourceColumn": "service_category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "qualification_status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dfde8966-6e0b-40d8-8425-2c002cbbe1c0",
+            "sourceColumn": "qualification_status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "lead_score",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "8cf7702f-4e30-4a5a-9f6d-10486e0f5d8f",
+            "sourceColumn": "lead_score",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "duration_ms",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "8c97fbdd-61db-4fd6-8465-be58d995c074",
+            "sourceColumn": "duration_ms",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "error",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8b9f5a81-1ab7-4337-9fdd-004149ede52a",
+            "sourceColumn": "error",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_synthetic",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "lineageTag": "ae877de8-9ec9-4ce9-b672-8dfa4064f191",
+            "sourceColumn": "is_synthetic",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "received_date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "isHidden": true,
+            "lineageTag": "764fed30-ce0c-4719-a42b-362f8da28af5",
+            "sourceColumn": "received_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_valid_submission",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "lineageTag": "6b356f77-d8fb-47cd-8eb8-523540b5fc34",
+            "sourceColumn": "is_valid_submission",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_verified_creation",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "lineageTag": "d451f9b4-dad7-470a-b1c4-83e991f7c506",
+            "sourceColumn": "is_verified_creation",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Duration (s)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "expression": "DIVIDE ( v_transactions[duration_ms], 1000 )",
+            "formatString": "0.00",
+            "isDataTypeInferred": true,
+            "lineageTag": "619093bb-0bb1-41d5-98aa-1c2eb24e01c1",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Outcome Group",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "SWITCH ( TRUE (), v_transactions[outcome] = \"created\", \"Success\", v_transactions[outcome] = \"duplicate\", \"Protected duplicate\", v_transactions[outcome] IN { \"invalid\", \"consent_declined\", \"unauthorized\" }, \"Rejected\", \"CRM failure\" )",
+            "isDataTypeInferred": true,
+            "lineageTag": "73f0f19d-3fa8-4394-8716-aa939f2a49ea",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "fc8ac40a-b159-4149-bc6a-c430842ea1fc",
+        "partitions": [
+          {
+            "name": "v_transactions",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Odbc.Query(DidanOdbcConnectionString, \"SELECT id, received_at::timestamp, submission_id::text, outcome::text, http_status, crm_id, verified, service_category::text, qualification_status::text, lead_score, duration_ms, error::text, is_synthetic, received_date::timestamp, is_valid_submission, is_verified_creation FROM reporting.v_transactions\"),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source, {{\"id\", Int64.Type}, {\"received_at\", type datetime}, {\"submission_id\", type text}, {\"outcome\", type text}, {\"http_status\", Int64.Type}, {\"crm_id\", Int64.Type}, {\"verified\", type logical}, {\"service_category\", type text}, {\"qualification_status\", type text}, {\"lead_score\", Int64.Type}, {\"duration_ms\", Int64.Type}, {\"error\", type text}, {\"is_synthetic\", type logical}, {\"received_date\", type datetime}, {\"is_valid_submission\", type logical}, {\"is_verified_creation\", type logical}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "v_opportunities",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "crm_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "7193aa5a-328a-4b56-a8a7-25be27ca3216",
+            "sourceColumn": "crm_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "created_at",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "2fe2bdc9-0a7e-428e-8837-ab7e5c020d02",
+            "sourceColumn": "created_at",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "submission_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "e4229e3b-2eec-4992-b8e7-ed438219e013",
+            "sourceColumn": "submission_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "opportunity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "33e25d77-9f37-4eda-883b-c437d8d5fe59",
+            "sourceColumn": "opportunity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "stage",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3c1de7b2-9822-4e36-9187-3d489e5c6897",
+            "sourceColumn": "stage",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "source",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "db6edaae-36c5-41be-ae39-e1320e198c65",
+            "sourceColumn": "source",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "service_interest",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "262508e3-522c-4620-b337-cf4744f56942",
+            "sourceColumn": "service_interest",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "qualification_status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "606d6976-7e37-4a75-a261-f018b7b3a79e",
+            "sourceColumn": "qualification_status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "lead_score",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "6d981a75-0f7e-4cc6-912c-ac5ea71b8b8e",
+            "sourceColumn": "lead_score",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fields_populated",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "8522bf15-0287-4877-8359-dbd2934ff7ed",
+            "sourceColumn": "fields_populated",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fields_expected",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "ead4b456-5ce9-4ddc-878d-7f635d5c9a56",
+            "sourceColumn": "fields_expected",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_active",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "lineageTag": "dd2ab1f0-c488-4ee2-8224-c96ef57077e3",
+            "sourceColumn": "is_active",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_synthetic",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "lineageTag": "9a62c951-ab50-43ea-929c-e92ae5d8e131",
+            "sourceColumn": "is_synthetic",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Created Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "expression": "DATE ( YEAR ( v_opportunities[created_at] ), MONTH ( v_opportunities[created_at] ), DAY ( v_opportunities[created_at] ) )",
+            "formatString": "Long Date",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "4804b179-f188-4caa-9b7c-5f93fc909573",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Score Band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "SWITCH ( TRUE (), v_opportunities[lead_score] >= 75, \"High (75-100)\", v_opportunities[lead_score] >= 50, \"Medium (50-74)\", \"Low (0-49)\" )",
+            "isDataTypeInferred": true,
+            "lineageTag": "ccbfb7b6-960f-4491-a011-94cb1da61c4e",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "8b9c87ef-abf2-45db-bd3a-c402841e9a22",
+        "partitions": [
+          {
+            "name": "v_opportunities",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Odbc.Query(DidanOdbcConnectionString, \"SELECT crm_id, created_at::timestamp, submission_id::text, opportunity::text, stage::text, source::text, service_interest::text, qualification_status::text, lead_score, fields_populated, fields_expected, is_active, is_synthetic FROM reporting.v_opportunities\"),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source, {{\"crm_id\", Int64.Type}, {\"created_at\", type datetime}, {\"submission_id\", type text}, {\"opportunity\", type text}, {\"stage\", type text}, {\"source\", type text}, {\"service_interest\", type text}, {\"qualification_status\", type text}, {\"lead_score\", Int64.Type}, {\"fields_populated\", Int64.Type}, {\"fields_expected\", Int64.Type}, {\"is_active\", type logical}, {\"is_synthetic\", type logical}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Date",
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "ec8b1823-8158-43d6-a411-b7ac1f3ef92c",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "4d9f56b8-22dd-4875-a631-9ece6d71e865",
+            "sourceColumn": "[Year]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Month Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "0afae7aa-a596-4baa-8037-f38b98fc54f4",
+            "sourceColumn": "[Month Number]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "2ed479dd-e875-46da-8e4a-afc35f56f3a6",
+            "sortByColumn": "Month Number",
+            "sourceColumn": "[Month]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "8d07c5ef-15cd-4b32-abac-31fa1e695f90",
+            "sourceColumn": "[Year Month]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "8c8a2910-f02a-4e19-bcb0-fe6a54e18f4c",
+            "sourceColumn": "[Quarter]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "dataCategory": "Time",
+        "lineageTag": "4adc8cca-64f5-4cb6-8fe1-0d6de9cd481c",
+        "partitions": [
+          {
+            "name": "Date",
+            "mode": "import",
+            "source": {
+              "expression": "ADDCOLUMNS ( CALENDAR ( DATE ( YEAR ( TODAY () ) - 2, 1, 1 ), DATE ( YEAR ( TODAY () ) + 2, 12, 31 ) ), \"Year\", YEAR ( [Date] ), \"Month Number\", MONTH ( [Date] ), \"Month\", FORMAT ( [Date], \"MMM\" ), \"Year Month\", FORMAT ( [Date], \"yyyy-MM\" ), \"Quarter\", \"Q\" & FORMAT ( [Date], \"Q\" ) )",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Funnel Stages",
+        "columns": [
+          {
+            "name": "Step",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "54720a31-5d97-45e5-8edc-b9fb916151e9",
+            "sortByColumn": "Sort Order",
+            "sourceColumn": "[Step]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Sort Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "fc0f1bfe-8560-45a3-9c6e-15c1d5de287c",
+            "sourceColumn": "[Sort Order]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "99df3b27-298e-427f-a897-d7f5d6383af0",
+        "partitions": [
+          {
+            "name": "Funnel Stages",
+            "mode": "import",
+            "source": {
+              "expression": "DATATABLE ( \"Step\", STRING, \"Sort Order\", INTEGER, { { \"Conversations\", 1 }, { \"Entered qualification\", 2 }, { \"Completed qualification\", 3 }, { \"Opportunities created\", 4 }, { \"Qualified leads\", 5 } } )",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "_Measures",
+        "columns": [
+          {
+            "name": "Placeholder",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "bd8581e4-64a7-46ea-b456-1358effba52f",
+            "sourceColumn": "[Placeholder]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "708594a6-de65-4d37-b761-7c38e50648a3",
+        "measures": [
+          {
+            "name": "Conversations",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Conversation funnel",
+            "expression": "COUNTROWS ( v_conversations )",
+            "formatString": "#,0",
+            "lineageTag": "e4ccf069-1ff7-4914-b2d8-9abc08a003bb"
+          },
+          {
+            "name": "Entered Qualification",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Conversation funnel",
+            "expression": "CALCULATE ( [Conversations], v_conversations[entered_qualification] = TRUE () )",
+            "formatString": "#,0",
+            "lineageTag": "4c9a1b85-f2cc-4f82-9a84-9e12c32fce08"
+          },
+          {
+            "name": "Completed Qualifications",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Conversation funnel",
+            "expression": "CALCULATE ( [Conversations], v_conversations[completed_qualification] = TRUE () )",
+            "formatString": "#,0",
+            "lineageTag": "af2734e6-0a32-4816-9298-a4bab2c1baf4"
+          },
+          {
+            "name": "Abandoned Conversations",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Conversation funnel",
+            "expression": "CALCULATE ( [Conversations], v_conversations[abandoned] = TRUE () )",
+            "formatString": "#,0",
+            "lineageTag": "610899af-3288-497e-bc7f-cc4a2a8f0444"
+          },
+          {
+            "name": "Conversations with Abstention",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Conversation funnel",
+            "expression": "CALCULATE ( [Conversations], v_conversations[had_abstention] = TRUE () )",
+            "formatString": "#,0",
+            "lineageTag": "af068aa5-1b02-4051-bdc1-4c596fdf8ad6"
+          },
+          {
+            "name": "Information-only Conversations",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Conversation funnel",
+            "expression": "CALCULATE ( [Conversations], v_conversations[entered_qualification] = FALSE () )",
+            "formatString": "#,0",
+            "lineageTag": "152e23fb-b34c-4b6b-9e18-3da9ccd8d2d7"
+          },
+          {
+            "name": "Qualification Entry Rate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Conversation funnel",
+            "expression": "DIVIDE ( [Entered Qualification], [Conversations] )",
+            "formatString": "0.0%;-0.0%;0.0%",
+            "lineageTag": "70ec2534-10bb-4aa2-8d6c-ae8f8bd99c3c"
+          },
+          {
+            "name": "Qualification Completion",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Conversation funnel",
+            "expression": "DIVIDE ( [Completed Qualifications], [Entered Qualification] )",
+            "formatString": "0.0%;-0.0%;0.0%",
+            "lineageTag": "0cf38e00-dedf-48d7-afe4-58301ab3a8a3"
+          },
+          {
+            "name": "Abandonment Rate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Conversation funnel",
+            "expression": "DIVIDE ( [Abandoned Conversations], [Entered Qualification] )",
+            "formatString": "0.0%;-0.0%;0.0%",
+            "lineageTag": "cc42f1fa-98a9-4020-920f-7395a81fdd58"
+          },
+          {
+            "name": "Abstention Rate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Conversation funnel",
+            "expression": "DIVIDE ( [Conversations with Abstention], [Conversations] )",
+            "formatString": "0.0%;-0.0%;0.0%",
+            "lineageTag": "5847aec2-7d53-4d53-b3ac-804619b6d68e"
+          },
+          {
+            "name": "Opportunities Created",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Lead quality",
+            "expression": "COUNTROWS ( v_opportunities )",
+            "formatString": "#,0",
+            "lineageTag": "8c427c00-5c05-4606-8f11-f7491115a87b"
+          },
+          {
+            "name": "Leads Meeting Criteria",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Lead quality",
+            "expression": "CALCULATE ( [Opportunities Created], v_opportunities[qualification_status] = \"qualified\" )",
+            "formatString": "#,0",
+            "lineageTag": "d653465a-96c4-4df2-99d1-d000bd9f2afe"
+          },
+          {
+            "name": "Partial Leads",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Lead quality",
+            "expression": "CALCULATE ( [Opportunities Created], v_opportunities[qualification_status] = \"partial\" )",
+            "formatString": "#,0",
+            "lineageTag": "3095b176-3bd6-425b-ad0e-1bbb82e1bbca"
+          },
+          {
+            "name": "Not Qualified Leads",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Lead quality",
+            "expression": "CALCULATE ( [Opportunities Created], v_opportunities[qualification_status] = \"not_qualified\" )",
+            "formatString": "#,0",
+            "lineageTag": "e1b8d838-d2cc-40d8-a560-c8875c39c9e1"
+          },
+          {
+            "name": "Average Lead Score",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Lead quality",
+            "expression": "AVERAGE ( v_opportunities[lead_score] )",
+            "formatString": "0.0",
+            "lineageTag": "c27b358a-0b83-4a38-9664-e8e9f5ff8ffd"
+          },
+          {
+            "name": "Median Lead Score",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Lead quality",
+            "expression": "MEDIAN ( v_opportunities[lead_score] )",
+            "formatString": "0.0",
+            "lineageTag": "a24ecb54-8ec6-49ec-974f-6eba732daec7"
+          },
+          {
+            "name": "High Priority Leads",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Lead quality",
+            "expression": "CALCULATE ( [Opportunities Created], v_opportunities[lead_score] >= 75 )",
+            "formatString": "#,0",
+            "lineageTag": "af4de83d-e634-4949-a7ee-bdbc4c649633"
+          },
+          {
+            "name": "Field Completeness",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Lead quality",
+            "expression": "DIVIDE ( SUM ( v_opportunities[fields_populated] ), SUM ( v_opportunities[fields_expected] ) )",
+            "formatString": "0.0%;-0.0%;0.0%",
+            "lineageTag": "e1bc91c7-c546-4aa5-b5cb-8f3b6cf95529"
+          },
+          {
+            "name": "Opportunity Conversion",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Lead quality",
+            "expression": "DIVIDE ( [Opportunities Created], [Completed Qualifications] )",
+            "formatString": "0.0%;-0.0%;0.0%",
+            "lineageTag": "1244c2a7-be33-4c01-97c1-af271518392b"
+          },
+          {
+            "name": "Qualified Lead Rate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Lead quality",
+            "expression": "DIVIDE ( [Leads Meeting Criteria], [Opportunities Created] )",
+            "formatString": "0.0%;-0.0%;0.0%",
+            "lineageTag": "af4fc676-0be3-4d22-a940-4553789c4f77"
+          },
+          {
+            "name": "Total Transactions",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "CRM reliability",
+            "expression": "COUNTROWS ( v_transactions )",
+            "formatString": "#,0",
+            "lineageTag": "f83557be-e2cb-4c54-b14c-9ec398f68eaf"
+          },
+          {
+            "name": "Valid Unique Submissions",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "CRM reliability",
+            "expression": "CALCULATE ( DISTINCTCOUNT ( v_transactions[submission_id] ), v_transactions[is_valid_submission] = TRUE () )",
+            "formatString": "#,0",
+            "lineageTag": "3b8a1b44-fc44-4ca8-9172-5127859f4adb"
+          },
+          {
+            "name": "Verified Creations",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "CRM reliability",
+            "expression": "CALCULATE ( DISTINCTCOUNT ( v_transactions[submission_id] ), v_transactions[is_verified_creation] = TRUE () )",
+            "formatString": "#,0",
+            "lineageTag": "b51b2493-219a-423e-bbdc-54d1902207e9"
+          },
+          {
+            "name": "CRM Success Rate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "CRM reliability",
+            "expression": "DIVIDE ( [Verified Creations], [Valid Unique Submissions] )",
+            "formatString": "0.0%;-0.0%;0.0%",
+            "lineageTag": "964ac2c4-feeb-4f50-9b64-0e3b29febf89"
+          },
+          {
+            "name": "Duplicates Blocked",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "CRM reliability",
+            "expression": "CALCULATE ( [Total Transactions], v_transactions[outcome] = \"duplicate\" )",
+            "formatString": "#,0",
+            "lineageTag": "31e1be22-a2fd-4acc-83bd-d5a0863793aa"
+          },
+          {
+            "name": "Duplicate Attempt Rate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "CRM reliability",
+            "expression": "DIVIDE ( [Duplicates Blocked], [Total Transactions] )",
+            "formatString": "0.0%;-0.0%;0.0%",
+            "lineageTag": "6b6c69fc-cb63-45bc-84a3-4309d8c6228a"
+          },
+          {
+            "name": "Duplicate Record Rate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "CRM reliability",
+            "expression": "DIVIDE ( [Opportunities Created] - DISTINCTCOUNT ( v_opportunities[submission_id] ), [Opportunities Created] )",
+            "formatString": "0.0%;-0.0%;0.0%",
+            "lineageTag": "2df38ebf-81db-403e-9ab5-4931dc93bc82"
+          },
+          {
+            "name": "Rejected Submissions",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "CRM reliability",
+            "expression": "CALCULATE ( [Total Transactions], v_transactions[outcome] IN { \"invalid\", \"consent_declined\" } )",
+            "formatString": "#,0",
+            "lineageTag": "956077ef-4445-4c6a-a65a-f48490d817f1"
+          },
+          {
+            "name": "Unauthorized Requests",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "CRM reliability",
+            "expression": "CALCULATE ( [Total Transactions], v_transactions[outcome] = \"unauthorized\" )",
+            "formatString": "#,0",
+            "lineageTag": "01967688-42a0-45e6-8eba-99f6a4b9a3dc"
+          },
+          {
+            "name": "CRM Failures",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "CRM reliability",
+            "expression": "CALCULATE ( [Total Transactions], v_transactions[outcome] IN { \"crm_auth_failed\", \"crm_unavailable\", \"crm_error\", \"verification_failed\", \"crm_not_configured\" } )",
+            "formatString": "#,0",
+            "lineageTag": "fd037d83-93ea-43d1-abd3-3770c1c81a16"
+          },
+          {
+            "name": "Verified Transaction Rate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "CRM reliability",
+            "expression": "DIVIDE ( CALCULATE ( [Total Transactions], v_transactions[verified] = TRUE () ), [Total Transactions] )",
+            "formatString": "0.0%;-0.0%;0.0%",
+            "lineageTag": "2148a583-bb88-40ca-8b92-fe91fadb091f"
+          },
+          {
+            "name": "Median Processing (s)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Processing time",
+            "expression": "DIVIDE ( CALCULATE ( MEDIAN ( v_transactions[duration_ms] ), v_transactions[is_verified_creation] = TRUE () ), 1000 )",
+            "formatString": "0.00",
+            "lineageTag": "be552b0d-5286-4b3e-a0cc-9c812a4a5ed2"
+          },
+          {
+            "name": "Average Processing (s)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Processing time",
+            "expression": "DIVIDE ( CALCULATE ( AVERAGE ( v_transactions[duration_ms] ), v_transactions[is_verified_creation] = TRUE () ), 1000 )",
+            "formatString": "0.00",
+            "lineageTag": "2fdc3a44-def2-4e0f-8616-a5d2d5a72361"
+          },
+          {
+            "name": "P90 Processing (s)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Processing time",
+            "expression": "DIVIDE ( CALCULATE ( PERCENTILEX.INC ( v_transactions, v_transactions[duration_ms], 0.9 ), v_transactions[is_verified_creation] = TRUE () ), 1000 )",
+            "formatString": "0.00",
+            "lineageTag": "8036c50c-3487-4e0d-b88a-8ad7dc65766d"
+          },
+          {
+            "name": "Maximum Processing (s)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Processing time",
+            "expression": "DIVIDE ( CALCULATE ( MAX ( v_transactions[duration_ms] ), v_transactions[is_verified_creation] = TRUE () ), 1000 )",
+            "formatString": "0.00",
+            "lineageTag": "f79ef9ff-42b9-4aa2-ab0c-012688f02deb"
+          },
+          {
+            "name": "Funnel Value",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":false}"
+              }
+            ],
+            "displayFolder": "Conversation funnel",
+            "expression": "SWITCH ( SELECTEDVALUE ( 'Funnel Stages'[Step] ), \"Conversations\", [Conversations], \"Entered qualification\", [Entered Qualification], \"Completed qualification\", [Completed Qualifications], \"Opportunities created\", [Opportunities Created], \"Qualified leads\", [Leads Meeting Criteria] )",
+            "formatString": "#,0",
+            "lineageTag": "b6a439b2-9bb9-4d42-a168-872b3fa8cbe1"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "_Measures",
+            "mode": "import",
+            "source": {
+              "expression": "ROW ( \"Placeholder\", \"7didan\" )",
+              "type": "calculated"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
