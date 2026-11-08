@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "7didan Knowledge Base — Runtime Architecture",
+    "subtitle": "FastAPI RAG backend + offline ingestion pipeline + pgvector store + CRM webhook integration",
+    "locale": "en",
+    "output": "images/7didan-runtime-architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    { "id": "website", "type": "external", "label": "Website chatbot", "sublabel": "Next.js chatbot UI", "pos": [30, 300], "size": [150, 60] },
+    { "id": "api", "type": "backend", "label": "FastAPI app", "sublabel": "uvicorn :8000 · main.py", "pos": [280, 300], "size": [180, 64], "tag": "7didan-api" },
+    { "id": "ragchain", "type": "backend", "label": "RAG chain", "sublabel": "lazy components · rag_chain.py", "pos": [570, 300], "size": [200, 64] },
+    { "id": "retriever", "type": "backend", "label": "PGRetriever", "sublabel": "Qwen embed + search k=20", "pos": [880, 300], "size": [190, 64] },
+    { "id": "pg", "type": "database", "label": "PostgreSQL pgvector", "sublabel": "7didan_store · reporting", "pos": [1180, 300], "size": [180, 64], "tag": "7didan-db-portable" },
+    { "id": "guardrail", "type": "backend", "label": "Input guardrail", "sublabel": "allowed/rejected via LLM", "pos": [280, 100], "size": [170, 60] },
+    { "id": "llm", "type": "external", "label": "LLM API (NVIDIA)", "sublabel": "init_chat_model endpoint", "pos": [1180, 100], "size": [200, 60] },
+    { "id": "reranker", "type": "backend", "label": "Qwen reranker", "sublabel": "CrossEncoder top_k=10", "pos": [880, 100], "size": [170, 60] },
+    { "id": "crm", "type": "backend", "label": "CRM integration", "sublabel": "client.py + scoring.py", "pos": [280, 520], "size": [180, 60] },
+    { "id": "evaluator", "type": "backend", "label": "Laya evaluator", "sublabel": "noul score ≥ 0.5", "pos": [570, 520], "size": [190, 60] },
+    { "id": "rawdata", "type": "database", "label": "Raw markdown", "sublabel": "raw .md + sidecar .json", "pos": [30, 520], "size": [180, 60] },
+    { "id": "ingest", "type": "backend", "label": "Ingestion pipeline", "sublabel": "main.py crawl→clean→index", "pos": [30, 680], "size": [190, 60] },
+    { "id": "n8n", "type": "external", "label": "n8n workflow", "sublabel": "/webhook/7didan/lead :5678", "pos": [570, 700], "size": [190, 60] },
+    { "id": "odoo", "type": "external", "label": "Odoo CRM", "sublabel": "crm.lead opportunity", "pos": [850, 700], "size": [170, 60] },
+    { "id": "dump", "type": "database", "label": "Repo SQL dump", "sublabel": "postgres/7didan_backup.sql", "pos": [1090, 700], "size": [190, 60] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "FastAPI container 7didan-api (image from this repo)", "wraps": ["api", "ragchain", "retriever", "reranker", "guardrail", "evaluator", "crm"] },
+    { "kind": "region", "label": "PostgreSQL container 7didan-db-portable", "wraps": ["pg"] },
+    { "kind": "region", "label": "Host — offline ingestion + repo dump", "wraps": ["rawdata", "ingest", "dump"] }
+  ],
+  "connections": [
+    { "id": "web-api", "from": "website", "to": "api", "label": "POST /api/*", "variant": "emphasis" },
+    { "id": "api-rag", "from": "api", "to": "ragchain", "label": "rag_chain()", "variant": "emphasis" },
+    { "id": "rag-retriever", "from": "ragchain", "to": "retriever", "label": "search k=20" },
+    { "id": "retriever-pg", "from": "retriever", "to": "pg", "label": "vector search" },
+    { "id": "rag-llm", "from": "ragchain", "to": "llm", "label": "LLM: answer + intent", "variant": "emphasis" },
+    { "id": "rag-guardrail", "from": "ragchain", "to": "guardrail", "label": "validate", "variant": "security" },
+    { "id": "rag-reranker", "from": "ragchain", "to": "reranker", "label": "rerank top 10" },
+    { "id": "rag-evaluator", "from": "ragchain", "to": "evaluator", "label": "laya evaluate" },
+    { "id": "api-crm", "from": "api", "to": "crm", "label": "enquiries + score" },
+    { "id": "crm-n8n", "from": "crm", "to": "n8n", "label": "webhook + token", "variant": "security" },
+    { "id": "n8n-odoo", "from": "n8n", "to": "odoo", "label": "JSON-RPC" },
+    { "id": "api-events", "from": "api", "to": "pg", "label": "reporting events", "variant": "dashed" },
+    { "id": "rawdata-ingest", "from": "rawdata", "to": "ingest", "label": "clean docs" },
+    { "id": "ingest-pg", "from": "ingest", "to": "pg", "label": "index: embed + meta", "variant": "emphasis" },
+    { "id": "dump-pg", "from": "dump", "to": "pg", "label": "initdb restore", "variant": "dashed" }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "Request path", "items": ["Website → FastAPI → RAG chain → PGRetriever/reranker/LLM → answer with source URLs", "Heavy components are lazy-loaded on first /api/chat call (rag_chain.py __getattr__)"] },
+    { "dot": "cyan", "title": "Persistence", "items": ["pgvector table 7didan_store: content, embedding, langchain_metadata {source, url, section_h1..h3}", "reporting.conversation_events written by backend (crm/events.py)", "postgres/7didan_backup.sql restores a fresh Docker volume via docker-entrypoint-initdb.d"] },
+    { "dot": "rose", "title": "CRM handoff", "items": ["/api/enquiries computes lead_score locally; CrmClient POSTs n8n webhook with X-7didan-Token", "≤3 retries with backoff only on crm_unavailable; submission_id is the idempotency key", "n8n forwards to Odoo and returns {status, crm_id, verified, retryable, errors}"] },
+    { "dot": "slate", "title": "Evidence note", "items": ["Components and edges reflect the current working tree (git HEAD 9943b29 + uncommitted CRM/docker changes); file names appear in sublabels", "Source links are omitted because this local repo has no origin remote, so archify git-evidence verification cannot run"] }
+  ]
+}

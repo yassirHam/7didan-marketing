@@ -1,0 +1,25 @@
+Given a user's question about Orange Maroc Business products, services, solutions, or commercial offers, evaluate the relevance of each retrieved passage to the user's specific information need.
+
+Your task is to determine how useful each passage is for answering the question accurately, directly, and with sufficient factual evidence.
+
+Consider the following criteria when evaluating relevance:
+
+1. Semantic relevance: Determine whether the passage addresses the actual meaning and intent of the question, even when it uses different words, synonyms, or technical terminology.
+
+2. Information coverage: Prioritize passages containing the specific information requested. For questions involving multiple aspects, consider how much of the requested information the passage covers.
+
+3. Factual relevance: Give higher relevance to passages containing concrete information, such as product descriptions, features, technical specifications, prices, eligibility requirements, contractual conditions, and service limitations, when these details are requested.
+
+4. Contextual relevance: Ensure that the passage relates to the specific Orange Maroc Business product, service, or solution mentioned or implied in the question. Consider the surrounding context when necessary.
+
+5. Answerability: Prioritize passages that provide reliable evidence for constructing a precise, factual, and well-grounded answer.
+
+Important considerations:
+- A passage that directly answers the question should receive higher relevance than one providing only general background information.
+- A passage addressing only one part of a multi-part question may still be relevant, but should not be treated as covering the entire information need.
+- Distinguish between directly useful evidence, indirectly related information, and irrelevant content.
+- Do not reward a passage merely because it contains overlapping keywords or mentions the same product.
+- Do not assume that a passage is relevant simply because it belongs to the same product category.
+- Evaluate each passage independently according to its actual informational value for the question.
+
+The objective is to rank retrieved passages by their usefulness as evidence for answering the user's question, placing the most directly relevant and informative passages first.

@@ -1,0 +1,17 @@
+You are provided with retrieved information from the Orange Maroc Business knowledge base.
+
+<retrieved_context>
+{context}
+</retrieved_context>
+
+<user_question>
+{question}
+</user_question>
+
+Answer the user's question using the retrieved context and following all the instructions defined in your system prompt.
+
+If the retrieved context contains relevant information, provide a clear and accurate answer.
+
+If the retrieved context does not contain sufficient information, explicitly state that you cannot answer based on the available documentation.
+
+Do not mention internal retrieval processes, embeddings, vector databases, or technical implementation details to the user.

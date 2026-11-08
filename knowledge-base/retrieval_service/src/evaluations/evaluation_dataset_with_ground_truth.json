@@ -1,0 +1,243 @@
+[
+  {
+    "id": "Q001",
+    "category": "factual",
+    "question": "Quels services de connectivité destinés aux entreprises sont présentés dans la documentation d'Orange Maroc Business ?",
+    "is_answerable": true,
+    "expected_answer": "Les services de connectivité présentés sont le service Lan to Lan, qui permet d'interconnecter tous les sites et réseaux locaux de l'entreprise via un réseau Ethernet VPLS avec des débits allant de 256 Kbps à 1 Gbps, ainsi que la connectivité incluse dans l'offre Business Hosting (100 Mbps Best Effort, Business VPN en option, avec des options de sécurité Business Security et Business DDoS Security).",
+    "reference_evidence": [
+      "Le service Lan to Lan vous permet d'interconnecter tous vos sites et réseaux locaux avec le confort et la souplesse d'un LAN étendu.\nLe réseau Ethernet VPLS d'Orange vous assure un haut niveau de sécurité et de performance.\nVos collaborateurs bénéficient ainsi d'un réseau Ethernet très évolutif, avec des débits allant de 256 Kbps à 1 Gbps en zone dense pour accéder à toutes les ressources de l'entreprise : partage de documents, messagerie, travail collaboratif, etc.",
+      "### Connectivité\n* Neutralité de la connectivité quant à l’ensemble des opérateurs marocains\n* Double adduction vers les POP de tous les opérateurs\n* 100 Mbps Best Effort\n* Business VPN en option\n* Des options de sécurité des accès : Business Security & Business DDoS Security"
+    ],
+    "status": "needs_review",
+    "generation_assessment": "supported",
+    "generation_reason": "Le contexte mentionne explicitement le service Lan to Lan comme solution de connectivité dédiée à l'interconnexion des sites de l'entreprise, et détaille les composantes connectivité de l'offre Business Hosting (Business VPN, 100 Mbps Best Effort, options de sécurité associées)."
+  },
+  {
+    "id": "Q002",
+    "category": "factual",
+    "question": "Quels services ou solutions cloud sont proposés aux clients professionnels ?",
+    "is_answerable": true,
+    "expected_answer": "Orange Maroc propose aux clients professionnels trois solutions cloud : Business Cloud (un cloud 100% marocain managé de bout en bout), Amazon Web Services (AWS) avec un accompagnement complet incluant consulting, sécurité, migration et gestion, et Microsoft Azure pour la virtualisation d'infrastructure et la gestion de données sensibles.",
+    "reference_evidence": [
+      "# Business Cloud",
+      "Et le tout depuis un Cloud 100% marocain",
+      "# Amazon Web Services",
+      "## Orange accompagne ses clients dans leur transition vers le Cloud",
+      "# Microsoft Azure",
+      "Pour une entreprise ayant des besoins spécifiques en matière de virtualisation de l'infrastructure informatique et de gestion de données sensibles, Microsoft Azure via Orange Maroc peut offrir une solution flexible, évolutive et intégrée"
+    ],
+    "status": "needs_review",
+    "generation_assessment": "supported",
+    "generation_reason": "Le contexte mentionne explicitement trois solutions cloud distinctes proposées aux clients professionnels : Business Cloud, Amazon Web Services et Microsoft Azure, avec leurs caractéristiques respectives clairement identifiées dans les chunks fournis."
+  },
+  {
+    "id": "Q003",
+    "category": "factual",
+    "question": "Quels services de cybersécurité sont présentés dans la documentation ?",
+    "is_answerable": true,
+    "expected_answer": "La documentation présente deux services de cybersécurité spécifiques : Business Internet Security, qui filtre, analyse et bloque les menaces avant qu'elles n'atteignent le réseau de l'entreprise, et Micro-SOC Entreprise, qui assure une surveillance 24h/24 des postes de travail et serveurs, détecte les comportements suspects et traite les menaces en temps réel. Des solutions générales de filtrage d'accès internet et de surveillance de serveurs sont également mentionnées.",
+    "reference_evidence": [
+      "## Business Internet Security\n\nUne seule connexion compromise suffit à mettre votre activité à l'arrêt. Business Internet Security filtre, analyse et bloque les menaces avant qu'elles n'atteignent votre réseau. Sans équipement à installer, sans investissement de départ.",
+      "## Micro-SOC Entreprise\n\nMicro-SOC Entreprise surveille l’ensemble de vos postes de travail et vos serveurs 24h/24, détecte et qualifie les comportements suspects et traite les menaces en temps réel. Une protection continue, à un coût maîtrisé et sans mobilisation de ressources dédiées.",
+      "Du filtrage de votre accès internet à la surveillance de vos serveurs 24h/24 : grâce à nos solutions de cybersécurité, votre entreprise reste protégée et vos services disponibles."
+    ],
+    "status": "needs_review",
+    "generation_assessment": "supported",
+    "generation_reason": "Le contexte mentionne explicitement deux services de cybersécurité nommés (Business Internet Security et Micro-SOC Entreprise) avec leurs fonctionnalités détaillées, ainsi que des capacités générales de protection (filtrage internet, surveillance 24/7). Ces éléments permettent de répondre précisément et complètement à la question."
+  },
+  {
+    "id": "Q004",
+    "category": "factual",
+    "question": "Quels services de communication ou de collaboration sont disponibles pour les clients professionnels, selon la documentation ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "supported",
+    "generation_reason": "Le contexte documentaire mentionne explicitement plusieurs services dédiés aux clients professionnels : Conférence Call et Numéros d'accueil (services complémentaires à l'abonnement fixe), Business Talk (téléphonie IP) et Office Pack (téléphonie d'entreprise avec IPBX). Ces passages permettent de répondre précisément à la question."
+  },
+  {
+    "id": "Q005",
+    "category": "factual",
+    "question": "Quels services d'assistance ou de support client sont présentés dans les offres professionnelles ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "supported",
+    "generation_reason": "Le contexte documentaire mentionne explicitement plusieurs canaux et services d'assistance : le contact par agent, le formulaire de contact, le support proactif, le conseiller clientèle, la mention du service client récompensé et l'intervention d'un technicien expert, ce qui permet de répondre précisément à la question."
+  },
+  {
+    "id": "Q006",
+    "category": "technical",
+    "question": "Quelles exigences techniques ou conditions préalables sont spécifiées pour l'un des services professionnels présentés dans la documentation ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "uncertain",
+    "generation_reason": "Le contexte présente les caractéristiques et avantages des services professionnels (Business Cloud, Business Hosting, Fibre, Machine-to-Machine) mais ne spécifie aucune exigence technique ou condition préalable concrète que le client doit remplir pour bénéficier de l'un de ces services (par exemple : prérequis matériels, conditions d'éligibilité, spécifications techniques requises)."
+  },
+  {
+    "id": "Q007",
+    "category": "technical",
+    "question": "Quelles technologies réseau ou quels types de connectivité sont mentionnés dans la documentation ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "supported",
+    "generation_reason": "Le contexte contient explicitement plusieurs mentions de technologies réseau (fibre optique, Ethernet VPLS, 4G+, Wi-Fi, ADSL) et de types de connectivité (LAN-to-LAN, VPN, Best Effort, double adduction), permettant de répondre précisément à la question."
+  },
+  {
+    "id": "Q008",
+    "category": "technical",
+    "question": "Quelles spécifications relatives aux performances, à la capacité ou à la bande passante sont fournies pour les services présentés dans la documentation ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "supported",
+    "generation_reason": "Le contexte fournit explicitement les plages de bande passante pour le service LAN-to-LAN (256 Kbps à 1 Gbps) avec des engagements de performance et des métriques de supervision, ainsi que les débits spécifiques des différentes offres Fibre d'Orange (20 Mbps à 1 Gbps)."
+  },
+  {
+    "id": "Q009",
+    "category": "technical",
+    "question": "Quelles sont les étapes d'installation, d'activation ou de déploiement documentées pour un service destiné aux entreprises ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "uncertain",
+    "generation_reason": "Le contexte ne documente pas les étapes d'installation, d'activation ou de déploiement pour un service spécifiquement destiné aux entreprises. Les seules procédures détaillées (Chunks 3 et 4) concernent l'activation d'un forfait mobile via une carte SIM (service grand public), tandis que pour les services B2B comme Business Cloud (Chunk 1) ou Business Hosting (Chunk 5), le déploiement est mentionné comme une étape assurée par les équipes Orange sans détailler les étapes concrètes pour le client."
+  },
+  {
+    "id": "Q010",
+    "category": "technical",
+    "question": "Quelles limitations techniques, exigences de compatibilité ou contraintes liées aux services sont mentionnées dans la documentation ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "uncertain",
+    "generation_reason": "Les cinq chunks fournis décrivent exclusivement les avantages, fonctionnalités et bénéfices des services (Business Cloud managé, Fibre avec relais 4G+, solutions Machine-to-Machine) sans mentionner aucune limitation technique, exigence de compatibilité matérielle/logicielle, contrainte d'éligibilité ou condition restrictive liée à ces services."
+  },
+  {
+    "id": "Q011",
+    "category": "commercial",
+    "question": "Quelles informations tarifaires sont fournies concernant les offres professionnelles présentées dans la documentation ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "error",
+    "generation_reason": "Connection error."
+  },
+  {
+    "id": "Q012",
+    "category": "commercial",
+    "question": "Quels forfaits ou quelles formules commerciales sont présentés dans la documentation, et que comprennent-ils ?",
+    "is_answerable": true,
+    "expected_answer": "La documentation présente plusieurs forfaits et formules commerciales : (1) Les forfaits Machine-to-Machine, comprenant des options Internet, SMS, voix, national et Roaming selon les besoins métiers ; (2) Les Pass sur facture comprenant des appels au Maroc (2H à 25 Dhs valable 7 jours), de l'Internet (5Go à 50 Dhs, 10Go à 100 Dhs, 20Go à 180 Dhs, 25Go à 220 Dhs, 30Go à 250 Dhs), et des appels à l'international (30 min vers l'Amérique à 20 Dhs, l'Europe à 25 Dhs, le Moyen Orient à 50 Dhs, l'Afrique à 100 Dhs) ; (3) Un abonnement fixe ; (4) Des forfaits mobiles (Yo, classique, illimité).",
+    "reference_evidence": [
+      "1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.",
+      "### Appels au Maroc\n* 2H à 25 Dhs valable 7 jours",
+      "### Internet\n* 5Go à 50 Dhs\n* 10Go à 100 Dhs\n* 20 Go à 180 Dhs\n* 25Go à 220 Dhs\n* 30Go à 250 Dhs\nValidité de la date d’activation à la fin du cycle.",
+      "### Appels à l'international\n### 30 min avec tarif par zone :\n* 20 Dhs vers l’Amérique\n* 25 Dhs vers l’Europe\n* 50 Dhs vers le moyen orient\n* 100 Dhs vers l’Afrique\nValidité de la date d’activation à la fin du cycle.",
+      "# Abonnement fixe",
+      "Vous vous posez des questions sur comment acheter un forfait Yo, forfait classique ou encore un forfait illimité ?"
+    ],
+    "status": "needs_review",
+    "generation_assessment": "supported",
+    "generation_reason": "Le contexte fournit des détails précis sur les forfaits Machine-to-Machine (types d'usages : Internet, SMS, voix, national/Roaming) et sur les Pass sur facture (contenus détaillés pour appels nationaux, Internet et appels internationaux avec tarifs). Il mentionne également l'existence d'un abonnement fixe et de forfaits mobiles spécifiques (Yo, classique, illimité) sans détailler leur contenu dans les passages fournis."
+  },
+  {
+    "id": "Q013",
+    "category": "commercial",
+    "question": "Quelles conditions d'éligibilité ou quels prérequis un client professionnel doit-il remplir pour souscrire à une offre présentée dans la documentation ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "uncertain",
+    "generation_reason": "Le contexte décrit des modalités pratiques de souscription (canaux d'activation selon le profil gestionnaire/utilisateur, acceptation des conditions générales pour l'achat en ligne, ou détention d'un solde suffisant pour les pass) mais ne fournit aucune information sur les conditions d'éligibilité générales (statut juridique requis, documents à fournir, critères d'accès) qu'un client professionnel doit remplir pour souscrire aux offres présentées (abonnement fixe, Machine-to-Machine, pass et options, forfait mobile)."
+  },
+  {
+    "id": "Q014",
+    "category": "commercial",
+    "question": "Quelle durée de contrat, quelle période d'engagement ou quelles conditions de résiliation sont précisées pour une offre professionnelle ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "uncertain",
+    "generation_reason": "Les cinq chunks fournis décrivent uniquement les fonctionnalités, avantages et services des offres professionnelles (Abonnement fixe, Conférence Call, Cybersécurité, Fibre) mais ne contiennent aucune information relative à la durée du contrat, à la période d'engagement minimale ou aux conditions de résiliation (préavis, frais, etc.). Aucun passage ne permet de répondre à la question posée."
+  },
+  {
+    "id": "Q015",
+    "category": "multi_hop",
+    "question": "Quel service professionnel présenté dans la documentation répond à un besoin spécifique d'une entreprise, et quelles fonctionnalités documentées justifient ce choix ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "supported",
+    "generation_reason": "Le contexte documentaire décrit explicitement le service Business Cloud et détaille ses avantages spécifiques (gestion managée complète, modèle de facturation à la consommation, souveraineté des données via un cloud local), ce qui permet d'identifier ce service comme répondant à un besoin professionnel spécifique et de justifier ce choix par les fonctionnalités listées."
+  },
+  {
+    "id": "Q016",
+    "category": "multi_hop",
+    "question": "Quelles sont les principales fonctionnalités d'une offre présentée dans la documentation, ainsi que les conditions d'abonnement ou de tarification associées ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "uncertain",
+    "generation_reason": "Si le contexte décrit les fonctionnalités de certaines offres (Office Pack, Machine-to-Machine), il ne fournit aucune information sur les conditions d'abonnement ou la tarification (prix, durée d'engagement, modalités de paiement). Le titre 'Abonnement fixe' apparaît sans détails associés."
+  },
+  {
+    "id": "Q017",
+    "category": "multi_hop",
+    "question": "Quels sont les prérequis nécessaires pour bénéficier d'un service présenté dans la documentation, et quelles étapes sont décrites pour son activation ou son déploiement ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "supported",
+    "generation_reason": "Le contexte fournit explicitement les prérequis (achat en ligne, réception de la carte SIM, identifiants créés lors de l'achat) et détaille pas à pas les procédures d'activation via l'application mobile et via le site web, permettant de répondre précisément à la question."
+  },
+  {
+    "id": "Q018",
+    "category": "unanswerable",
+    "question": "Quel est le prix exact d'un service professionnel si aucun tarif n'est indiqué dans la base de connaissances disponible ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "uncertain",
+    "generation_reason": "Le contexte fourni ne contient aucune information indiquant quel serait le prix exact d'un service professionnel dans le cas où aucun tarif ne serait disponible dans la base de connaissances. Les chunks présentent soit des services sans tarifs affichés (Business Cloud, Abonnement fixe) sans préciser de montant alternatif ou de procédure, soit des offres avec tarifs explicites (Fibre d'Orange, Pass et options), mais ne répondent pas à la question hypothétique sur la politique tarifaire en l'absence d'information documentée."
+  },
+  {
+    "id": "Q019",
+    "category": "unanswerable",
+    "question": "Orange Maroc garantit-il un pourcentage précis de disponibilité du service qui n'est mentionné nulle part dans la documentation disponible ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "uncertain",
+    "generation_reason": "Le contexte mentionne des engagements de qualité de service incluant un 'taux de disponibilité' (CHUNK 2) mais ne fournit aucun pourcentage chiffré. La question porte sur l'existence d'un pourcentage précis garanti qui serait absent de la documentation disponible ; or, sans connaître cette valeur spécifique à partir des seuls passages fournis, il est impossible de confirmer ou d'infirmer une telle garantie."
+  },
+  {
+    "id": "Q020",
+    "category": "unanswerable",
+    "question": "Une fonctionnalité particulière, qui n'est pas mentionnée dans la documentation, est-elle incluse dans une offre professionnelle ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "needs_review",
+    "generation_assessment": "uncertain",
+    "generation_reason": "La question porte sur l'existence d'une fonctionnalité spécifique non mentionnée dans la documentation, ce qui est par définition absent des passages fournis. Aucun chunk ne mentionne l'inclusion de fonctionnalités non documentées dans les offres professionnelles, et la question ne précise pas de quelle fonctionnalité il s'agit. Le contexte ne permet donc pas de confirmer ni d'infirmer l'existence d'une telle fonctionnalité."
+  }
+]

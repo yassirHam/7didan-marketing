@@ -1,0 +1,22 @@
+Given a user's question about Orange Maroc Business products, services, solutions, or commercial offers, retrieve passages from the official Orange Maroc Business documentation that are semantically relevant to the user's information need.
+
+Focus on identifying passages that provide direct and specific evidence related to the question, including:
+- Product and service descriptions, features, and capabilities.
+- Pricing, subscription plans, and commercial offers.
+- Technical specifications, requirements, and supported technologies.
+- Eligibility conditions, availability, and service limitations.
+- Contract terms, commitments, and associated conditions.
+- Installation, configuration, deployment, and support procedures.
+- Frequently asked questions and their corresponding answers.
+
+Understand the semantic meaning and intent of the question rather than relying exclusively on exact keyword matches.
+
+Consider synonyms, alternative expressions, technical terminology, and related concepts when identifying relevant passages.
+
+Prioritize passages that contain concrete factual information directly supporting the user's information need. Distinguish between passages that directly answer the question and those that are merely related to the same product or topic.
+
+For questions involving multiple aspects, retrieve passages covering each relevant aspect whenever available.
+
+Avoid passages that share keywords with the question but do not provide useful evidence for answering it.
+
+The objective is to retrieve a relevant candidate set of passages that enables a downstream reranking model to identify the strongest evidence for generating accurate, grounded answers.

@@ -1,0 +1,45 @@
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    container_name: 7didan-db-portable
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      # Plain-SQL dump kept in the repo (scripts/export_db.py regenerates it).
+      # On first start of a fresh volume it is restored automatically, so the
+      # vector store (with source URLs) and reporting schema come back.
+      - ./postgres/7didan_backup.sql:/docker-entrypoint-initdb.d/01_restore.sql:ro
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    container_name: 7didan-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    environment:
+      POSTGRES_HOST: db
+    ports:
+      - "8000:8000"
+    volumes:
+      - hf-cache:/app/model_cache
+    # Reach n8n (running on the host via the 7didan-marketing project)
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres-data:
+  hf-cache:

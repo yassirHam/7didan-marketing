@@ -1,0 +1,1562 @@
+[
+    {
+        "id": "Q001",
+        "category": "factual",
+        "question": "Quels services de connectivité destinés aux entreprises sont présentés dans la documentation d'Orange Maroc Business ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Business Hosting\n## Les bénéfices de l’offre\n\n### Connectivité\n* Neutralité de la connectivité quant à l’ensemble des opérateurs marocains\n* Double adduction vers les POP de tous les opérateurs\n* 100 Mbps Best Effort\n* Business VPN en option\n* Des options de sécurité des accès : Business Security & Business DDoS Security\n### Services\n* Aménagements spécifiques\n* Supervision et optimisation de l’urbanisation de la baie client\n* Mise à disposition d’espaces bureau / stockage\n### Tarification\n* Tarification granulaire et sans coûts masqués",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 2,
+                "content": "# Lan to Lan\n\n* [Le service Lan to Lan](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-ea2aad46384a82aa5bbd9e47a7bfadac)\n* [Avantages](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-71f2754ea8e7203473aebee03ff8368b)\n* [Architecture](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-a66dcac242e383f0a936e65ed9708eb2)\nLe service Lan to Lan Avantages ArchitectureLe service Lan to Lan\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nLe service Lan to Lan vous permet d'interconnecter tous vos sites et réseaux locaux avec le confort et la souplesse d'un LAN étendu.\nLe réseau Ethernet VPLS d'Orange vous assure un haut niveau de sécurité et de performance.\nVos collaborateurs bénéficient ainsi d'un réseau Ethernet très évolutif, avec des débits allant de 256 Kbps à 1 Gbps en zone dense pour accéder à toutes les ressources de l'entreprise : partage de documents, messagerie, travail collaboratif, etc.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 3,
+                "content": "# Mobile VPN\n\n* [Mobile VPN](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Mobile-VPN#address-904c5c1e945eefdd9c6bff8a0e804c88)\n* [Avantages](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Mobile-VPN#address-309a783354c9830673e65468dd114999)\nMobile VPN AvantagesMobile VPN\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nMobile VPN est une solution d’accès au réseau VPN MPLS de l’entreprise via le réseau mobile 4G/3G.\nVos collaborateurs peuvent accéder en haut débit 4G aux applications métiers de l’entreprise à tout moment et en toute sécurité depuis leur Smartphone, tablette ou ordinateur portable, comme s’ils se trouvaient au bureau.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 4,
+                "content": "# Business Hosting\n\nPour vous accompagner dans votre stratégie d’externalisation de votre infrastructure IT, Orange Maroc vous propose un catalogue de services complet vous permettant d’aborder votre hébergement en toute sérénité.\nExternaliser votre infrastructure au sein d’un Data Center certifié Tier III Design & Facilities. Dans une optique One Stop Shop, Business Hosting inclus une offre allant de la connectivité jusqu’aux services managés relatifs à l’hébergement.\nEn espacé mutualisé ou dédié, notre solution s’adapte aux différents impératifs des entreprises.\n### Espace mutualisé\nUne offre à la baie vous permettant de bénéficier de :\n* Un espace confiné en couloir froid\n* Une maitrise de la consommation énergétique\n* Une gestion de la climatisation et de l’hygronométrie de vos serveurs\n### Espace dédié\nL’hébergement en espace privatif répond aux standards internationaux en terme de sécurité et de gestion des actifs du Data Center",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 5,
+                "content": "# \n## Les avantages Fibre d'Orange\n\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL. Jouez, streamez et connectez tous vos appareils en simultané sans aucune coupure.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Wi-Fi sans coupure\nRestez toujours connecté. En cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+ en attendant le rétablissement.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile. Le rendez-vous est fixé selon vos disponibilités pour une mise en service rapide et discrète.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Élu Service Client de l’Année 2026 – MAROC\nBénéficiez de l’expertise d’un leader mondial et d’un service client de qualité, récompensé au Maroc en 2026, avec un matériel à la pointe de la technologie.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 6,
+                "content": "# Business Cloud\n## Avantages\n\n### Un Cloud managé de bout en bout\nLes équipes d’Orange assurent la maintenance et la disponibilité du service de bout en bout :\n* Qualification de votre besoin\n* Ingénierie de la solution\n* Déploiement\n* Support proactif\n### Une facturation optimisée\nLes services Business Cloud vous permettent de ne payer que ce que vous consommez dans le cadre de l’hébergement de vos ressources\n### Et le tout depuis un Cloud 100% marocain",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 7,
+                "content": "# Abonnement fixe\n## La solution de téléphonie Orange pour entreprises\n\nL'abonnement fixe est la solution de téléphonie Orange pour entreprises.\nUne offre unique qui garantit performance et économie.\n* Émettre des appels gratuits vers tous les fixes Orange et vers la flotte mobile de l’entreprise.\n* Bénéficier de prix très compétitifs vers les mobiles et fixes de l'Europe.\n* Profiter de remises mensuelles en fonction de votre consommation.\n* Conserver vos équipements et postes téléphoniques.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 8,
+                "content": "# Lan to Lan\n## Avantages\n\n### Simplicité\nLe service LAN-to-LAN est une solution d'interconnexion Ethernet fournie clés en main par Orange : les équipements et les accès sont fournis et installés sur chaque site, administrés et supervisés par le Network Operation Center (NOC), en heures et jours ouvrés et 7j/7, 24h/24 en option premium.\n### Bande passante large\nLe service LAN-to-LAN vous offre de très larges bandes passantes allant de 256 Kbps jusqu’à 1 Gbps. Vous pouvez donc transférer des données entre vos sites, à très haut débit et en temps réel.\n### Robustesse\nL’intégralité du réseau Backbone Orange repose sur un réseau redondant en fibre optique.\n### Évolutivité\nPour accompagner l'évolution de votre activité, à tout moment et sans rien changer à vos équipements, vous pouvez ajouter un nouveau site ou monter en débit jusqu'au 1 Gbps.\n### Engagement\nPerformance, disponibilité et continuité de service de votre réseau vous sont garanties à tout moment.\n### Extranet de pilotage\nVia une interface Web Sécurisée, vous gardez un aperçu en temps réel de la performance de votre réseau (usage de la bande passante, temps de transit moyen, taux de perte de Paquet etc).",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 9,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 10,
+                "content": "# \n## La Fibre d'Orange\n\nPassez à la vitesse supérieure avec la Fibre d'Orange. Trouvez l'offre parfaite pour votre foyer ou votre activité et vérifiez immédiatement la disponibilité à votre adresse.\nPour ma maisonPour mon activité professionnelle\n### 20 Mbps\nJusqu'à\n20 Mbps\n20 Mbps\n2H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\nFrais d’installation : 99 DH\n‎249,00DH/mois\nChoisir cette offre\n### 50 Mbps\nJusqu'à\n50 Mbps\n50 Mbps\n3H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎299,00DH/mois\nChoisir cette offre\n### 100 Mbps\nJusqu'à\n100 Mbps\n100 Mbps\n4H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎349,00DH/mois\nChoisir cette offre\n### 200 Mbps\nJusqu'à\n200 Mbps\n200 Mbps\n6H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎449,00DH/mois\nChoisir cette offre\n### 500 Mbps\nJusqu'à\n500 Mbps\n500 Mbps\n10H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎749,00DH/mois\nChoisir cette offre\n### 1Gbps\nJusqu'à\n1000 Mbps\n500 Mbps\n20H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎949,00DH/mois\nChoisir cette offre",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            }
+        ]
+    },
+    {
+        "id": "Q002",
+        "category": "factual",
+        "question": "Quels services ou solutions cloud sont proposés aux clients professionnels ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Business Cloud\n## Avantages\n\n### Un Cloud managé de bout en bout\nLes équipes d’Orange assurent la maintenance et la disponibilité du service de bout en bout :\n* Qualification de votre besoin\n* Ingénierie de la solution\n* Déploiement\n* Support proactif\n### Une facturation optimisée\nLes services Business Cloud vous permettent de ne payer que ce que vous consommez dans le cadre de l’hébergement de vos ressources\n### Et le tout depuis un Cloud 100% marocain",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 2,
+                "content": "# Amazon Web Services\n## Orange accompagne ses clients dans leur transition vers le Cloud\n\n### Consulting Services\n### Security & Data Residency\n### FinOps\n### Cloud Migration\n### Cloud Management",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 3,
+                "content": "# Amazon Web Services\n## La puissance du Cloud soutenue par Orange\n\n### Orange s'allie à Amazon Web Services pour accélérer l'innovation des clients dans le Cloud\n* Simplifiez la transformation numérique grâce à un « guichet unique » pour le conseil, l'intégration, la modernisation et l'exploitation d'applications et de services sur AWS\n* Sécurisez l’adoption complète de l’expérience Cloud avec des cas d’usage en Intelligence Artificielle / Machine Learning à fort retour sur investissement pour vos équipes et vos clients\n* Migrez votre infrastructure IT en toute sécurité vers le Cloud\n* Créez des services innovants pour vos clients grâce à des services à forte valeur ajoutée",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 4,
+                "content": "# Business Cloud\n## En quoi consiste la solution ?\n\nBusiness Cloud est une solution de virtualisation d’infrastructure permettant :\n### Flexibilité\nde déploiement et de facturation\n### Accessibilité\nà vos ressources (Anytime Anywhere and from any Device)\n### Performance\navec des engagements forts en terme de disponibilité et de déploiement\n### Simplicité\nde prise en main par vos collaborateurs\n### Sécurité\ngrâce à un catalogue de sécurité en option",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 5,
+                "content": "# Amazon Web Services\n## Orange propose à ses clients une offre complète avec un accompagnement de bout en bout\n\n### Sécurité\n* Infrastructure Cloud robuste\n* Surveillance 24/7\n* Chiffrement automatique\n* Contrôle total des données\n### Disponibilité\n* Disponibilité réseau maximale\n* Résilience aux pannes\n* Fonctionnement sécurisé\n* Indépendance des réseaux externes\n### Performance\n* Performance élevée\n* Réduction de latence\n* Déploiement rapide\n### Capacité de mise à l'échelle\n* Flexibilité et évolutivité des ressources\n* Réduction des coûts\n* Déploiement rapide\n### Flexibilité\n* Flexibilité de localisation\n* Option pour faible latence\n* Unification des services\n* Exécution sur site\n### Présence Mondiale\n* Présence mondiale étendue\n* Croissance rapide\n* Proximité avec les utilisateurs\n* Prise en charge variée",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 6,
+                "content": "# Microsoft Azure\n\nPour une entreprise ayant des besoins spécifiques en matière de virtualisation de l'infrastructure informatique et de gestion de données sensibles, Microsoft Azure via Orange Maroc peut offrir une solution flexible, évolutive et intégrée, permettant aux entreprises de tirer parti des dernières innovations technologiques tout en répondant à leurs exigences spécifiques.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 7,
+                "content": "# Business Hosting\n\nPour vous accompagner dans votre stratégie d’externalisation de votre infrastructure IT, Orange Maroc vous propose un catalogue de services complet vous permettant d’aborder votre hébergement en toute sérénité.\nExternaliser votre infrastructure au sein d’un Data Center certifié Tier III Design & Facilities. Dans une optique One Stop Shop, Business Hosting inclus une offre allant de la connectivité jusqu’aux services managés relatifs à l’hébergement.\nEn espacé mutualisé ou dédié, notre solution s’adapte aux différents impératifs des entreprises.\n### Espace mutualisé\nUne offre à la baie vous permettant de bénéficier de :\n* Un espace confiné en couloir froid\n* Une maitrise de la consommation énergétique\n* Une gestion de la climatisation et de l’hygronométrie de vos serveurs\n### Espace dédié\nL’hébergement en espace privatif répond aux standards internationaux en terme de sécurité et de gestion des actifs du Data Center",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 8,
+                "content": "# Microsoft Azure\n## En savoir plus\n\n* Familiarisez-vous avec les meilleures pratiques et méthodes de migration proposées par Microsoft en consultant le document Microsoft Cloud Adoption Framework pour Azure, afin de soutenir vos équipes.\n* Les exigences de migration varient d’un type de charge de travail à l’autre. Renseignez-vous sur les [outils de migration spécialisés](https://azure.microsoft.com/fr-fr/products/azure-migrate/) que vous pouvez utiliser par vous-même ou avec l’aide de nos équipes chez Orange Maroc.\n### Quels sont les avantages de la plateforme Azure ?\nAzure offre des services cloud économiques et hautement sécurisés avec une flexibilité hybride transparente conçue pour augmenter la productivité des développeurs. Créez, exécutez et gérez efficacement des applications sur site, dans plusieurs nuages et à la périphérie grâce à des fonctionnalités telles que :\n* Scalabilité : Azure permet d'adapter facilement les ressources en fonction des besoins, que ce soit pour des petites applications ou des solutions à grande échelle.\n* Flexibilité : Avec une large gamme de services, Azure prend en charge différents langages, frameworks et systèmes d'exploitation, facilitant ainsi l'intégration dans des environnements existants.\n* Sécurité : Azure offre des mesures de sécurité avancées, y compris le cryptage des données, la gestion des identités et la conformité aux normes de sécurité.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 9,
+                "content": "# \n## Les avantages Fibre d'Orange\n\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL. Jouez, streamez et connectez tous vos appareils en simultané sans aucune coupure.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Wi-Fi sans coupure\nRestez toujours connecté. En cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+ en attendant le rétablissement.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile. Le rendez-vous est fixé selon vos disponibilités pour une mise en service rapide et discrète.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Élu Service Client de l’Année 2026 – MAROC\nBénéficiez de l’expertise d’un leader mondial et d’un service client de qualité, récompensé au Maroc en 2026, avec un matériel à la pointe de la technologie.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 10,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            }
+        ]
+    },
+    {
+        "id": "Q003",
+        "category": "factual",
+        "question": "Quels services de cybersécurité sont présentés dans la documentation ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Cybersécurité : travaillez l'esprit tranquille\n\nDu filtrage de votre accès internet à la surveillance de vos serveurs 24h/24 : grâce à nos solutions de cybersécurité, votre entreprise reste protégée et vos services disponibles.\n[Discutez-en avec un expert](https://www.orange.ma/pos/details/36461)",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 2,
+                "content": "# Cybersécurité : travaillez l'esprit tranquille\n## Business Internet Security\n\nUne seule connexion compromise suffit à mettre votre activité à l'arrêt. Business Internet Security filtre, analyse et bloque les menaces avant qu'elles n'atteignent votre réseau. Sans équipement à installer, sans investissement de départ.\n[Découvrir Business Internet Security](https://www.orange.ma/pos/details/36461)",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 3,
+                "content": "# Cybersécurité : travaillez l'esprit tranquille\n## Pourquoi choisir Cybersécurité d'Orange Business Maroc ?\n\n### Une expertise à temps plein\nDes experts sont à votre dispositions 24/7 pour vous protéger contre toutes les menaces.\n###  Nos experts à vos côtés\nCadrage, formation, personnalisation, support : nos experts vous accompagnent à chaque étape.\n###  Une offre évolutive\nNombre d’utilisateurs, fonctionnalités, options : adaptez votre solution au rythme de vos besoins et maîtrisez vos coûts en toute transparence.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 4,
+                "content": "# Amazon Web Services\n## Orange propose à ses clients une offre complète avec un accompagnement de bout en bout\n\n### Sécurité\n* Infrastructure Cloud robuste\n* Surveillance 24/7\n* Chiffrement automatique\n* Contrôle total des données\n### Disponibilité\n* Disponibilité réseau maximale\n* Résilience aux pannes\n* Fonctionnement sécurisé\n* Indépendance des réseaux externes\n### Performance\n* Performance élevée\n* Réduction de latence\n* Déploiement rapide\n### Capacité de mise à l'échelle\n* Flexibilité et évolutivité des ressources\n* Réduction des coûts\n* Déploiement rapide\n### Flexibilité\n* Flexibilité de localisation\n* Option pour faible latence\n* Unification des services\n* Exécution sur site\n### Présence Mondiale\n* Présence mondiale étendue\n* Croissance rapide\n* Proximité avec les utilisateurs\n* Prise en charge variée",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 5,
+                "content": "# Cybersécurité : travaillez l'esprit tranquille\n## Micro-SOC Entreprise\n\nMicro-SOC Entreprise surveille l’ensemble de vos postes de travail et vos serveurs 24h/24, détecte et qualifie les comportements suspects et traite les menaces en temps réel. Une protection continue, à un coût maîtrisé et sans mobilisation de ressources dédiées.\n[Découvrir Micro-SOC Entreprise](https://www.orange.ma/pos/details/36454)",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 6,
+                "content": "# Business Hosting\n## Les bénéfices de l’offre\n\n### Connectivité\n* Neutralité de la connectivité quant à l’ensemble des opérateurs marocains\n* Double adduction vers les POP de tous les opérateurs\n* 100 Mbps Best Effort\n* Business VPN en option\n* Des options de sécurité des accès : Business Security & Business DDoS Security\n### Services\n* Aménagements spécifiques\n* Supervision et optimisation de l’urbanisation de la baie client\n* Mise à disposition d’espaces bureau / stockage\n### Tarification\n* Tarification granulaire et sans coûts masqués",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 7,
+                "content": "# Business SD-WAN\n## Avantages de l’offre\n\n### Une solution 100% managée\nConfier la gestion de la solution aux équipes d’Orange\n### Une gestion de la sécurité\nAccélérer la détection et le blocage des cyber-attaques\n### Une optimisation de l’évolution des débits\nGérez l’exploitation de vos liens de transports (Underlay) pour faire face à l’exploitation de la demande en bande passante",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 8,
+                "content": "# Lan to Lan\n\n* [Le service Lan to Lan](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-ea2aad46384a82aa5bbd9e47a7bfadac)\n* [Avantages](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-71f2754ea8e7203473aebee03ff8368b)\n* [Architecture](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-a66dcac242e383f0a936e65ed9708eb2)\nLe service Lan to Lan Avantages ArchitectureLe service Lan to Lan\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nLe service Lan to Lan vous permet d'interconnecter tous vos sites et réseaux locaux avec le confort et la souplesse d'un LAN étendu.\nLe réseau Ethernet VPLS d'Orange vous assure un haut niveau de sécurité et de performance.\nVos collaborateurs bénéficient ainsi d'un réseau Ethernet très évolutif, avec des débits allant de 256 Kbps à 1 Gbps en zone dense pour accéder à toutes les ressources de l'entreprise : partage de documents, messagerie, travail collaboratif, etc.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 9,
+                "content": "# Business DDoS Security\n## Besoin de plus d’informations ?\n\n### Ecrire à un agent\nDemandez l'aide d'un agent de notre service client :\n_Vérification de la disponibilité d'un agent_\n### Par le formulaire\nNous vous invitons à remplir notre formulaire, si vous avez des questions techniques, commerciales sur les services mobiles ou Internet.\n[Accéder au formulaire](https://espace-entreprise.orange.ma/contactez-nous)",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 10,
+                "content": "# Business Hosting\n\nPour vous accompagner dans votre stratégie d’externalisation de votre infrastructure IT, Orange Maroc vous propose un catalogue de services complet vous permettant d’aborder votre hébergement en toute sérénité.\nExternaliser votre infrastructure au sein d’un Data Center certifié Tier III Design & Facilities. Dans une optique One Stop Shop, Business Hosting inclus une offre allant de la connectivité jusqu’aux services managés relatifs à l’hébergement.\nEn espacé mutualisé ou dédié, notre solution s’adapte aux différents impératifs des entreprises.\n### Espace mutualisé\nUne offre à la baie vous permettant de bénéficier de :\n* Un espace confiné en couloir froid\n* Une maitrise de la consommation énergétique\n* Une gestion de la climatisation et de l’hygronométrie de vos serveurs\n### Espace dédié\nL’hébergement en espace privatif répond aux standards internationaux en terme de sécurité et de gestion des actifs du Data Center",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            }
+        ]
+    },
+    {
+        "id": "Q004",
+        "category": "factual",
+        "question": "Quels services de communication ou de collaboration sont disponibles pour les clients professionnels, selon la documentation ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Abonnement fixe\n## Allez plus loin avec nos services complémentaires\n\n### Conférence Call\nTransformez le monde en salle de conférence. Vous pouvez organiser des réunions d'équipes décentralisées, partager votre écran avec d'autres participants et faire vos présentations en temps réel.\n[Découvrez l'offre](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Conference-Call)\n### Numéros d’accueil\nÉlaborez une gestion des appels sur mesure pour votre entreprise.\n[Découvrez l'offre](https://entreprise.orange.ma/Solutions-Business/Fixe/Telephonie-Fixe/Abonnement-fixe)",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 2,
+                "content": "# Business Talk\n## Modernisez votre téléphonie d'entreprise avec Business Talk\n\nLa solution Business Talk évolutive pour une communication fluide, sécurisée et économique.\n###  La téléphonie IP au service de votre entreprise\nOrange vous propose Business Talk, une solution innovante pour transformer vos systèmes téléphoniques traditionnels en une infrastructure IP moderne. Nous vous offrons une intégration optimale avec vos outils numériques existants, pour une gestion plus simple et plus performante de vos communications. Profitez d'une solution flexible, évolutive et conçue pour accompagner la croissance de votre entreprise.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 3,
+                "content": "# Lan to Lan\n\n* [Le service Lan to Lan](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-ea2aad46384a82aa5bbd9e47a7bfadac)\n* [Avantages](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-71f2754ea8e7203473aebee03ff8368b)\n* [Architecture](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-a66dcac242e383f0a936e65ed9708eb2)\nLe service Lan to Lan Avantages ArchitectureLe service Lan to Lan\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nLe service Lan to Lan vous permet d'interconnecter tous vos sites et réseaux locaux avec le confort et la souplesse d'un LAN étendu.\nLe réseau Ethernet VPLS d'Orange vous assure un haut niveau de sécurité et de performance.\nVos collaborateurs bénéficient ainsi d'un réseau Ethernet très évolutif, avec des débits allant de 256 Kbps à 1 Gbps en zone dense pour accéder à toutes les ressources de l'entreprise : partage de documents, messagerie, travail collaboratif, etc.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 4,
+                "content": "# Pass et options Orange\n## Plus de détails\n\n* Ou en prenant contact avec un conseiller clientèle depuis le lien https://entreprise.orange.ma/Contact rubrique « écrire à un agent »",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 5,
+                "content": "# Business Talk\n## Une expérience client optimisée, pensée pour vous\n\n### Simplicité d’installation et de gestion\nProfitez d’un déploiement rapide facilitant l'intégration à votre infrastructure existante, tout en réduisant les délais et la complexité.\n### Disponibilité d’un support technique dédié\nBénéficiez d'un service client réactif, avec un SLA qui garantit des niveaux de service élevés pour une continuité optimale.\n### Adaptabilité sans limite\nFaites évoluer votre solution à tout moment, sans interruption de service. Chaque entreprise est unique, votre téléphonie doit l'être aussi.\n### Qualité et sécurité renforcées\nAssurez des communications de haute qualité, avec un chiffrement avancé pour protéger les données sensibles de votre entreprise.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 6,
+                "content": "# Office Pack\n## Une solution de téléphonie d’entreprise modulaire sans investissement initial\n\nEn souscrivant à Office Pack d’Orange, vous offrez à votre entreprise la solution de téléphonie la plus complète du marché qui comprend l’intégration, la fourniture des équipements, la communication, le SAV et la maintenance. Equipez votre entreprise d’un IPBX nouvelle génération, de postes téléphoniques analogiques et IP de grande qualité, sans aucun investissement initial.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 7,
+                "content": "# Business Cloud\n## Avantages\n\n### Un Cloud managé de bout en bout\nLes équipes d’Orange assurent la maintenance et la disponibilité du service de bout en bout :\n* Qualification de votre besoin\n* Ingénierie de la solution\n* Déploiement\n* Support proactif\n### Une facturation optimisée\nLes services Business Cloud vous permettent de ne payer que ce que vous consommez dans le cadre de l’hébergement de vos ressources\n### Et le tout depuis un Cloud 100% marocain",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 8,
+                "content": "# Office Pack\n## Des atouts qui font la différence\n\n### Accompagnement\n* Un interlocuteur dédié à vos côtés\n* Un service Garanti de rétablissement 4H\n* Un centre Relation Entreprise accessible et joignable au 0520178178\n### Agilité\n* Des offres de téléphonie fixe adaptables selon vos besoins\n* Un ajout rapide et à la demande de nouveaux utilisateurs avec postes et SDA inclus\n### Disponibilité\n* Un accès fiable et performant pour vos usages\n* Un réseau dédié à 100% aux entreprises\n### Performance\n* De l’Internet haut débit garanti, en option, pour tous vos usages business et applications\n* Des lignes voix fixe avec des standards et des postes téléphoniques de dernière génération",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 9,
+                "content": "# \n## Les avantages Fibre d'Orange\n\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL. Jouez, streamez et connectez tous vos appareils en simultané sans aucune coupure.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Wi-Fi sans coupure\nRestez toujours connecté. En cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+ en attendant le rétablissement.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile. Le rendez-vous est fixé selon vos disponibilités pour une mise en service rapide et discrète.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Élu Service Client de l’Année 2026 – MAROC\nBénéficiez de l’expertise d’un leader mondial et d’un service client de qualité, récompensé au Maroc en 2026, avec un matériel à la pointe de la technologie.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 10,
+                "content": "# Business Hosting\n## Besoin de plus d’informations?\n\n### Ecrire à un agent\nDemandez l'aide d'un agent de notre service client :\n_Vérification de la disponibilité d'un agent_\n### Par le formulaire\nNous vous invitons à remplir notre formulaire, si vous avez des questions techniques, commerciales sur les services mobiles ou Internet.\n[Accéder au formulaire](https://espace-entreprise.orange.ma/contactez-nous)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            }
+        ]
+    },
+    {
+        "id": "Q005",
+        "category": "factual",
+        "question": "Quels services d'assistance ou de support client sont présentés dans les offres professionnelles ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Business Hosting\n## Besoin de plus d’informations?\n\n### Ecrire à un agent\nDemandez l'aide d'un agent de notre service client :\n_Vérification de la disponibilité d'un agent_\n### Par le formulaire\nNous vous invitons à remplir notre formulaire, si vous avez des questions techniques, commerciales sur les services mobiles ou Internet.\n[Accéder au formulaire](https://espace-entreprise.orange.ma/contactez-nous)",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 2,
+                "content": "# Business DDoS Security\n## Besoin de plus d’informations ?\n\n### Ecrire à un agent\nDemandez l'aide d'un agent de notre service client :\n_Vérification de la disponibilité d'un agent_\n### Par le formulaire\nNous vous invitons à remplir notre formulaire, si vous avez des questions techniques, commerciales sur les services mobiles ou Internet.\n[Accéder au formulaire](https://espace-entreprise.orange.ma/contactez-nous)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 3,
+                "content": "# Business Cloud\n## Avantages\n\n### Un Cloud managé de bout en bout\nLes équipes d’Orange assurent la maintenance et la disponibilité du service de bout en bout :\n* Qualification de votre besoin\n* Ingénierie de la solution\n* Déploiement\n* Support proactif\n### Une facturation optimisée\nLes services Business Cloud vous permettent de ne payer que ce que vous consommez dans le cadre de l’hébergement de vos ressources\n### Et le tout depuis un Cloud 100% marocain",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 4,
+                "content": "# Pass et options Orange\n## Plus de détails\n\n* Ou en prenant contact avec un conseiller clientèle depuis le lien https://entreprise.orange.ma/Contact rubrique « écrire à un agent »",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 5,
+                "content": "# \n## Les avantages Fibre d'Orange\n\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL. Jouez, streamez et connectez tous vos appareils en simultané sans aucune coupure.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Wi-Fi sans coupure\nRestez toujours connecté. En cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+ en attendant le rétablissement.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile. Le rendez-vous est fixé selon vos disponibilités pour une mise en service rapide et discrète.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Élu Service Client de l’Année 2026 – MAROC\nBénéficiez de l’expertise d’un leader mondial et d’un service client de qualité, récompensé au Maroc en 2026, avec un matériel à la pointe de la technologie.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 6,
+                "content": "# Machine-to-Machine\n## Un besoin spécifique ?\n\n[Contactez-nous](http://entreprise.orange.ma/Contact \"Contactez-nous\")",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 7,
+                "content": "# Device Management Premium\n\n* [La solution Device Management Premium](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-43c6c2a4825ff52d82ad43fdc42ef33b)\n* [Les Bénefices](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-84b44faa0bb1c206d76a45872034934a)\nLa solution Device Management Premium Les BéneficesLa solution Device Management Premium\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 8,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 9,
+                "content": "# Abonnement fixe\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 10,
+                "content": "# \n## La Fibre d'Orange\n\nPassez à la vitesse supérieure avec la Fibre d'Orange. Trouvez l'offre parfaite pour votre foyer ou votre activité et vérifiez immédiatement la disponibilité à votre adresse.\nPour ma maisonPour mon activité professionnelle\n### 20 Mbps\nJusqu'à\n20 Mbps\n20 Mbps\n2H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\nFrais d’installation : 99 DH\n‎249,00DH/mois\nChoisir cette offre\n### 50 Mbps\nJusqu'à\n50 Mbps\n50 Mbps\n3H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎299,00DH/mois\nChoisir cette offre\n### 100 Mbps\nJusqu'à\n100 Mbps\n100 Mbps\n4H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎349,00DH/mois\nChoisir cette offre\n### 200 Mbps\nJusqu'à\n200 Mbps\n200 Mbps\n6H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎449,00DH/mois\nChoisir cette offre\n### 500 Mbps\nJusqu'à\n500 Mbps\n500 Mbps\n10H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎749,00DH/mois\nChoisir cette offre\n### 1Gbps\nJusqu'à\n1000 Mbps\n500 Mbps\n20H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎949,00DH/mois\nChoisir cette offre",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            }
+        ]
+    },
+    {
+        "id": "Q006",
+        "category": "technical",
+        "question": "Quelles exigences techniques ou conditions préalables sont spécifiées pour l'un des services professionnels présentés dans la documentation ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Business Hosting\n## Besoin de plus d’informations?\n\n### Ecrire à un agent\nDemandez l'aide d'un agent de notre service client :\n_Vérification de la disponibilité d'un agent_\n### Par le formulaire\nNous vous invitons à remplir notre formulaire, si vous avez des questions techniques, commerciales sur les services mobiles ou Internet.\n[Accéder au formulaire](https://espace-entreprise.orange.ma/contactez-nous)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 2,
+                "content": "# Business Cloud\n## Avantages\n\n### Un Cloud managé de bout en bout\nLes équipes d’Orange assurent la maintenance et la disponibilité du service de bout en bout :\n* Qualification de votre besoin\n* Ingénierie de la solution\n* Déploiement\n* Support proactif\n### Une facturation optimisée\nLes services Business Cloud vous permettent de ne payer que ce que vous consommez dans le cadre de l’hébergement de vos ressources\n### Et le tout depuis un Cloud 100% marocain",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 3,
+                "content": "# Business Hosting\n\nPour vous accompagner dans votre stratégie d’externalisation de votre infrastructure IT, Orange Maroc vous propose un catalogue de services complet vous permettant d’aborder votre hébergement en toute sérénité.\nExternaliser votre infrastructure au sein d’un Data Center certifié Tier III Design & Facilities. Dans une optique One Stop Shop, Business Hosting inclus une offre allant de la connectivité jusqu’aux services managés relatifs à l’hébergement.\nEn espacé mutualisé ou dédié, notre solution s’adapte aux différents impératifs des entreprises.\n### Espace mutualisé\nUne offre à la baie vous permettant de bénéficier de :\n* Un espace confiné en couloir froid\n* Une maitrise de la consommation énergétique\n* Une gestion de la climatisation et de l’hygronométrie de vos serveurs\n### Espace dédié\nL’hébergement en espace privatif répond aux standards internationaux en terme de sécurité et de gestion des actifs du Data Center",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 4,
+                "content": "# Machine-to-Machine\n## Un besoin spécifique ?\n\n[Contactez-nous](http://entreprise.orange.ma/Contact \"Contactez-nous\")",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 5,
+                "content": "# \n## Les avantages Fibre d'Orange\n\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL. Jouez, streamez et connectez tous vos appareils en simultané sans aucune coupure.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Wi-Fi sans coupure\nRestez toujours connecté. En cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+ en attendant le rétablissement.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile. Le rendez-vous est fixé selon vos disponibilités pour une mise en service rapide et discrète.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Élu Service Client de l’Année 2026 – MAROC\nBénéficiez de l’expertise d’un leader mondial et d’un service client de qualité, récompensé au Maroc en 2026, avec un matériel à la pointe de la technologie.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 6,
+                "content": "# Abonnement fixe\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 7,
+                "content": "# Device Management Premium\n\n* [La solution Device Management Premium](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-43c6c2a4825ff52d82ad43fdc42ef33b)\n* [Les Bénefices](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-84b44faa0bb1c206d76a45872034934a)\nLa solution Device Management Premium Les BéneficesLa solution Device Management Premium\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 8,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 9,
+                "content": "# Pass et options Orange\n## Plus de détails\n\n* Ou en prenant contact avec un conseiller clientèle depuis le lien https://entreprise.orange.ma/Contact rubrique « écrire à un agent »",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 10,
+                "content": "# \n## La Fibre d'Orange\n\nPassez à la vitesse supérieure avec la Fibre d'Orange. Trouvez l'offre parfaite pour votre foyer ou votre activité et vérifiez immédiatement la disponibilité à votre adresse.\nPour ma maisonPour mon activité professionnelle\n### 20 Mbps\nJusqu'à\n20 Mbps\n20 Mbps\n2H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\nFrais d’installation : 99 DH\n‎249,00DH/mois\nChoisir cette offre\n### 50 Mbps\nJusqu'à\n50 Mbps\n50 Mbps\n3H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎299,00DH/mois\nChoisir cette offre\n### 100 Mbps\nJusqu'à\n100 Mbps\n100 Mbps\n4H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎349,00DH/mois\nChoisir cette offre\n### 200 Mbps\nJusqu'à\n200 Mbps\n200 Mbps\n6H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎449,00DH/mois\nChoisir cette offre\n### 500 Mbps\nJusqu'à\n500 Mbps\n500 Mbps\n10H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎749,00DH/mois\nChoisir cette offre\n### 1Gbps\nJusqu'à\n1000 Mbps\n500 Mbps\n20H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎949,00DH/mois\nChoisir cette offre",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            }
+        ]
+    },
+    {
+        "id": "Q007",
+        "category": "technical",
+        "question": "Quelles technologies réseau ou quels types de connectivité sont mentionnés dans la documentation ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Business Hosting\n## Les bénéfices de l’offre\n\n### Connectivité\n* Neutralité de la connectivité quant à l’ensemble des opérateurs marocains\n* Double adduction vers les POP de tous les opérateurs\n* 100 Mbps Best Effort\n* Business VPN en option\n* Des options de sécurité des accès : Business Security & Business DDoS Security\n### Services\n* Aménagements spécifiques\n* Supervision et optimisation de l’urbanisation de la baie client\n* Mise à disposition d’espaces bureau / stockage\n### Tarification\n* Tarification granulaire et sans coûts masqués",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 2,
+                "content": "# Lan to Lan\n\n* [Le service Lan to Lan](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-ea2aad46384a82aa5bbd9e47a7bfadac)\n* [Avantages](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-71f2754ea8e7203473aebee03ff8368b)\n* [Architecture](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-a66dcac242e383f0a936e65ed9708eb2)\nLe service Lan to Lan Avantages ArchitectureLe service Lan to Lan\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nLe service Lan to Lan vous permet d'interconnecter tous vos sites et réseaux locaux avec le confort et la souplesse d'un LAN étendu.\nLe réseau Ethernet VPLS d'Orange vous assure un haut niveau de sécurité et de performance.\nVos collaborateurs bénéficient ainsi d'un réseau Ethernet très évolutif, avec des débits allant de 256 Kbps à 1 Gbps en zone dense pour accéder à toutes les ressources de l'entreprise : partage de documents, messagerie, travail collaboratif, etc.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 3,
+                "content": "# IP VPN\n\n* [L'IPVPN](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/IP-VPN#address-7ec8bf136ad38164cb9ab096de461ef9)\n* [Avantages](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/IP-VPN#address-823c2f5913bc4334d79de9ea344a6401)\n* [Architecture](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/IP-VPN#address-54bdf883171c607f4ce5f48c547ae105)\nL'IPVPN Avantages ArchitectureL'IPVPN\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nTransferts de fichier, e-mails, CRM, Intranet, voix et vidéo… Tout est centralisé sur un réseau d’entreprise privé et accessible depuis tous vos sites.\nL’IPVPN d’Orange vous permet de bâtir un réseau privé IP entre vos sites et vous garantit sécurité et performance. C’est la solution idéale pour permettre à vos employés de faire du télétravail sans exposer vos données confidentielles.\nEn confiant la fourniture et la gestion de votre réseau IPVPN aux experts d’Orange (routeurs, garanties, tables de routage, et sécurité), vous réalisez de réels bénéfices en temps et en coûts télécom, et vous pouvez consacrer ainsi au développement de votre activité plutôt qu'à la gestion quotidienne de votre réseau.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 4,
+                "content": "# \n## Les avantages Fibre d'Orange\n\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL. Jouez, streamez et connectez tous vos appareils en simultané sans aucune coupure.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Wi-Fi sans coupure\nRestez toujours connecté. En cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+ en attendant le rétablissement.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile. Le rendez-vous est fixé selon vos disponibilités pour une mise en service rapide et discrète.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Élu Service Client de l’Année 2026 – MAROC\nBénéficiez de l’expertise d’un leader mondial et d’un service client de qualité, récompensé au Maroc en 2026, avec un matériel à la pointe de la technologie.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 5,
+                "content": "# Lan to Lan\n## Avantages\n\n### Simplicité\nLe service LAN-to-LAN est une solution d'interconnexion Ethernet fournie clés en main par Orange : les équipements et les accès sont fournis et installés sur chaque site, administrés et supervisés par le Network Operation Center (NOC), en heures et jours ouvrés et 7j/7, 24h/24 en option premium.\n### Bande passante large\nLe service LAN-to-LAN vous offre de très larges bandes passantes allant de 256 Kbps jusqu’à 1 Gbps. Vous pouvez donc transférer des données entre vos sites, à très haut débit et en temps réel.\n### Robustesse\nL’intégralité du réseau Backbone Orange repose sur un réseau redondant en fibre optique.\n### Évolutivité\nPour accompagner l'évolution de votre activité, à tout moment et sans rien changer à vos équipements, vous pouvez ajouter un nouveau site ou monter en débit jusqu'au 1 Gbps.\n### Engagement\nPerformance, disponibilité et continuité de service de votre réseau vous sont garanties à tout moment.\n### Extranet de pilotage\nVia une interface Web Sécurisée, vous gardez un aperçu en temps réel de la performance de votre réseau (usage de la bande passante, temps de transit moyen, taux de perte de Paquet etc).",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 6,
+                "content": "# \n## Nos équipements\n\nOrange vous propose des équipements haut débit pour accompagner votre offre\n### Livebox WiFi 6\n* Meilleur signal réseau\n* Compatible WiFi 6\n* Sécurité du réseau\n* Faible consommation d'énergie\n### Livebox WiFi 7\n* Design personnalisé\n* 3 bandes de fréquences WiFi\n* 10 antennes internes\n* Service VPN et contrôle parental offerts",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 7,
+                "content": "# Abonnement fixe\n## Plus d’avantages\n\n### Un réseau fiable à 100 %\nLarge choix de possibilités d’accès.\nUn réseau de fibre optique offrant toutes les garanties nécessaires en termes de qualité et transparence.\nUn réseau supervisé en permanence et géré de manière proactive.\n### Un réseau Fixe performant\nL’engagement Orange est simple : vous garantir la meilleure expérience.\nOrange construit et entretient son réseau constamment en suivant l’évolution des technologies, des besoins des clients et des législations en vigueur.\n### Un accompagnement au quotidien\nDes équipes techniques d’intervention vous sont dédiées.\nDes engagements de qualité de service : temps de rétablissement et taux de disponibilité.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 8,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 9,
+                "content": "# \n## On répond à vos questions\n\n### Comment savoir si je peux bénéficier de la Fibre d’Orange ?\n### Mon logement est grand et le wifi ne couvre pas toutes les pièces. Que faire ?\n### Quel débit est offert dans le cadre de cette offre, s’agit-il d’un débit garanti ?\n### Que dois-je faire pour passer d’une offre à une autre ?\n### Que dois-je faire en cas de problème ou de besoin d’informations ?\n### Comment j’active ma ligne ?",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 10,
+                "content": "# Machine-to-Machine\n## Le meilleur du Machine-to-Machine à portée de mains\n\n### Autonomie\n* Accès sécurisé au portail Machine-to-Machine, 24H/24, 7J/7\n* Gestion des opérations quotidiennes à distance\n* Minimisation des interventions humaines (détection des pannes, diagnostic de connectivité…)\n* Géolocalisation au Maroc et à l’international\n* Prévention de la fraude\n### Flexibilité\n* Des formules tarifaires et des cartes SIM en fonction de vos besoins métier\n* Droits d’administration différents en fonction des utilisateurs\n* Gestion personnalisée de la flotte\n### Simplicité\n* Une solution 100% digitale\n* Une interface intuitive et ergonomique\n* Une prise en main facile grâce au guide d’utilisation fourni avec la solution\n* Une gestion de flotte simplifiée et plus efficace\n### Accompagnement\n* Une équipe d’experts pour vous aider à choisir la solution optimale\n* Nos agents CRE à votre service 24h/24, 7j/7\n* Orange, un opérateur de référence dans le domaine Machine-to-Machine/IOT à l’échelle mondial",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            }
+        ]
+    },
+    {
+        "id": "Q008",
+        "category": "technical",
+        "question": "Quelles spécifications relatives aux performances, à la capacité ou à la bande passante sont fournies pour les services présentés dans la documentation ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Lan to Lan\n## Avantages\n\n### Simplicité\nLe service LAN-to-LAN est une solution d'interconnexion Ethernet fournie clés en main par Orange : les équipements et les accès sont fournis et installés sur chaque site, administrés et supervisés par le Network Operation Center (NOC), en heures et jours ouvrés et 7j/7, 24h/24 en option premium.\n### Bande passante large\nLe service LAN-to-LAN vous offre de très larges bandes passantes allant de 256 Kbps jusqu’à 1 Gbps. Vous pouvez donc transférer des données entre vos sites, à très haut débit et en temps réel.\n### Robustesse\nL’intégralité du réseau Backbone Orange repose sur un réseau redondant en fibre optique.\n### Évolutivité\nPour accompagner l'évolution de votre activité, à tout moment et sans rien changer à vos équipements, vous pouvez ajouter un nouveau site ou monter en débit jusqu'au 1 Gbps.\n### Engagement\nPerformance, disponibilité et continuité de service de votre réseau vous sont garanties à tout moment.\n### Extranet de pilotage\nVia une interface Web Sécurisée, vous gardez un aperçu en temps réel de la performance de votre réseau (usage de la bande passante, temps de transit moyen, taux de perte de Paquet etc).",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 2,
+                "content": "# Lan to Lan\n\n* [Le service Lan to Lan](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-ea2aad46384a82aa5bbd9e47a7bfadac)\n* [Avantages](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-71f2754ea8e7203473aebee03ff8368b)\n* [Architecture](https://entreprise.orange.ma/Solutions-Business/Fixe/Solutions-de-Connectivite/Lan-to-Lan#address-a66dcac242e383f0a936e65ed9708eb2)\nLe service Lan to Lan Avantages ArchitectureLe service Lan to Lan\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nLe service Lan to Lan vous permet d'interconnecter tous vos sites et réseaux locaux avec le confort et la souplesse d'un LAN étendu.\nLe réseau Ethernet VPLS d'Orange vous assure un haut niveau de sécurité et de performance.\nVos collaborateurs bénéficient ainsi d'un réseau Ethernet très évolutif, avec des débits allant de 256 Kbps à 1 Gbps en zone dense pour accéder à toutes les ressources de l'entreprise : partage de documents, messagerie, travail collaboratif, etc.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 3,
+                "content": "# IP VPN\n## Avantages\n\n### Continuité de service\nUne seconde ligne via VDSL, fibre ou même 4G assure la redondance du système. Vous organisez les priorités au niveau de votre trafic et assurez l’accès permanent à vos applications critiques grâce à 3 niveaux de Quality of Service.\n### Accessibilité\nUtilisez la 4G pour connecter vos sites éloignés ou comme solution de back-up en cas de problème.\n### Adaptabilité\nLa configuration de l’IPVPN de chaque site est facilement adaptable selon l’évolution de vos besoins en bande passante. Un déménagement ? Un nouveau site à ajouter à votre réseau IPVPN ? Tout se règle facillement, avec le type d’accès de votre choix.\n### Performance\nLe service IPVPN d’Orange est basé sur un réseau MPLS (Multi-Protocol Label Switching) exclusivement dédié aux entreprises qui vous offre un niveau de sécurité extrêmement élevé.\n### Clarté\nVia une interface web sécurisée, vous connaissez en temps réel la performance de votre réseau.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 4,
+                "content": "# \n## Les avantages Fibre d'Orange\n\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL. Jouez, streamez et connectez tous vos appareils en simultané sans aucune coupure.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Wi-Fi sans coupure\nRestez toujours connecté. En cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+ en attendant le rétablissement.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile. Le rendez-vous est fixé selon vos disponibilités pour une mise en service rapide et discrète.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Élu Service Client de l’Année 2026 – MAROC\nBénéficiez de l’expertise d’un leader mondial et d’un service client de qualité, récompensé au Maroc en 2026, avec un matériel à la pointe de la technologie.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 5,
+                "content": "# Business Hosting\n## Les bénéfices de l’offre\n\n### Connectivité\n* Neutralité de la connectivité quant à l’ensemble des opérateurs marocains\n* Double adduction vers les POP de tous les opérateurs\n* 100 Mbps Best Effort\n* Business VPN en option\n* Des options de sécurité des accès : Business Security & Business DDoS Security\n### Services\n* Aménagements spécifiques\n* Supervision et optimisation de l’urbanisation de la baie client\n* Mise à disposition d’espaces bureau / stockage\n### Tarification\n* Tarification granulaire et sans coûts masqués",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 6,
+                "content": "# Pass et options Orange\n## Plus de détails\n\n* Ou en prenant contact avec un conseiller clientèle depuis le lien https://entreprise.orange.ma/Contact rubrique « écrire à un agent »",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 7,
+                "content": "# \n## La Fibre d'Orange\n\nPassez à la vitesse supérieure avec la Fibre d'Orange. Trouvez l'offre parfaite pour votre foyer ou votre activité et vérifiez immédiatement la disponibilité à votre adresse.\nPour ma maisonPour mon activité professionnelle\n### 20 Mbps\nJusqu'à\n20 Mbps\n20 Mbps\n2H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\nFrais d’installation : 99 DH\n‎249,00DH/mois\nChoisir cette offre\n### 50 Mbps\nJusqu'à\n50 Mbps\n50 Mbps\n3H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎299,00DH/mois\nChoisir cette offre\n### 100 Mbps\nJusqu'à\n100 Mbps\n100 Mbps\n4H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎349,00DH/mois\nChoisir cette offre\n### 200 Mbps\nJusqu'à\n200 Mbps\n200 Mbps\n6H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎449,00DH/mois\nChoisir cette offre\n### 500 Mbps\nJusqu'à\n500 Mbps\n500 Mbps\n10H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎749,00DH/mois\nChoisir cette offre\n### 1Gbps\nJusqu'à\n1000 Mbps\n500 Mbps\n20H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎949,00DH/mois\nChoisir cette offre",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 8,
+                "content": "# \n## On répond à vos questions\n\n### Comment savoir si je peux bénéficier de la Fibre d’Orange ?\n### Mon logement est grand et le wifi ne couvre pas toutes les pièces. Que faire ?\n### Quel débit est offert dans le cadre de cette offre, s’agit-il d’un débit garanti ?\n### Que dois-je faire pour passer d’une offre à une autre ?\n### Que dois-je faire en cas de problème ou de besoin d’informations ?\n### Comment j’active ma ligne ?",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 9,
+                "content": "# Abonnement fixe\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 10,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            }
+        ]
+    },
+    {
+        "id": "Q009",
+        "category": "technical",
+        "question": "Quelles sont les étapes d'installation, d'activation ou de déploiement documentées pour un service destiné aux entreprises ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Business Talk\n## Une expérience client optimisée, pensée pour vous\n\n### Simplicité d’installation et de gestion\nProfitez d’un déploiement rapide facilitant l'intégration à votre infrastructure existante, tout en réduisant les délais et la complexité.\n### Disponibilité d’un support technique dédié\nBénéficiez d'un service client réactif, avec un SLA qui garantit des niveaux de service élevés pour une continuité optimale.\n### Adaptabilité sans limite\nFaites évoluer votre solution à tout moment, sans interruption de service. Chaque entreprise est unique, votre téléphonie doit l'être aussi.\n### Qualité et sécurité renforcées\nAssurez des communications de haute qualité, avec un chiffrement avancé pour protéger les données sensibles de votre entreprise.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 2,
+                "content": "# Business Cloud\n## Avantages\n\n### Un Cloud managé de bout en bout\nLes équipes d’Orange assurent la maintenance et la disponibilité du service de bout en bout :\n* Qualification de votre besoin\n* Ingénierie de la solution\n* Déploiement\n* Support proactif\n### Une facturation optimisée\nLes services Business Cloud vous permettent de ne payer que ce que vous consommez dans le cadre de l’hébergement de vos ressources\n### Et le tout depuis un Cloud 100% marocain",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 3,
+                "content": "# Pass et options Orange\n## Plus de détails\n\n* Ou en prenant contact avec un conseiller clientèle depuis le lien https://entreprise.orange.ma/Contact rubrique « écrire à un agent »",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 4,
+                "content": "# Comment acheter un forfait Orange en ligne ?\n## Comment activer mon forfait Orange ?\n\nVous avez un acheté un forfait Orange en ligne, et vous venez d’être livré chez vous ? L’activation de votre forfait Orange est simple, elle ne vous prendre que quelques minutes.\n[En savoir plus](https://www.orange.ma/Assistance/Boutique-en-ligne/Comment-activer-forfait-Orange)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 5,
+                "content": "# Comment activer mon forfait Orange ?\n## Activer mon forfait sur le site web [orange.ma](https://espace-client.orange.ma/)\n\n* Une fois la nouvelle carte SIM Orange reçue vous pouvez activer votre ligne sur [votre espace client Orange et moi Web](https://espace-client.orange.ma/).\n* Cliquez sur l’onglet Orange et moi du site web [Orange.ma](https://www.orange.ma/)\n* Renseignez votre numéro de ligne puis cliquez sur « Continuer ».\n* Ensuite, saisissez votre mot de passe, le même que celui que vous avez défini lors de votre commande en ligne, avant d’appuyer sur le bouton « Me connecter ».\n* Renseignez les 13 chiffres figurants au dos de votre nouvelle carte SIM et cliquez sur « Activer ».\n* Vous recevrez un sms de confirmation d’activation sur votre nouvelle ligne.\nVotre ligne est activée !",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 6,
+                "content": "# Comment activer mon forfait Orange ?\n## Activer mon forfait sur [l’application Orange et moi](https://www.orange.ma/Application-Orange-et-moi)\n\n* [Téléchargez l’application « Orange et moi Maroc »](https://orangemaroc.page.link/appli).\n* Si vous êtes nouveau client Orange, lancez l’application « Orange et Moi » et connectez-vous en utilisant vos identifiants (Adresse email & mot de passe) créés lors de votre achat sur la boutique en ligne.\n* Si vous êtes déjà inscrit sur Orange et moi, votre nouvelle ligne est automatiquement ajoutée à votre compte. Vous pouvez la retrouver en haut en faisant défiler vos lignes.\n* Cliquez sur : « Activer en quelque clics ».\n* Scannez ou saisissez manuellement les 13 chiffres figurants au dos de votre nouvelle carte SIM.\n* Votre ligne est activée dans les minutes qui suivent. Vous recevrez un sms de confirmation d’activation sur votre nouvelle ligne.\nVotre ligne est activée ! Vous pouvez la gérer et profiter d’une multitude de fonctionnalités sur l’application Orange et moi.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 7,
+                "content": "# Business Hosting\n\nPour vous accompagner dans votre stratégie d’externalisation de votre infrastructure IT, Orange Maroc vous propose un catalogue de services complet vous permettant d’aborder votre hébergement en toute sérénité.\nExternaliser votre infrastructure au sein d’un Data Center certifié Tier III Design & Facilities. Dans une optique One Stop Shop, Business Hosting inclus une offre allant de la connectivité jusqu’aux services managés relatifs à l’hébergement.\nEn espacé mutualisé ou dédié, notre solution s’adapte aux différents impératifs des entreprises.\n### Espace mutualisé\nUne offre à la baie vous permettant de bénéficier de :\n* Un espace confiné en couloir froid\n* Une maitrise de la consommation énergétique\n* Une gestion de la climatisation et de l’hygronométrie de vos serveurs\n### Espace dédié\nL’hébergement en espace privatif répond aux standards internationaux en terme de sécurité et de gestion des actifs du Data Center",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 8,
+                "content": "# Business Hosting\n## Besoin de plus d’informations?\n\n### Ecrire à un agent\nDemandez l'aide d'un agent de notre service client :\n_Vérification de la disponibilité d'un agent_\n### Par le formulaire\nNous vous invitons à remplir notre formulaire, si vous avez des questions techniques, commerciales sur les services mobiles ou Internet.\n[Accéder au formulaire](https://espace-entreprise.orange.ma/contactez-nous)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 9,
+                "content": "# Device Management Premium\n\n* [La solution Device Management Premium](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-43c6c2a4825ff52d82ad43fdc42ef33b)\n* [Les Bénefices](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-84b44faa0bb1c206d76a45872034934a)\nLa solution Device Management Premium Les BéneficesLa solution Device Management Premium\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 10,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            }
+        ]
+    },
+    {
+        "id": "Q010",
+        "category": "technical",
+        "question": "Quelles limitations techniques, exigences de compatibilité ou contraintes liées aux services sont mentionnées dans la documentation ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Business Cloud\n## Avantages\n\n### Un Cloud managé de bout en bout\nLes équipes d’Orange assurent la maintenance et la disponibilité du service de bout en bout :\n* Qualification de votre besoin\n* Ingénierie de la solution\n* Déploiement\n* Support proactif\n### Une facturation optimisée\nLes services Business Cloud vous permettent de ne payer que ce que vous consommez dans le cadre de l’hébergement de vos ressources\n### Et le tout depuis un Cloud 100% marocain",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 2,
+                "content": "# Business Hosting\n## Besoin de plus d’informations?\n\n### Ecrire à un agent\nDemandez l'aide d'un agent de notre service client :\n_Vérification de la disponibilité d'un agent_\n### Par le formulaire\nNous vous invitons à remplir notre formulaire, si vous avez des questions techniques, commerciales sur les services mobiles ou Internet.\n[Accéder au formulaire](https://espace-entreprise.orange.ma/contactez-nous)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 3,
+                "content": "# Pass et options Orange\n## Plus de détails\n\n* Ou en prenant contact avec un conseiller clientèle depuis le lien https://entreprise.orange.ma/Contact rubrique « écrire à un agent »",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 4,
+                "content": "# \n## Les avantages Fibre d'Orange\n\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL. Jouez, streamez et connectez tous vos appareils en simultané sans aucune coupure.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Wi-Fi sans coupure\nRestez toujours connecté. En cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+ en attendant le rétablissement.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile. Le rendez-vous est fixé selon vos disponibilités pour une mise en service rapide et discrète.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Élu Service Client de l’Année 2026 – MAROC\nBénéficiez de l’expertise d’un leader mondial et d’un service client de qualité, récompensé au Maroc en 2026, avec un matériel à la pointe de la technologie.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 5,
+                "content": "# Abonnement fixe\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 6,
+                "content": "# Device Management Premium\n\n* [La solution Device Management Premium](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-43c6c2a4825ff52d82ad43fdc42ef33b)\n* [Les Bénefices](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-84b44faa0bb1c206d76a45872034934a)\nLa solution Device Management Premium Les BéneficesLa solution Device Management Premium\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 7,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 8,
+                "content": "# \n## On répond à vos questions\n\n### Comment savoir si je peux bénéficier de la Fibre d’Orange ?\n### Mon logement est grand et le wifi ne couvre pas toutes les pièces. Que faire ?\n### Quel débit est offert dans le cadre de cette offre, s’agit-il d’un débit garanti ?\n### Que dois-je faire pour passer d’une offre à une autre ?\n### Que dois-je faire en cas de problème ou de besoin d’informations ?\n### Comment j’active ma ligne ?",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 9,
+                "content": "# Pass et options Orange\n## Pass sur facture\n\n### Appels au Maroc\n* 2H à 25 Dhs valable 7 jours\n### Internet\n* 5Go à 50 Dhs\n* 10Go à 100 Dhs\n* 20 Go à 180 Dhs\n* 25Go à 220 Dhs\n* 30Go à 250 Dhs\nValidité de la date d’activation à la fin du cycle.\n### Appels à l'international\n### 30 min avec tarif par zone :\n* 20 Dhs vers l’Amérique\n* 25 Dhs vers l’Europe\n* 50 Dhs vers le moyen orient\n* 100 Dhs vers l’Afrique\nValidité de la date d’activation à la fin du cycle.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 10,
+                "content": "# Mobile\n\n1. Avez-vous changé de terminal ? Si OUI, veuillez cliquer sur le lien suivant pour la configuration de votre nouveau terminal ([https://configuration-mobile.orange.ma/](http://configuration-mobile.orange.ma/orange-fo/)\n2. Avez-vous testé la navigation sur un ou plusieurs sites web? Avez-vous testé la connexion sur plusieurs applications (Facebook, WhatsApp...)? Si le problème ne concerne qu’un seul site web ou une seule application, l’incident n’est pas lié directement à Orange.\n3. Le problème est-il lié à un lieu en particulier ou pas ? S’il est lié à un lieu en particulier, il s’agit d’un problème de couverture dans cette zone.\n4. Avez-vous changé de terminal ? Si OUI, veuillez cliquer sur le lien suivant pour la configuration de votre nouveau terminal ([https://configuration-mobile.orange.ma/](http://configuration-mobile.orange.ma/orange-fo/))\n### Comment avoir accès à Internet sur mobile ou tablette ?\n1. Vérifier le solde depuis [votre espace client](https://espace-client.orange.ma/), votre [application Orange et moi](https://orangemaroc.page.link/appli) ou bien en appelant le 555.  2. Vérifier si le téléphone est compatible 3G/4G en vérifiant sur le site web du fabricant de votre Smartphone ou tablette.3. Redémarrer le téléphone.4. Activer les données cellulaires.\nActiver ou désactiver les données mobiles sur Android\n* Ouvrez l'application « Paramètres » de votre téléphone\n* Appuyez sur « Réseau » et « Internet » puis Consommation des données",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            }
+        ]
+    },
+    {
+        "id": "Q011",
+        "category": "commercial",
+        "question": "Quelles informations tarifaires sont fournies concernant les offres professionnelles présentées dans la documentation ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Business Cloud\n## Avantages\n\n### Un Cloud managé de bout en bout\nLes équipes d’Orange assurent la maintenance et la disponibilité du service de bout en bout :\n* Qualification de votre besoin\n* Ingénierie de la solution\n* Déploiement\n* Support proactif\n### Une facturation optimisée\nLes services Business Cloud vous permettent de ne payer que ce que vous consommez dans le cadre de l’hébergement de vos ressources\n### Et le tout depuis un Cloud 100% marocain",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 2,
+                "content": "# Abonnement fixe\n## La solution de téléphonie Orange pour entreprises\n\nL'abonnement fixe est la solution de téléphonie Orange pour entreprises.\nUne offre unique qui garantit performance et économie.\n* Émettre des appels gratuits vers tous les fixes Orange et vers la flotte mobile de l’entreprise.\n* Bénéficier de prix très compétitifs vers les mobiles et fixes de l'Europe.\n* Profiter de remises mensuelles en fonction de votre consommation.\n* Conserver vos équipements et postes téléphoniques.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 3,
+                "content": "# Device Management Premium\n\n* [La solution Device Management Premium](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-43c6c2a4825ff52d82ad43fdc42ef33b)\n* [Les Bénefices](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-84b44faa0bb1c206d76a45872034934a)\nLa solution Device Management Premium Les BéneficesLa solution Device Management Premium\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 4,
+                "content": "# \n## Les avantages Fibre d'Orange\n\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL. Jouez, streamez et connectez tous vos appareils en simultané sans aucune coupure.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Wi-Fi sans coupure\nRestez toujours connecté. En cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+ en attendant le rétablissement.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile. Le rendez-vous est fixé selon vos disponibilités pour une mise en service rapide et discrète.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Élu Service Client de l’Année 2026 – MAROC\nBénéficiez de l’expertise d’un leader mondial et d’un service client de qualité, récompensé au Maroc en 2026, avec un matériel à la pointe de la technologie.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 5,
+                "content": "# \n## La Fibre d'Orange\n\nPassez à la vitesse supérieure avec la Fibre d'Orange. Trouvez l'offre parfaite pour votre foyer ou votre activité et vérifiez immédiatement la disponibilité à votre adresse.\nPour ma maisonPour mon activité professionnelle\n### 20 Mbps\nJusqu'à\n20 Mbps\n20 Mbps\n2H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\nFrais d’installation : 99 DH\n‎249,00DH/mois\nChoisir cette offre\n### 50 Mbps\nJusqu'à\n50 Mbps\n50 Mbps\n3H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎299,00DH/mois\nChoisir cette offre\n### 100 Mbps\nJusqu'à\n100 Mbps\n100 Mbps\n4H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎349,00DH/mois\nChoisir cette offre\n### 200 Mbps\nJusqu'à\n200 Mbps\n200 Mbps\n6H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎449,00DH/mois\nChoisir cette offre\n### 500 Mbps\nJusqu'à\n500 Mbps\n500 Mbps\n10H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎749,00DH/mois\nChoisir cette offre\n### 1Gbps\nJusqu'à\n1000 Mbps\n500 Mbps\n20H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎949,00DH/mois\nChoisir cette offre",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 6,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 7,
+                "content": "# Office Pack\n## Bénéfices\n\n### Une offre flexible et évolutive\nVous bénéficiez d’une solution fixe que vous pouvez ajuster en fonction de vos besoins :\n* De 4 à 20 utilisateurs\n* De 21 à 100 utilisateurs\n### Une offre tout en un\nVous profitez d’appels gratuits et illimités vers tous les numéros fixes nationaux et les numéros Orange de votre entreprise\n+ Intégration par des experts\n+ Solution 100% IP\n+ Services de téléphonie d’entreprise inclus\n+ Accès inclus dans l’offre\n+ Internet haut débit garanti (en option\n### Une simplicité de gestion\nVous disposez d’un seul interlocuteur de bout en bout : fourniture des équipements, installation et maintenance",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 8,
+                "content": "# Pass et options Orange\n## Pass sur facture\n\n### Appels au Maroc\n* 2H à 25 Dhs valable 7 jours\n### Internet\n* 5Go à 50 Dhs\n* 10Go à 100 Dhs\n* 20 Go à 180 Dhs\n* 25Go à 220 Dhs\n* 30Go à 250 Dhs\nValidité de la date d’activation à la fin du cycle.\n### Appels à l'international\n### 30 min avec tarif par zone :\n* 20 Dhs vers l’Amérique\n* 25 Dhs vers l’Europe\n* 50 Dhs vers le moyen orient\n* 100 Dhs vers l’Afrique\nValidité de la date d’activation à la fin du cycle.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 9,
+                "content": "# Office Pack\n## Une solution de téléphonie d’entreprise modulaire sans investissement initial\n\nEn souscrivant à Office Pack d’Orange, vous offrez à votre entreprise la solution de téléphonie la plus complète du marché qui comprend l’intégration, la fourniture des équipements, la communication, le SAV et la maintenance. Equipez votre entreprise d’un IPBX nouvelle génération, de postes téléphoniques analogiques et IP de grande qualité, sans aucun investissement initial.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 10,
+                "content": "# Abonnement fixe\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            }
+        ]
+    },
+    {
+        "id": "Q012",
+        "category": "commercial",
+        "question": "Quels forfaits ou quelles formules commerciales sont présentés dans la documentation, et que comprennent-ils ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 2,
+                "content": "# Business Hosting\n## Besoin de plus d’informations?\n\n### Ecrire à un agent\nDemandez l'aide d'un agent de notre service client :\n_Vérification de la disponibilité d'un agent_\n### Par le formulaire\nNous vous invitons à remplir notre formulaire, si vous avez des questions techniques, commerciales sur les services mobiles ou Internet.\n[Accéder au formulaire](https://espace-entreprise.orange.ma/contactez-nous)",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 3,
+                "content": "# Device Management Premium\n\n* [La solution Device Management Premium](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-43c6c2a4825ff52d82ad43fdc42ef33b)\n* [Les Bénefices](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-84b44faa0bb1c206d76a45872034934a)\nLa solution Device Management Premium Les BéneficesLa solution Device Management Premium\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 4,
+                "content": "# Abonnement fixe\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 5,
+                "content": "# \n## On répond à vos questions\n\n### Comment savoir si je peux bénéficier de la Fibre d’Orange ?\n### Mon logement est grand et le wifi ne couvre pas toutes les pièces. Que faire ?\n### Quel débit est offert dans le cadre de cette offre, s’agit-il d’un débit garanti ?\n### Que dois-je faire pour passer d’une offre à une autre ?\n### Que dois-je faire en cas de problème ou de besoin d’informations ?\n### Comment j’active ma ligne ?",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 6,
+                "content": "# Pass et options Orange\n## Pass sur facture\n\n### Appels au Maroc\n* 2H à 25 Dhs valable 7 jours\n### Internet\n* 5Go à 50 Dhs\n* 10Go à 100 Dhs\n* 20 Go à 180 Dhs\n* 25Go à 220 Dhs\n* 30Go à 250 Dhs\nValidité de la date d’activation à la fin du cycle.\n### Appels à l'international\n### 30 min avec tarif par zone :\n* 20 Dhs vers l’Amérique\n* 25 Dhs vers l’Europe\n* 50 Dhs vers le moyen orient\n* 100 Dhs vers l’Afrique\nValidité de la date d’activation à la fin du cycle.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 7,
+                "content": "# Comment acheter un forfait Orange en ligne ?\n## Acheter un forfait Orange n’a jamais été plus facile !\n\n[Vous voulez souscrire à l’un des forfaits mobile Orange](https://boutique.orange.ma/fr/offres-mobile.html) et vous avez besoin d’assistance ? Vous vous posez des questions sur comment acheter un forfait Yo, forfait classique ou encore un forfait illimité ? Comment choisir votre offre ? Ou même combien de temps prend une livraison à domicile ?\nLe service assistance Orange répond à vos questions !",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 8,
+                "content": "# Comment acheter un forfait Orange en ligne ?\n## Parcours d’achat en ligne de forfait mobile\n\n* Accepter les conditions générales de vente et d’utilisation (cocher la case).\n* Un récapitulatif de votre commande vous sera affiché et envoyé par email avec le contrat associé à votre ligne.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 9,
+                "content": "# Factures et paiements\n\n[Télécharger](https://www.orange.ma/content/download/150943/2297909/version/3/file/Autorisation+PB.pdf \"Télécharger\")\n### Agences Orange\nPlus de 400 agences Orange au Maroc sont à votre disposition pour payer les factures de votre entreprise\n### Nos partenaires\nPayez les factures de votre entreprise en espèce chez nos partenaires Cash plus, Fawatir, Barid cash, Wafa Cash, MPOST et Damane Cash par la simple présentation de votre numéro RC/Patente.\nPlus de 2000 agences au Maroc sont à votre disposition.\n### Paiement électronique\nPayez vos factures entreprise via les canaux de nos Banques partenaires (GAB, Application, site web)\n### Consulter ma facture\nLa e-Facture Orange est un service simple, pratique et rapide qui vous permet de consulter directement vos\nfactures en toute sécurité 24h/24 et 7j/7.\nVous pouvez accéder à vos 12 dernières factures en ligne depuis votre espace client orange entreprise\n<https://espace-entreprise.orange.ma/sso/login> ou depuis l’application Orange pro dans la rubrique « Mes\nfactures ».\nVous pouvez télécharger vos factures sous format XLS ou PDF.\nVous recevez également un email pour vous informer que la facture est disponible sur votre espace client.\n### Suivre votre consommation\nLa facturation détaillée vous permet de suivre en toute transparence, le nombre d’appels, les numéros\nappelés et la durée des appels.\nLe service « Facturation détaillée » est gratuit.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 10,
+                "content": "# \n## La Fibre d'Orange\n\nPassez à la vitesse supérieure avec la Fibre d'Orange. Trouvez l'offre parfaite pour votre foyer ou votre activité et vérifiez immédiatement la disponibilité à votre adresse.\nPour ma maisonPour mon activité professionnelle\n### 20 Mbps\nJusqu'à\n20 Mbps\n20 Mbps\n2H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\nFrais d’installation : 99 DH\n‎249,00DH/mois\nChoisir cette offre\n### 50 Mbps\nJusqu'à\n50 Mbps\n50 Mbps\n3H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎299,00DH/mois\nChoisir cette offre\n### 100 Mbps\nJusqu'à\n100 Mbps\n100 Mbps\n4H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎349,00DH/mois\nChoisir cette offre\n### 200 Mbps\nJusqu'à\n200 Mbps\n200 Mbps\n6H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎449,00DH/mois\nChoisir cette offre\n### 500 Mbps\nJusqu'à\n500 Mbps\n500 Mbps\n10H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎749,00DH/mois\nChoisir cette offre\n### 1Gbps\nJusqu'à\n1000 Mbps\n500 Mbps\n20H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎949,00DH/mois\nChoisir cette offre",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            }
+        ]
+    },
+    {
+        "id": "Q013",
+        "category": "commercial",
+        "question": "Quelles conditions d'éligibilité ou quels prérequis un client professionnel doit-il remplir pour souscrire à une offre présentée dans la documentation ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Business Hosting\n## Besoin de plus d’informations?\n\n### Ecrire à un agent\nDemandez l'aide d'un agent de notre service client :\n_Vérification de la disponibilité d'un agent_\n### Par le formulaire\nNous vous invitons à remplir notre formulaire, si vous avez des questions techniques, commerciales sur les services mobiles ou Internet.\n[Accéder au formulaire](https://espace-entreprise.orange.ma/contactez-nous)",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 2,
+                "content": "# Abonnement fixe\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 3,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 4,
+                "content": "# Device Management Premium\n\n* [La solution Device Management Premium](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-43c6c2a4825ff52d82ad43fdc42ef33b)\n* [Les Bénefices](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-84b44faa0bb1c206d76a45872034934a)\nLa solution Device Management Premium Les BéneficesLa solution Device Management Premium\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 5,
+                "content": "# Pass et options Orange\n## Comment y souscrire?\n\n**Vous êtes le gestionnaire de parc?**\nVous pouvez activer les pass Orange:\n* Via l'application Orange Pro\n* Via votre Espace Client Entreprise\n* Ou via notre Centre de Relation Entreprise en appelant le 178\n**Vous êtes l’utilisateur final?**\nVous pouvez activer les pass Orange:\n* Via l’application « Orange et moi », rubrique « Mes pass »\n* Ou via le menu interactif en appelant le 555\nL’utilisateur peut cumuler autant de pass qu’il le souhaite, à condition de disposer d’un solde recharge équivalent au montant du pass souscrit.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 6,
+                "content": "# Pass et options Orange\n## Plus de détails\n\n* Ou en prenant contact avec un conseiller clientèle depuis le lien https://entreprise.orange.ma/Contact rubrique « écrire à un agent »",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 7,
+                "content": "# Comment acheter un forfait Orange en ligne ?\n## Parcours d’achat en ligne de forfait mobile\n\n* Accepter les conditions générales de vente et d’utilisation (cocher la case).\n* Un récapitulatif de votre commande vous sera affiché et envoyé par email avec le contrat associé à votre ligne.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 8,
+                "content": "# \n## La Fibre d'Orange\n\nPassez à la vitesse supérieure avec la Fibre d'Orange. Trouvez l'offre parfaite pour votre foyer ou votre activité et vérifiez immédiatement la disponibilité à votre adresse.\nPour ma maisonPour mon activité professionnelle\n### 20 Mbps\nJusqu'à\n20 Mbps\n20 Mbps\n2H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\nFrais d’installation : 99 DH\n‎249,00DH/mois\nChoisir cette offre\n### 50 Mbps\nJusqu'à\n50 Mbps\n50 Mbps\n3H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎299,00DH/mois\nChoisir cette offre\n### 100 Mbps\nJusqu'à\n100 Mbps\n100 Mbps\n4H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎349,00DH/mois\nChoisir cette offre\n### 200 Mbps\nJusqu'à\n200 Mbps\n200 Mbps\n6H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎449,00DH/mois\nChoisir cette offre\n### 500 Mbps\nJusqu'à\n500 Mbps\n500 Mbps\n10H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎749,00DH/mois\nChoisir cette offre\n### 1Gbps\nJusqu'à\n1000 Mbps\n500 Mbps\n20H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎949,00DH/mois\nChoisir cette offre",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 9,
+                "content": "# \n## On répond à vos questions\n\n### Comment savoir si je peux bénéficier de la Fibre d’Orange ?\n### Mon logement est grand et le wifi ne couvre pas toutes les pièces. Que faire ?\n### Quel débit est offert dans le cadre de cette offre, s’agit-il d’un débit garanti ?\n### Que dois-je faire pour passer d’une offre à une autre ?\n### Que dois-je faire en cas de problème ou de besoin d’informations ?\n### Comment j’active ma ligne ?",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 10,
+                "content": "# Comment acheter un forfait Orange en ligne ?\n## Acheter un forfait Orange n’a jamais été plus facile !\n\n[Vous voulez souscrire à l’un des forfaits mobile Orange](https://boutique.orange.ma/fr/offres-mobile.html) et vous avez besoin d’assistance ? Vous vous posez des questions sur comment acheter un forfait Yo, forfait classique ou encore un forfait illimité ? Comment choisir votre offre ? Ou même combien de temps prend une livraison à domicile ?\nLe service assistance Orange répond à vos questions !",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            }
+        ]
+    },
+    {
+        "id": "Q014",
+        "category": "commercial",
+        "question": "Quelle durée de contrat, quelle période d'engagement ou quelles conditions de résiliation sont précisées pour une offre professionnelle ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Abonnement fixe\n## Allez plus loin avec nos services complémentaires\n\n### Conférence Call\nTransformez le monde en salle de conférence. Vous pouvez organiser des réunions d'équipes décentralisées, partager votre écran avec d'autres participants et faire vos présentations en temps réel.\n[Découvrez l'offre](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Conference-Call)\n### Numéros d’accueil\nÉlaborez une gestion des appels sur mesure pour votre entreprise.\n[Découvrez l'offre](https://entreprise.orange.ma/Solutions-Business/Fixe/Telephonie-Fixe/Abonnement-fixe)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 2,
+                "content": "# Abonnement fixe\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 3,
+                "content": "# Abonnement fixe\n## La solution de téléphonie Orange pour entreprises\n\nL'abonnement fixe est la solution de téléphonie Orange pour entreprises.\nUne offre unique qui garantit performance et économie.\n* Émettre des appels gratuits vers tous les fixes Orange et vers la flotte mobile de l’entreprise.\n* Bénéficier de prix très compétitifs vers les mobiles et fixes de l'Europe.\n* Profiter de remises mensuelles en fonction de votre consommation.\n* Conserver vos équipements et postes téléphoniques.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 4,
+                "content": "# Cybersécurité : travaillez l'esprit tranquille\n## Pourquoi choisir Cybersécurité d'Orange Business Maroc ?\n\n### Une expertise à temps plein\nDes experts sont à votre dispositions 24/7 pour vous protéger contre toutes les menaces.\n###  Nos experts à vos côtés\nCadrage, formation, personnalisation, support : nos experts vous accompagnent à chaque étape.\n###  Une offre évolutive\nNombre d’utilisateurs, fonctionnalités, options : adaptez votre solution au rythme de vos besoins et maîtrisez vos coûts en toute transparence.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 5,
+                "content": "# \n## Les avantages Fibre d'Orange\n\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL. Jouez, streamez et connectez tous vos appareils en simultané sans aucune coupure.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Wi-Fi sans coupure\nRestez toujours connecté. En cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+ en attendant le rétablissement.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile. Le rendez-vous est fixé selon vos disponibilités pour une mise en service rapide et discrète.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Élu Service Client de l’Année 2026 – MAROC\nBénéficiez de l’expertise d’un leader mondial et d’un service client de qualité, récompensé au Maroc en 2026, avec un matériel à la pointe de la technologie.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 6,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 7,
+                "content": "# \n## La Fibre d'Orange\n\nPassez à la vitesse supérieure avec la Fibre d'Orange. Trouvez l'offre parfaite pour votre foyer ou votre activité et vérifiez immédiatement la disponibilité à votre adresse.\nPour ma maisonPour mon activité professionnelle\n### 20 Mbps\nJusqu'à\n20 Mbps\n20 Mbps\n2H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\nFrais d’installation : 99 DH\n‎249,00DH/mois\nChoisir cette offre\n### 50 Mbps\nJusqu'à\n50 Mbps\n50 Mbps\n3H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎299,00DH/mois\nChoisir cette offre\n### 100 Mbps\nJusqu'à\n100 Mbps\n100 Mbps\n4H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎349,00DH/mois\nChoisir cette offre\n### 200 Mbps\nJusqu'à\n200 Mbps\n200 Mbps\n6H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎449,00DH/mois\nChoisir cette offre\n### 500 Mbps\nJusqu'à\n500 Mbps\n500 Mbps\n10H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎749,00DH/mois\nChoisir cette offre\n### 1Gbps\nJusqu'à\n1000 Mbps\n500 Mbps\n20H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎949,00DH/mois\nChoisir cette offre",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 8,
+                "content": "# Device Management Premium\n\n* [La solution Device Management Premium](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-43c6c2a4825ff52d82ad43fdc42ef33b)\n* [Les Bénefices](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-84b44faa0bb1c206d76a45872034934a)\nLa solution Device Management Premium Les BéneficesLa solution Device Management Premium\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 9,
+                "content": "# Business Cloud\n## Avantages\n\n### Un Cloud managé de bout en bout\nLes équipes d’Orange assurent la maintenance et la disponibilité du service de bout en bout :\n* Qualification de votre besoin\n* Ingénierie de la solution\n* Déploiement\n* Support proactif\n### Une facturation optimisée\nLes services Business Cloud vous permettent de ne payer que ce que vous consommez dans le cadre de l’hébergement de vos ressources\n### Et le tout depuis un Cloud 100% marocain",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 10,
+                "content": "# Business Hosting\n\nPour vous accompagner dans votre stratégie d’externalisation de votre infrastructure IT, Orange Maroc vous propose un catalogue de services complet vous permettant d’aborder votre hébergement en toute sérénité.\nExternaliser votre infrastructure au sein d’un Data Center certifié Tier III Design & Facilities. Dans une optique One Stop Shop, Business Hosting inclus une offre allant de la connectivité jusqu’aux services managés relatifs à l’hébergement.\nEn espacé mutualisé ou dédié, notre solution s’adapte aux différents impératifs des entreprises.\n### Espace mutualisé\nUne offre à la baie vous permettant de bénéficier de :\n* Un espace confiné en couloir froid\n* Une maitrise de la consommation énergétique\n* Une gestion de la climatisation et de l’hygronométrie de vos serveurs\n### Espace dédié\nL’hébergement en espace privatif répond aux standards internationaux en terme de sécurité et de gestion des actifs du Data Center",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            }
+        ]
+    },
+    {
+        "id": "Q015",
+        "category": "multi_hop",
+        "question": "Quel service professionnel présenté dans la documentation répond à un besoin spécifique d'une entreprise, et quelles fonctionnalités documentées justifient ce choix ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Machine-to-Machine\n## Un besoin spécifique ?\n\n[Contactez-nous](http://entreprise.orange.ma/Contact \"Contactez-nous\")",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 2,
+                "content": "# Business Cloud\n## Avantages\n\n### Un Cloud managé de bout en bout\nLes équipes d’Orange assurent la maintenance et la disponibilité du service de bout en bout :\n* Qualification de votre besoin\n* Ingénierie de la solution\n* Déploiement\n* Support proactif\n### Une facturation optimisée\nLes services Business Cloud vous permettent de ne payer que ce que vous consommez dans le cadre de l’hébergement de vos ressources\n### Et le tout depuis un Cloud 100% marocain",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 3,
+                "content": "# Microsoft Azure\n\nPour une entreprise ayant des besoins spécifiques en matière de virtualisation de l'infrastructure informatique et de gestion de données sensibles, Microsoft Azure via Orange Maroc peut offrir une solution flexible, évolutive et intégrée, permettant aux entreprises de tirer parti des dernières innovations technologiques tout en répondant à leurs exigences spécifiques.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 4,
+                "content": "# Business Hosting\n\nPour vous accompagner dans votre stratégie d’externalisation de votre infrastructure IT, Orange Maroc vous propose un catalogue de services complet vous permettant d’aborder votre hébergement en toute sérénité.\nExternaliser votre infrastructure au sein d’un Data Center certifié Tier III Design & Facilities. Dans une optique One Stop Shop, Business Hosting inclus une offre allant de la connectivité jusqu’aux services managés relatifs à l’hébergement.\nEn espacé mutualisé ou dédié, notre solution s’adapte aux différents impératifs des entreprises.\n### Espace mutualisé\nUne offre à la baie vous permettant de bénéficier de :\n* Un espace confiné en couloir froid\n* Une maitrise de la consommation énergétique\n* Une gestion de la climatisation et de l’hygronométrie de vos serveurs\n### Espace dédié\nL’hébergement en espace privatif répond aux standards internationaux en terme de sécurité et de gestion des actifs du Data Center",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 5,
+                "content": "# Business Hosting\n## Les bénéfices de l’offre\n\n### Connectivité\n* Neutralité de la connectivité quant à l’ensemble des opérateurs marocains\n* Double adduction vers les POP de tous les opérateurs\n* 100 Mbps Best Effort\n* Business VPN en option\n* Des options de sécurité des accès : Business Security & Business DDoS Security\n### Services\n* Aménagements spécifiques\n* Supervision et optimisation de l’urbanisation de la baie client\n* Mise à disposition d’espaces bureau / stockage\n### Tarification\n* Tarification granulaire et sans coûts masqués",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 6,
+                "content": "# Cybersécurité : travaillez l'esprit tranquille\n## Pourquoi choisir Cybersécurité d'Orange Business Maroc ?\n\n### Une expertise à temps plein\nDes experts sont à votre dispositions 24/7 pour vous protéger contre toutes les menaces.\n###  Nos experts à vos côtés\nCadrage, formation, personnalisation, support : nos experts vous accompagnent à chaque étape.\n###  Une offre évolutive\nNombre d’utilisateurs, fonctionnalités, options : adaptez votre solution au rythme de vos besoins et maîtrisez vos coûts en toute transparence.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 7,
+                "content": "# \n## Les avantages Fibre d'Orange\n\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL. Jouez, streamez et connectez tous vos appareils en simultané sans aucune coupure.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Wi-Fi sans coupure\nRestez toujours connecté. En cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+ en attendant le rétablissement.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile. Le rendez-vous est fixé selon vos disponibilités pour une mise en service rapide et discrète.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Élu Service Client de l’Année 2026 – MAROC\nBénéficiez de l’expertise d’un leader mondial et d’un service client de qualité, récompensé au Maroc en 2026, avec un matériel à la pointe de la technologie.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 8,
+                "content": "# Business Hosting\n## Besoin de plus d’informations?\n\n### Ecrire à un agent\nDemandez l'aide d'un agent de notre service client :\n_Vérification de la disponibilité d'un agent_\n### Par le formulaire\nNous vous invitons à remplir notre formulaire, si vous avez des questions techniques, commerciales sur les services mobiles ou Internet.\n[Accéder au formulaire](https://espace-entreprise.orange.ma/contactez-nous)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 9,
+                "content": "# Abonnement fixe\n## La solution de téléphonie Orange pour entreprises\n\nL'abonnement fixe est la solution de téléphonie Orange pour entreprises.\nUne offre unique qui garantit performance et économie.\n* Émettre des appels gratuits vers tous les fixes Orange et vers la flotte mobile de l’entreprise.\n* Bénéficier de prix très compétitifs vers les mobiles et fixes de l'Europe.\n* Profiter de remises mensuelles en fonction de votre consommation.\n* Conserver vos équipements et postes téléphoniques.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 10,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            }
+        ]
+    },
+    {
+        "id": "Q016",
+        "category": "multi_hop",
+        "question": "Quelles sont les principales fonctionnalités d'une offre présentée dans la documentation, ainsi que les conditions d'abonnement ou de tarification associées ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Abonnement fixe\n## La solution de téléphonie Orange pour entreprises\n\nL'abonnement fixe est la solution de téléphonie Orange pour entreprises.\nUne offre unique qui garantit performance et économie.\n* Émettre des appels gratuits vers tous les fixes Orange et vers la flotte mobile de l’entreprise.\n* Bénéficier de prix très compétitifs vers les mobiles et fixes de l'Europe.\n* Profiter de remises mensuelles en fonction de votre consommation.\n* Conserver vos équipements et postes téléphoniques.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 2,
+                "content": "# Office Pack\n## Bénéfices\n\n### Une offre flexible et évolutive\nVous bénéficiez d’une solution fixe que vous pouvez ajuster en fonction de vos besoins :\n* De 4 à 20 utilisateurs\n* De 21 à 100 utilisateurs\n### Une offre tout en un\nVous profitez d’appels gratuits et illimités vers tous les numéros fixes nationaux et les numéros Orange de votre entreprise\n+ Intégration par des experts\n+ Solution 100% IP\n+ Services de téléphonie d’entreprise inclus\n+ Accès inclus dans l’offre\n+ Internet haut débit garanti (en option\n### Une simplicité de gestion\nVous disposez d’un seul interlocuteur de bout en bout : fourniture des équipements, installation et maintenance",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 3,
+                "content": "# Pass et options Orange\n## Plus de détails\n\n* Ou en prenant contact avec un conseiller clientèle depuis le lien https://entreprise.orange.ma/Contact rubrique « écrire à un agent »",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 4,
+                "content": "# Abonnement fixe\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 5,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 6,
+                "content": "# \n## On répond à vos questions\n\n### Comment savoir si je peux bénéficier de la Fibre d’Orange ?\n### Mon logement est grand et le wifi ne couvre pas toutes les pièces. Que faire ?\n### Quel débit est offert dans le cadre de cette offre, s’agit-il d’un débit garanti ?\n### Que dois-je faire pour passer d’une offre à une autre ?\n### Que dois-je faire en cas de problème ou de besoin d’informations ?\n### Comment j’active ma ligne ?",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 7,
+                "content": "# Device Management Premium\n\n* [La solution Device Management Premium](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-43c6c2a4825ff52d82ad43fdc42ef33b)\n* [Les Bénefices](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-84b44faa0bb1c206d76a45872034934a)\nLa solution Device Management Premium Les BéneficesLa solution Device Management Premium\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 8,
+                "content": "# \n## La Fibre d'Orange\n\nPassez à la vitesse supérieure avec la Fibre d'Orange. Trouvez l'offre parfaite pour votre foyer ou votre activité et vérifiez immédiatement la disponibilité à votre adresse.\nPour ma maisonPour mon activité professionnelle\n### 20 Mbps\nJusqu'à\n20 Mbps\n20 Mbps\n2H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\nFrais d’installation : 99 DH\n‎249,00DH/mois\nChoisir cette offre\n### 50 Mbps\nJusqu'à\n50 Mbps\n50 Mbps\n3H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎299,00DH/mois\nChoisir cette offre\n### 100 Mbps\nJusqu'à\n100 Mbps\n100 Mbps\n4H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎349,00DH/mois\nChoisir cette offre\n### 200 Mbps\nJusqu'à\n200 Mbps\n200 Mbps\n6H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎449,00DH/mois\nChoisir cette offre\n### 500 Mbps\nJusqu'à\n500 Mbps\n500 Mbps\n10H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎749,00DH/mois\nChoisir cette offre\n### 1Gbps\nJusqu'à\n1000 Mbps\n500 Mbps\n20H d’appels vers le mobile national et fixe international\nAppels illimités vers fixes nationaux\n‎949,00DH/mois\nChoisir cette offre",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 9,
+                "content": "# \n## Les avantages Fibre d'Orange\n\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL. Jouez, streamez et connectez tous vos appareils en simultané sans aucune coupure.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Wi-Fi sans coupure\nRestez toujours connecté. En cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+ en attendant le rétablissement.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile. Le rendez-vous est fixé selon vos disponibilités pour une mise en service rapide et discrète.\n[](https://boutique.orange.ma/fibre-d-orange?ts_ftth_type_multiselect=Pour+mon+activit%C3%A9+professionnelle)\n#### Élu Service Client de l’Année 2026 – MAROC\nBénéficiez de l’expertise d’un leader mondial et d’un service client de qualité, récompensé au Maroc en 2026, avec un matériel à la pointe de la technologie.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 10,
+                "content": "# Pass et options Orange\n## Pass sur facture\n\n### Appels au Maroc\n* 2H à 25 Dhs valable 7 jours\n### Internet\n* 5Go à 50 Dhs\n* 10Go à 100 Dhs\n* 20 Go à 180 Dhs\n* 25Go à 220 Dhs\n* 30Go à 250 Dhs\nValidité de la date d’activation à la fin du cycle.\n### Appels à l'international\n### 30 min avec tarif par zone :\n* 20 Dhs vers l’Amérique\n* 25 Dhs vers l’Europe\n* 50 Dhs vers le moyen orient\n* 100 Dhs vers l’Afrique\nValidité de la date d’activation à la fin du cycle.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            }
+        ]
+    },
+    {
+        "id": "Q017",
+        "category": "multi_hop",
+        "question": "Quels sont les prérequis nécessaires pour bénéficier d'un service présenté dans la documentation, et quelles étapes sont décrites pour son activation ou son déploiement ?",
+        "is_unanswerable_test": false,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Comment activer mon forfait Orange ?\n## Activer mon forfait sur [l’application Orange et moi](https://www.orange.ma/Application-Orange-et-moi)\n\n* [Téléchargez l’application « Orange et moi Maroc »](https://orangemaroc.page.link/appli).\n* Si vous êtes nouveau client Orange, lancez l’application « Orange et Moi » et connectez-vous en utilisant vos identifiants (Adresse email & mot de passe) créés lors de votre achat sur la boutique en ligne.\n* Si vous êtes déjà inscrit sur Orange et moi, votre nouvelle ligne est automatiquement ajoutée à votre compte. Vous pouvez la retrouver en haut en faisant défiler vos lignes.\n* Cliquez sur : « Activer en quelque clics ».\n* Scannez ou saisissez manuellement les 13 chiffres figurants au dos de votre nouvelle carte SIM.\n* Votre ligne est activée dans les minutes qui suivent. Vous recevrez un sms de confirmation d’activation sur votre nouvelle ligne.\nVotre ligne est activée ! Vous pouvez la gérer et profiter d’une multitude de fonctionnalités sur l’application Orange et moi.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 2,
+                "content": "# Comment activer mon forfait Orange ?\n## Activer mon forfait sur le site web [orange.ma](https://espace-client.orange.ma/)\n\n* Une fois la nouvelle carte SIM Orange reçue vous pouvez activer votre ligne sur [votre espace client Orange et moi Web](https://espace-client.orange.ma/).\n* Cliquez sur l’onglet Orange et moi du site web [Orange.ma](https://www.orange.ma/)\n* Renseignez votre numéro de ligne puis cliquez sur « Continuer ».\n* Ensuite, saisissez votre mot de passe, le même que celui que vous avez défini lors de votre commande en ligne, avant d’appuyer sur le bouton « Me connecter ».\n* Renseignez les 13 chiffres figurants au dos de votre nouvelle carte SIM et cliquez sur « Activer ».\n* Vous recevrez un sms de confirmation d’activation sur votre nouvelle ligne.\nVotre ligne est activée !",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 3,
+                "content": "# Pass et options Orange\n## Plus de détails\n\n* Ou en prenant contact avec un conseiller clientèle depuis le lien https://entreprise.orange.ma/Contact rubrique « écrire à un agent »",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 4,
+                "content": "# Comment activer mon forfait Orange ?\n\nVous avez un acheté un forfait Orange en ligne, et vous venez d’être livré chez vous ? L’activation de votre forfait Orange est simple, elle ne vous prendre que quelques minutes :",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 5,
+                "content": "# Comment acheter un forfait Orange en ligne ?\n## Comment activer mon forfait Orange ?\n\nVous avez un acheté un forfait Orange en ligne, et vous venez d’être livré chez vous ? L’activation de votre forfait Orange est simple, elle ne vous prendre que quelques minutes.\n[En savoir plus](https://www.orange.ma/Assistance/Boutique-en-ligne/Comment-activer-forfait-Orange)",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 6,
+                "content": "# Machine-to-Machine\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde, permettant la digitalisation de plusieurs opérations métiers, dans différents secteurs d’activité.\nPour faciliter la gestion de ces millions de cartes SIM Machine-to-Machine, Orange met à la disposition de ces clients une offre Machine-to Machine complète :\n1. Les forfaits Machine-to-Machine : en fonction de vos besoins métiers (Internet, SMS, voix, national/Roaming…), nous vous proposons une large gamme de forfaits Machine-to-Machine adaptés à vos usages.\n2. Ce portail vous permet de garder le contrôle sur l’ensemble de vos cartes SMS Machine-to-Machine en quelques clics, n’importe où, à n’importe quel moment, et surtout en toute autonomie.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 7,
+                "content": "# Device Management Premium\n\n* [La solution Device Management Premium](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-43c6c2a4825ff52d82ad43fdc42ef33b)\n* [Les Bénefices](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-84b44faa0bb1c206d76a45872034934a)\nLa solution Device Management Premium Les BéneficesLa solution Device Management Premium\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 8,
+                "content": "# Abonnement fixe\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 9,
+                "content": "# Business Hosting\n## Besoin de plus d’informations?\n\n### Ecrire à un agent\nDemandez l'aide d'un agent de notre service client :\n_Vérification de la disponibilité d'un agent_\n### Par le formulaire\nNous vous invitons à remplir notre formulaire, si vous avez des questions techniques, commerciales sur les services mobiles ou Internet.\n[Accéder au formulaire](https://espace-entreprise.orange.ma/contactez-nous)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 10,
+                "content": "# Comment acheter un forfait Orange en ligne ?\n## Quand est-ce que mon forfait sera activé ?\n\nVous avez un acheté un forfait Orange en ligne, et vous avez besoin de plus d’informations sur les dates d’activation qu’Orange vous propose ?\nVotre forfait est désormais activé à la date qui vous convient :\n* Activer mon forfait le jour de la livraison\nExemple : Vous achetez votre forfait Orange le 15 Mars, vous êtes livré le 16 Mars et votre cycle débute le 1er de chaque mois (la date à laquelle le solde de votre forfait se réinitialise). Votre forfait sera activé le jour même de la livraison (16 Mars).\nPour votre premier mois de forfait, tout solde non consommé du 16 Mars au 31 Mars sera reporté au cycle suivant, à savoir du 1er Avril au 30 Avril)\n* Activer mon forfait le 1er jour du cycle\nEx : Vous achetez votre forfait Orange le 15 Mars, vous êtes livré le 16 Mars, mais vous ne souhaitez l’activer que le 1er jour du cycle suivant, à savoir le 1er Avril, pour profiter pleinement de votre forfait tout le long du cycle.\nCe que vous devez savoir : Chez Orange, il existe deux cycles de consommation de votre forfait, soit du premier jour jusqu’au dernier jour de chaque mois, soit du 18 de chaque mois jusqu’au 17 du mois suivant.\nImportant : Pour les clients souhaitant transférer leur numéro d’un autre opérateur vers Orange, nous les invitons à patienter 3 jours à partir de la date de la livraison de la carte SIM Orange (hors Week-end et jours fériés), pour que la ligne chez l’opérateur précédent soit désactivée.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            }
+        ]
+    },
+    {
+        "id": "Q018",
+        "category": "unanswerable",
+        "question": "Quel est le prix exact d'un service professionnel si aucun tarif n'est indiqué dans la base de connaissances disponible ?",
+        "is_unanswerable_test": true,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Business Cloud\n## Avantages\n\n### Un Cloud managé de bout en bout\nLes équipes d’Orange assurent la maintenance et la disponibilité du service de bout en bout :\n* Qualification de votre besoin\n* Ingénierie de la solution\n* Déploiement\n* Support proactif\n### Une facturation optimisée\nLes services Business Cloud vous permettent de ne payer que ce que vous consommez dans le cadre de l’hébergement de vos ressources\n### Et le tout depuis un Cloud 100% marocain",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 2,
+                "content": "# Cybersécurité : travaillez l'esprit tranquille\n## Pourquoi choisir Cybersécurité d'Orange Business Maroc ?\n### Une expertise à temps plein\nDes experts sont à votre dispositions 24/7 pour vous protéger contre toutes les menaces.\n### Nos experts à vos côtés\nCadrage, formation, personnalisation, support : nos experts vous accompagnent à chaque étape.\n### Une offre évolutive\nNombre d’utilisateurs, fonctionnalités, options : adaptez votre solution au rythme de vos besoins et maîtrisez vos coûts en toute transparence.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 3,
+                "content": "# Device Management Premium\n\n* [La solution Device Management Premium](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-43c6c2a4825ff52d82ad43fdc42ef33b)\n* [Les Bénefices](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium#address-84b44faa0bb1c206d76a45872034934a)\nLa solution Device Management Premium Les BéneficesLa solution Device Management Premium\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 4,
+                "content": "# Abonnement fixe\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 5,
+                "content": "# Les avantages Fibre d'Orange\n\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL.\n#### Wi-Fi sans coupure\nEn cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+.\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 6,
+                "content": "# Business Hosting\n\nPour vous accompagner dans votre stratégie d’externalisation de votre infrastructure IT, Orange Maroc vous propose un catalogue de services complet permettant d’aborder votre hébergement en toute sérénité.\nExternaliser votre infrastructure au sein d’un Data Center certifié Tier III Design & Facilities. Business Hosting inclut une offre allant de la connectivité jusqu’aux services managés relatifs à l’hébergement.\nEn espace mutualisé ou dédié, notre solution s’adapte aux différents impératifs des entreprises.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 7,
+                "content": "# Business Hosting\n## Besoin de plus d’informations?\n\n### Ecrire à un agent\nDemandez l'aide d'un agent de notre service client.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 8,
+                "content": "# Pass et options Orange\n## Pass sur facture\n\n### Appels au Maroc\n* 2H à 25 Dhs valable 7 jours\n### Internet\n* 5Go à 50 Dhs\n* 10Go à 100 Dhs\n* 20 Go à 180 Dhs\n* 25Go à 220 Dhs\n* 30Go à 250 Dhs\nValidité de la date d’activation à la fin du cycle.\n### Appels à l'international\n### 30 min avec tarif par zone :\n* 20 Dhs vers l’Amérique\n* 25 Dhs vers l’Europe\n* 50 Dhs vers le moyen orient\n* 100 Dhs vers l’Afrique\nValidité de la date d’activation à la fin du cycle.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 9,
+                "content": "# La Fibre d'Orange\n\n### 20 Mbps\nFrais d’installation : 99 DH\n249,00 DH/mois\n### 50 Mbps\n299,00 DH/mois\n### 100 Mbps\n349,00 DH/mois\n### 200 Mbps\n449,00 DH/mois\n### 500 Mbps\n749,00 DH/mois\n### 1Gbps\n949,00 DH/mois",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 10,
+                "content": "# Abonnement fixe\n## La solution de téléphonie Orange pour entreprises\n\nL'abonnement fixe est la solution de téléphonie Orange pour entreprises.\nUne offre unique qui garantit performance et économie.\n* Émettre des appels gratuits vers tous les fixes Orange et vers la flotte mobile de l’entreprise.\n* Bénéficier de prix très compétitifs vers les mobiles et fixes de l'Europe.\n* Profiter de remises mensuelles en fonction de votre consommation.\n* Conserver vos équipements et postes téléphoniques.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            }
+        ]
+    },
+    {
+        "id": "Q019",
+        "category": "unanswerable",
+        "question": "Orange Maroc garantit-il un pourcentage précis de disponibilité du service qui n'est mentionné nulle part dans la documentation disponible ?",
+        "is_unanswerable_test": true,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Business Cloud\n## Avantages\n\n### Un Cloud managé de bout en bout\nLes équipes d’Orange assurent la maintenance et la disponibilité du service de bout en bout :\n* Qualification de votre besoin\n* Ingénierie de la solution\n* Déploiement\n* Support proactif\n### Une facturation optimisée\nLes services Business Cloud vous permettent de ne payer que ce que vous consommez dans le cadre de l’hébergement de vos ressources\n### Et le tout depuis un Cloud 100% marocain",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 2,
+                "content": "# Business Hosting\n## Besoin de plus d’informations?\n\n### Ecrire à un agent\nDemandez l'aide d'un agent de notre service client :\n_Vérification de la disponibilité d'un agent_\n### Par le formulaire\nNous vous invitons à remplir notre formulaire, si vous avez des questions techniques, commerciales sur les services mobiles ou Internet.\n[Accéder au formulaire](https://espace-entreprise.orange.ma/contactez-nous)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 3,
+                "content": "# On répond à vos questions\n\n### Comment savoir si je peux bénéficier de la Fibre d’Orange ?\n### Mon logement est grand et le wifi ne couvre pas toutes les pièces. Que faire ?\n### Quel débit est offert dans le cadre de cette offre, s’agit-il d’un débit garanti ?\n### Que dois-je faire pour passer d’une offre à une autre ?\n### Que dois-je faire en cas de problème ou de besoin d’informations ?\n### Comment j’active ma ligne ?",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 4,
+                "content": "# Abonnement fixe\n## Plus d’avantages\n\n### Un réseau fiable à 100 %\nLarge choix de possibilités d’accès.\nUn réseau de fibre optique offrant toutes les garanties nécessaires en termes de qualité et transparence.\nUn réseau supervisé en permanence et géré de manière proactive.\n### Un réseau Fixe performant\nL’engagement Orange est simple : vous garantir la meilleure expérience.\nOrange construit et entretient son réseau constamment en suivant l’évolution des technologies, des besoins des clients et des législations en vigueur.\n### Un accompagnement au quotidien\nDes équipes techniques d’intervention vous sont dédiées.\nDes engagements de qualité de service : temps de rétablissement et taux de disponibilité.",
+                "metadata": {},
+                "label": "relevant",
+                "relevance_score": 2
+            },
+            {
+                "rank": 5,
+                "content": "# Les avantages Fibre d'Orange\n\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL.\n#### Wi-Fi sans coupure\nEn cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+.\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 6,
+                "content": "# Pass et options Orange\n## Plus de détails\n\n* Ou en prenant contact avec un conseiller clientèle depuis le lien https://entreprise.orange.ma/Contact rubrique « écrire à un agent »",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 7,
+                "content": "# Machine-to-Machine\n\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde.\nOrange met à disposition une offre complète de forfaits adaptés aux besoins métiers et un portail de gestion des cartes SIM.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 8,
+                "content": "# La Fibre d'Orange\n\n### 20 Mbps\n249,00 DH/mois\n### 50 Mbps\n299,00 DH/mois\n### 100 Mbps\n349,00 DH/mois\n### 200 Mbps\n449,00 DH/mois\n### 500 Mbps\n749,00 DH/mois\n### 1Gbps\n949,00 DH/mois",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 9,
+                "content": "# Abonnement fixe\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 10,
+                "content": "# Factures et paiements\n\n### Agences Orange\nPlus de 400 agences Orange au Maroc sont à votre disposition pour payer les factures de votre entreprise.\n### Nos partenaires\nPayez les factures de votre entreprise en espèce chez nos partenaires Cash plus, Fawatir, Barid cash, Wafa Cash, MPOST et Damane Cash.\n### Paiement électronique\nPayez vos factures entreprise via les canaux de nos Banques partenaires.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            }
+        ]
+    },
+    {
+        "id": "Q020",
+        "category": "unanswerable",
+        "question": "Une fonctionnalité particulière, qui n'est pas mentionnée dans la documentation, est-elle incluse dans une offre professionnelle ?",
+        "is_unanswerable_test": true,
+        "retrieved_documents": [
+            {
+                "rank": 1,
+                "content": "# Abonnement fixe\n## Allez plus loin avec nos services complémentaires\n\n### Conférence Call\nTransformez le monde en salle de conférence. Vous pouvez organiser des réunions d'équipes décentralisées, partager votre écran avec d'autres participants et faire vos présentations en temps réel.\n[Découvrez l'offre](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Conference-Call)\n### Numéros d’accueil\nÉlaborez une gestion des appels sur mesure pour votre entreprise.\n[Découvrez l'offre](https://entreprise.orange.ma/Solutions-Business/Fixe/Telephonie-Fixe/Abonnement-fixe)",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 2,
+                "content": "# Business Cloud\n## Avantages\n\n### Un Cloud managé de bout en bout\nLes équipes d’Orange assurent la maintenance et la disponibilité du service de bout en bout :\n* Qualification de votre besoin\n* Ingénierie de la solution\n* Déploiement\n* Support proactif\n### Une facturation optimisée\nLes services Business Cloud vous permettent de ne payer que ce que vous consommez dans le cadre de l’hébergement de vos ressources\n### Et le tout depuis un Cloud 100% marocain",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 3,
+                "content": "# Business Hosting\n\nPour vous accompagner dans votre stratégie d’externalisation de votre infrastructure IT, Orange Maroc vous propose un catalogue de services complet vous permettant d’aborder votre hébergement en toute sérénité.\nExternaliser votre infrastructure au sein d’un Data Center certifié Tier III Design & Facilities. Dans une optique One Stop Shop, Business Hosting inclus une offre allant de la connectivité jusqu’aux services managés relatifs à l’hébergement.\nEn espacé mutualisé ou dédié, notre solution s’adapte aux différents impératifs des entreprises.\n### Espace mutualisé\nUne offre à la baie vous permettant de bénéficier de :\n* Un espace confiné en couloir froid\n* Une maitrise de la consommation énergétique\n* Une gestion de la climatisation et de l’hygronométrie de vos serveurs\n### Espace dédié\nL’hébergement en espace privatif répond aux standards internationaux en terme de sécurité et de gestion des actifs du Data Center",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 4,
+                "content": "# Les avantages Fibre d'Orange\n\n#### Internet très haut débit\nUne connexion 100% Fibre jusqu’à 20 fois plus rapide que l’ADSL.\n#### Wi-Fi sans coupure\nEn cas de travaux ou d’incident sur votre ligne, notre service exclusif prend automatiquement le relais via la 4G+.\n#### Une installation par un expert\nUn technicien expert Orange assure le raccordement de la Fibre jusqu’à votre domicile.",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 5,
+                "content": "# Office Pack\n## Bénéfices\n\n### Une offre flexible et évolutive\nVous bénéficiez d’une solution fixe que vous pouvez ajuster en fonction de vos besoins :\n* De 4 à 20 utilisateurs\n* De 21 à 100 utilisateurs\n### Une offre tout en un\nVous profitez d’appels gratuits et illimités vers tous les numéros fixes nationaux et les numéros Orange de votre entreprise\n+ Intégration par des experts\n+ Solution 100% IP\n+ Services de téléphonie d’entreprise inclus\n+ Accès inclus dans l’offre\n+ Internet haut débit garanti (en option\n### Une simplicité de gestion\nVous disposez d’un seul interlocuteur de bout en bout : fourniture des équipements, installation et maintenance",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 6,
+                "content": "# Machine-to-Machine\n\nGrâce aux solutions machine-to-machine, des millions d’équipements sont aujourd’hui connectés à travers le monde.\nOrange met à disposition une offre complète de forfaits adaptés aux besoins métiers et un portail de gestion des cartes SIM.",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 7,
+                "content": "# Device Management Premium\n\n* [La solution Device Management Premium](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium)\n* [Les bénéfices](https://entreprise.orange.ma/Solutions-Business/Solutions-avancees/Device-Management-Premium)",
+                "metadata": {},
+                "label": "partially_relevant",
+                "relevance_score": 1
+            },
+            {
+                "rank": 8,
+                "content": "# Abonnement fixe\n\n[Je suis intéressé](https://www.orange.ma/Quiz/Formulaire-Prise-d-interet)",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 9,
+                "content": "# Pass et options Orange\n## Plus de détails\n\n* Ou en prenant contact avec un conseiller clientèle depuis le lien https://entreprise.orange.ma/Contact rubrique « écrire à un agent »",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            },
+            {
+                "rank": 10,
+                "content": "# La Fibre d'Orange\n\n### 20 Mbps\n249,00 DH/mois\n### 50 Mbps\n299,00 DH/mois\n### 100 Mbps\n349,00 DH/mois\n### 200 Mbps\n449,00 DH/mois\n### 500 Mbps\n749,00 DH/mois\n### 1Gbps\n949,00 DH/mois",
+                "metadata": {},
+                "label": "irrelevant",
+                "relevance_score": 0
+            }
+        ]
+    }
+]

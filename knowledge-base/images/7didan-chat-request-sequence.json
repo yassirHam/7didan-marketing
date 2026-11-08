@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "7didan — Main Execution Flow: POST /api/chat",
+    "subtitle": "Guarded RAG: guardrail → embed → vector search → rerank → LLM answer → evaluation → intent → response with source URLs",
+    "locale": "en",
+    "output": "images/7didan-chat-request-sequence.html",
+    "quality_profile": "showcase",
+    "column_fit": "spread",
+    "viewBox": [1080, 1040]
+  },
+  "participants": [
+    { "id": "website", "type": "frontend", "label": "Website", "sublabel": "chatbot UI" },
+    { "id": "api", "type": "backend", "label": "FastAPI", "sublabel": "main.py" },
+    { "id": "rag", "type": "backend", "label": "RAG chain", "sublabel": "rag_chain.py" },
+    { "id": "guardrail", "type": "backend", "label": "Guardrail", "sublabel": "validate()" },
+    { "id": "retriever", "type": "backend", "label": "PGRetriever", "sublabel": "embed k=20" },
+    { "id": "pg", "type": "database", "label": "Postgres", "sublabel": "7didan_store" },
+    { "id": "reranker", "type": "backend", "label": "Reranker", "sublabel": "top_k=10" },
+    { "id": "llm", "type": "external", "label": "LLM API", "sublabel": "NVIDIA" },
+    { "id": "evaluator", "type": "backend", "label": "Evaluator", "sublabel": "laya noul" }
+  ],
+  "segments": [
+    { "from": 140, "to": 255, "label": "Request" },
+    { "from": 265, "to": 795, "label": "Guarded RAG pipeline" },
+    { "from": 805, "to": 935, "label": "Response" }
+  ],
+  "messages": [
+    { "id": "m1", "from": "website", "to": "api", "y": 170, "label": "POST /api/chat", "variant": "emphasis", "note": "body: {conversation_id, message}" },
+    { "id": "m2", "from": "api", "to": "pg", "y": 206, "label": "INSERT 'started' event", "variant": "dashed", "note": "record_safe() — logging failure never breaks chat" },
+    { "id": "m3", "from": "api", "to": "rag", "y": 242, "label": "guarded_rag_chain(message)", "variant": "emphasis" },
+    { "id": "m4", "from": "rag", "to": "guardrail", "y": 278, "label": "validate(question)", "variant": "security" },
+    { "id": "m5", "from": "guardrail", "to": "llm", "y": 314, "label": "structured: allowed/rejected" },
+    { "id": "m6", "from": "llm", "to": "guardrail", "y": 350, "label": "allowed", "variant": "return" },
+    { "id": "m7", "from": "rag", "to": "retriever", "y": 386, "label": "embed query + search k=20" },
+    { "id": "m8", "from": "retriever", "to": "pg", "y": 422, "label": "vector search" },
+    { "id": "m9", "from": "pg", "to": "retriever", "y": 458, "label": "20 docs (metadata incl. url)", "variant": "return" },
+    { "id": "m10", "from": "retriever", "to": "rag", "y": 494, "label": "documents", "variant": "return" },
+    { "id": "m11", "from": "rag", "to": "reranker", "y": 530, "label": "compress_documents" },
+    { "id": "m12", "from": "reranker", "to": "rag", "y": 566, "label": "top_k=10 ranked docs", "variant": "return" },
+    { "id": "m13", "from": "rag", "to": "llm", "y": 602, "label": "generate answer (prompt + context)", "variant": "emphasis" },
+    { "id": "m14", "from": "llm", "to": "rag", "y": 638, "label": "[ANSWERED] / [ABSTAINED]", "variant": "return" },
+    { "id": "m15", "from": "rag", "to": "evaluator", "y": 674, "label": "evaluate(question, context, answer)" },
+    { "id": "m16", "from": "evaluator", "to": "rag", "y": 710, "label": "score ≥ 0.5 → valid", "variant": "return" },
+    { "id": "m17", "from": "rag", "to": "llm", "y": 746, "label": "conversation intelligence" },
+    { "id": "m18", "from": "llm", "to": "rag", "y": 782, "label": "offer_qualification, suggested_service", "variant": "return" },
+    { "id": "m19", "from": "rag", "to": "api", "y": 818, "label": "{answer, status, documents, …}", "variant": "return" },
+    { "id": "m20", "from": "api", "to": "pg", "y": 854, "label": "INSERT answered/abstained", "variant": "dashed" },
+    { "id": "m21", "from": "api", "to": "website", "y": 890, "label": "200 AnswerResponse + sources", "variant": "return", "note": "sources[] = {title, section, url} from vector metadata" }
+  ],
+  "activations": [
+    { "participant": "api", "from": 165, "to": 895, "type": "backend" },
+    { "participant": "rag", "from": 237, "to": 823, "type": "backend" },
+    { "participant": "guardrail", "from": 273, "to": 355, "type": "backend" },
+    { "participant": "retriever", "from": 381, "to": 499, "type": "backend" },
+    { "participant": "pg", "from": 201, "to": 211, "type": "database" },
+    { "participant": "pg", "from": 417, "to": 463, "type": "database" },
+    { "participant": "pg", "from": 849, "to": 859, "type": "database" },
+    { "participant": "reranker", "from": 525, "to": 571, "type": "backend" },
+    { "participant": "llm", "from": 309, "to": 355, "type": "external" },
+    { "participant": "llm", "from": 597, "to": 643, "type": "external" },
+    { "participant": "llm", "from": 741, "to": 787, "type": "external" },
+    { "participant": "evaluator", "from": 669, "to": 715, "type": "backend" }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "Happy path", "items": ["Website → FastAPI → guarded RAG → pgvector → reranker → LLM → evaluator → response", "Response sources carry the page url stored in vector metadata during ingestion"] },
+    { "dot": "violet", "title": "Gates", "items": ["Input guardrail can reject before any retrieval (LLM structured output)", "Laya evaluator downgrades to abstained when score < 0.5"] },
+    { "dot": "orange", "title": "Side effects", "items": ["Funnel events (started / answered / abstained) go to reporting.conversation_events", "Event logging is fire-and-forget: record_safe() swallows DB errors"] },
+    { "dot": "slate", "title": "Evidence note", "items": ["Reflects the current working tree (git HEAD 9943b29 + uncommitted changes); file names appear in sublabels"] }
+  ]
+}

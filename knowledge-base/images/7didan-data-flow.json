@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "7didan — Data Flow: Ingestion → Vector Store → RAG Serving → CRM",
+    "subtitle": "How web/PDF content becomes searchable vectors with source URLs, and how chat + enquiry data leave the system",
+    "locale": "en",
+    "output": "images/7didan-data-flow.html",
+    "quality_profile": "showcase",
+    "viewBox": [1084, 760]
+  },
+  "stages": [
+    { "label": "Sources" },
+    { "label": "Ingest" },
+    { "label": "Store" },
+    { "label": "Runtime RAG" },
+    { "label": "CRM & funnel" }
+  ],
+  "nodes": [
+    { "id": "webpages", "type": "external", "label": "Web pages", "sublabel": "crawler.json URLs", "stage": 0, "row": 0, "width": 150, "height": 60 },
+    { "id": "pdfs", "type": "external", "label": "PDF documents", "sublabel": "PDF_DATA_PATH", "stage": 0, "row": 1, "width": 150, "height": 60 },
+    { "id": "crawler", "type": "backend", "label": "crawl4ai crawler", "sublabel": ".md + sidecar .json", "stage": 1, "row": 0, "width": 170, "height": 60 },
+    { "id": "pdfparser", "type": "backend", "label": "docling parser", "sublabel": ".md only, no url", "stage": 1, "row": 1, "width": 170, "height": 60 },
+    { "id": "cleaner", "type": "backend", "label": "Cleaner", "sublabel": "sidecar to url/title", "stage": 1, "row": 2, "width": 170, "height": 60 },
+    { "id": "chunker", "type": "backend", "label": "MarkdownChunker", "sublabel": "sections + metadata", "stage": 1, "row": 3, "width": 170, "height": 60 },
+    { "id": "rawmd", "type": "database", "label": "Raw markdown", "sublabel": "data/raw/markdown", "stage": 2, "row": 1, "width": 170, "height": 60 },
+    { "id": "pg", "type": "database", "label": "PostgreSQL pgvector", "sublabel": "7didan_store · reporting", "stage": 2, "row": 2, "width": 190, "height": 60 },
+    { "id": "dump", "type": "database", "label": "Repo SQL dump", "sublabel": "postgres/7didan_backup.sql", "stage": 2, "row": 3, "width": 170, "height": 60 },
+    { "id": "website", "type": "frontend", "label": "Website chatbot", "sublabel": "Next.js UI", "stage": 3, "row": 0, "width": 170, "height": 60 },
+    { "id": "api", "type": "backend", "label": "FastAPI app", "sublabel": "/api/chat · enquiries", "stage": 3, "row": 1, "width": 170, "height": 60 },
+    { "id": "embedret", "type": "backend", "label": "Embed + search", "sublabel": "Qwen embed, k=20", "stage": 3, "row": 2, "width": 170, "height": 60 },
+    { "id": "reranker", "type": "backend", "label": "Qwen reranker", "sublabel": "CrossEncoder top 10", "stage": 3, "row": 3, "width": 170, "height": 60 },
+    { "id": "llm", "type": "external", "label": "LLM API (NVIDIA)", "sublabel": "answer + intent", "stage": 3, "row": 4, "width": 170, "height": 60 },
+    { "id": "scoring", "type": "backend", "label": "Scoring rules", "sublabel": "lead_score 0-100", "stage": 4, "row": 0, "width": 170, "height": 60 },
+    { "id": "crmclient", "type": "backend", "label": "CrmClient httpx", "sublabel": "webhook + token", "stage": 4, "row": 1, "width": 170, "height": 60 },
+    { "id": "n8n", "type": "external", "label": "n8n workflow", "sublabel": "/webhook/7didan/lead", "stage": 4, "row": 2, "width": 170, "height": 60 },
+    { "id": "odoo", "type": "external", "label": "Odoo CRM", "sublabel": "crm.lead", "stage": 4, "row": 3, "width": 160, "height": 60 }
+  ],
+  "flows": [
+    { "id": "f1", "from": "webpages", "to": "crawler", "label": "crawl URLs", "classification": "web content", "variant": "default", "labelDy": -60 },
+    { "id": "f2", "from": "pdfs", "to": "pdfparser", "label": "parse PDFs", "classification": "documents", "variant": "default", "labelDy": -60 },
+    { "id": "f3", "from": "crawler", "to": "rawmd", "label": ".md + sidecar .json", "classification": "raw + provenance", "variant": "emphasis" },
+    { "id": "f4", "from": "pdfparser", "to": "rawmd", "label": ".md only", "classification": "raw, no url", "variant": "dashed", "labelDx": -60, "labelDy": 57 },
+    { "id": "f5", "from": "rawmd", "to": "cleaner", "label": "text + meta", "classification": "cleaned docs", "labelDx": 40 },
+    { "id": "f6", "from": "cleaner", "to": "chunker", "label": "doc records", "classification": "doc records", "route": "straight", "labelDx": 150, "labelDy": 30 },
+    { "id": "f7", "from": "chunker", "to": "pg", "label": "embed + meta {url}", "classification": "vectors + metadata", "variant": "emphasis", "labelDx": -160 },
+    { "id": "f8", "from": "pg", "to": "dump", "label": "export", "classification": "repo snapshot", "variant": "dashed", "route": "straight", "labelDx": 80, "labelDy": 44 },
+    { "id": "f9", "from": "dump", "to": "pg", "label": "restore", "classification": "bootstrap", "variant": "dashed", "fromSide": "top", "toSide": "bottom", "via": [[530, 452], [562, 452], [562, 434], [530, 434]], "labelDx": 120, "labelDy": -110 },
+    { "id": "f10", "from": "website", "to": "api", "label": "POST /api/chat", "classification": "user message", "variant": "emphasis", "route": "straight", "labelDx": 40, "labelDy": 48 },
+    { "id": "f11", "from": "api", "to": "embedret", "label": "embed + search k=20", "classification": "query", "route": "straight", "labelDx": 40, "labelDy": 48 },
+    { "id": "f12", "from": "pg", "to": "embedret", "label": "docs + url", "classification": "retrieved context", "variant": "default", "route": "straight", "labelDx": -60, "labelDy": -50 },
+    { "id": "f13", "from": "embedret", "to": "reranker", "label": "20 docs", "classification": "candidates", "route": "straight", "labelDx": -40, "labelDy": 44 },
+    { "id": "f14", "from": "reranker", "to": "llm", "label": "top_k=10", "classification": "prompt context", "route": "straight", "labelDx": 60, "labelDy": -70 },
+    { "id": "f15", "from": "llm", "to": "api", "label": "generated answer", "classification": "answer", "variant": "emphasis", "route": "vertical-channel", "channelX": 852, "fromSide": "right", "toSide": "right", "labelDx": 50, "labelDy": -100 },
+    { "id": "f16", "from": "api", "to": "website", "label": "sources [url]", "classification": "response", "variant": "dashed", "route": "vertical-channel", "channelX": 642, "fromSide": "left", "toSide": "left", "labelDx": -40 },
+    { "id": "f18", "from": "api", "to": "scoring", "label": "enquiries", "classification": "enquiry form", "labelDx": 60 },
+    { "id": "f19", "from": "scoring", "to": "crmclient", "label": "lead_score", "classification": "CRM payload", "route": "straight", "labelDx": 40, "labelDy": 48 },
+    { "id": "f20", "from": "crmclient", "to": "n8n", "label": "webhook + token", "classification": "webhook call", "variant": "security", "route": "straight", "labelDx": 40, "labelDy": 48 },
+    { "id": "f21", "from": "n8n", "to": "odoo", "label": "JSON-RPC", "classification": "CRM write", "variant": "default", "route": "straight", "labelDx": 40, "labelDy": 48 },
+    { "id": "f22", "from": "n8n", "to": "crmclient", "label": "response", "classification": "reply", "variant": "dashed", "route": "vertical-channel", "channelX": 1060, "fromSide": "right", "toSide": "right", "labelDx": -130, "labelDy": 112 }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "Provenance end-to-end", "items": ["crawler.json URL → sidecar .json source_url → cleaner → chunker → langchain_metadata.url → API sources[].url", "431 rows in 7didan_store carry url; PDF-sourced chunks have url=null"] },
+    { "dot": "cyan", "title": "Writes into Postgres", "items": ["Offline ingestion writes vectors (7didan_store) via PGIndexer", "Runtime writes funnel events (reporting.conversation_events) via crm/events.py", "postgres/7didan_backup.sql bootstraps fresh Docker volumes via initdb.d"] },
+    { "dot": "rose", "title": "Outbound CRM flow", "items": ["Backend computes lead_score + summary; browser sends neither", "CrmClient adds X-7didan-Token, retries only retryable failures with same submission_id", "ok only when status is created/duplicate AND verified=true"] },
+    { "dot": "slate", "title": "Evidence note", "items": ["Reflects the current working tree (git HEAD 9943b29 + uncommitted changes); file names appear in sublabels"] }
+  ]
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "id": "Q001",
+    "category": "factual",
+    "question": "Quels services de connectivité destinés aux entreprises sont présentés dans la documentation d'Orange Maroc Business ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q002",
+    "category": "factual",
+    "question": "Quels services ou solutions cloud sont proposés aux clients professionnels ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q003",
+    "category": "factual",
+    "question": "Quels services de cybersécurité sont présentés dans la documentation ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q004",
+    "category": "factual",
+    "question": "Quels services de communication ou de collaboration sont disponibles pour les clients professionnels, selon la documentation ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q005",
+    "category": "factual",
+    "question": "Quels services d'assistance ou de support client sont présentés dans les offres professionnelles ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q006",
+    "category": "technical",
+    "question": "Quelles exigences techniques ou conditions préalables sont spécifiées pour l'un des services professionnels présentés dans la documentation ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q007",
+    "category": "technical",
+    "question": "Quelles technologies réseau ou quels types de connectivité sont mentionnés dans la documentation ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q008",
+    "category": "technical",
+    "question": "Quelles spécifications relatives aux performances, à la capacité ou à la bande passante sont fournies pour les services présentés dans la documentation ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q009",
+    "category": "technical",
+    "question": "Quelles sont les étapes d'installation, d'activation ou de déploiement documentées pour un service destiné aux entreprises ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q010",
+    "category": "technical",
+    "question": "Quelles limitations techniques, exigences de compatibilité ou contraintes liées aux services sont mentionnées dans la documentation ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q011",
+    "category": "commercial",
+    "question": "Quelles informations tarifaires sont fournies concernant les offres professionnelles présentées dans la documentation ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q012",
+    "category": "commercial",
+    "question": "Quels forfaits ou quelles formules commerciales sont présentés dans la documentation, et que comprennent-ils ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q013",
+    "category": "commercial",
+    "question": "Quelles conditions d'éligibilité ou quels prérequis un client professionnel doit-il remplir pour souscrire à une offre présentée dans la documentation ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q014",
+    "category": "commercial",
+    "question": "Quelle durée de contrat, quelle période d'engagement ou quelles conditions de résiliation sont précisées pour une offre professionnelle ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q015",
+    "category": "multi_hop",
+    "question": "Quel service professionnel présenté dans la documentation répond à un besoin spécifique d'une entreprise, et quelles fonctionnalités documentées justifient ce choix ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q016",
+    "category": "multi_hop",
+    "question": "Quelles sont les principales fonctionnalités d'une offre présentée dans la documentation, ainsi que les conditions d'abonnement ou de tarification associées ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q017",
+    "category": "multi_hop",
+    "question": "Quels sont les prérequis nécessaires pour bénéficier d'un service présenté dans la documentation, et quelles étapes sont décrites pour son activation ou son déploiement ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q018",
+    "category": "unanswerable",
+    "question": "Quel est le prix exact d'un service professionnel si aucun tarif n'est indiqué dans la base de connaissances disponible ?",
+    "is_answerable": true,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q019",
+    "category": "unanswerable",
+    "question": "Orange Maroc garantit-il un pourcentage précis de disponibilité du service qui n'est mentionné nulle part dans la documentation disponible ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  },
+  {
+    "id": "Q020",
+    "category": "unanswerable",
+    "question": "Une fonctionnalité particulière, qui n'est pas mentionnée dans la documentation, est-elle incluse dans une offre professionnelle ?",
+    "is_answerable": false,
+    "expected_answer": "",
+    "reference_evidence": [],
+    "status": "draft"
+  }
+]

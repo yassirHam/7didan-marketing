@@ -1,0 +1,9 @@
+7didan-env/
+knowledge_base/data/
+chunker_test.py
+res.md
+retrieval_service/pg_rt_test.py
+**/__pycache__/
+.env
+.env.*
+!.env.example

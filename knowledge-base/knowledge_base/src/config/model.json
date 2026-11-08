@@ -1,0 +1,9 @@
+{
+    "encode_kwargs": {
+        "batch_size" : 8,
+        "normalize_embeddings": true
+    },
+    "query_encode_kwargs" : {
+        "normalize_embeddings" : true
+    }
+}

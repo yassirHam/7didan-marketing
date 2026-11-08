@@ -1,0 +1,45 @@
+# Python environments
+7didan-env/
+venv/
+.venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo/
+
+# Git
+.git/
+.gitignore
+
+# Ingestion data and pipelines
+knowledge_base/data/
+knowledge_base/src/ingestions/
+knowledge_base/src/preprocessing/
+knowledge_base/src/chunkers/
+knowledge_base/src/indexers/
+
+# Evaluations
+retrieval_service/src/evaluations/
+
+# Hugging Face cache
+model_cache/
+.cache/
+huggingface/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local experiments
+chunker_test.py
+res.md

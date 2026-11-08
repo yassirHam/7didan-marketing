@@ -1,0 +1,7 @@
+{
+    "do_ocr" : true,
+    "do_table_structure": true,
+    "generate_picture_images":true,
+    "cell_matching":true,
+    "image_scale":2.0
+}
